@@ -1,1 +1,1 @@
-# cosc-224-group-project
+# cosc-224-group-projects
