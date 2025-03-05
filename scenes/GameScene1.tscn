@@ -192,3 +192,4 @@ text = "Defender
 
 [connection signal="pressed" from="Home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="HBoxContainer/Attacker" to="." method="_on_attacker_pressed"]
+[connection signal="pressed" from="HBoxContainer/Defender" to="." method="_on_defender_pressed"]
