@@ -1,0 +1,266 @@
+[gd_scene load_steps=16 format=3 uid="uid://d3ykdghrl3d80"]
+
+[ext_resource type="Script" path="res://scenes/attacker_page.gd" id="1_bp4u8"]
+[ext_resource type="Texture2D" uid="uid://byilwodvj55yd" path="res://sky_lightened.png" id="1_e4nit"]
+[ext_resource type="Texture2D" uid="uid://bai0ilin7ncxj" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_1_lightened.png" id="2_tky66"]
+[ext_resource type="Texture2D" uid="uid://dlqkyteso2ate" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_3.png" id="3_spdsg"]
+[ext_resource type="Texture2D" uid="uid://cvht5puhcrmwt" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_2.png" id="4_818yx"]
+[ext_resource type="FontFile" uid="uid://ctf2pk0x6asf8" path="res://School Teachers.otf" id="5_j6ulg"]
+[ext_resource type="Texture2D" uid="uid://cgp2bccgs4d36" path="res://cloud_lonely.png" id="7_ksql5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hj6gj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7e8gu"]
+bg_color = Color(0.214923, 0.613613, 0.999999, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 10
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4as3i"]
+bg_color = Color(0.367501, 0.675869, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 10
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xdy3"]
+bg_color = Color(0.591849, 0.822409, 0.999619, 1)
+skew = Vector2(0.05, 0)
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 20
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 8
+anti_aliasing_size = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6pt34"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wkj4t"]
+bg_color = Color(0.214923, 0.613613, 0.999999, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 10
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7gas"]
+bg_color = Color(0.367501, 0.675869, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 10
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uc464"]
+bg_color = Color(0.591849, 0.822409, 0.999619, 1)
+skew = Vector2(0.05, 0)
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 20
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 8
+anti_aliasing_size = 10.0
+
+[node name="AttackerPage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -5.0
+offset_right = -1.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bp4u8")
+
+[node name="SkyLightened" type="Sprite2D" parent="."]
+position = Vector2(577.75, 335.5)
+scale = Vector2(3.08203, 3.13426)
+texture = ExtResource("1_e4nit")
+metadata/_edit_lock_ = true
+
+[node name="CloudsMg1Lightened" type="Sprite2D" parent="."]
+position = Vector2(580, 164)
+rotation = -3.14683
+scale = Vector2(3.0675, 1.54518)
+texture = ExtResource("2_tky66")
+
+[node name="CloudsMg3" type="Sprite2D" parent="."]
+position = Vector2(577, 514)
+scale = Vector2(3.0651, 1.0787)
+texture = ExtResource("3_spdsg")
+
+[node name="CloudsMg2" type="Sprite2D" parent="CloudsMg3"]
+position = Vector2(0.326249, 5.56216)
+scale = Vector2(0.983857, 1.20601)
+texture = ExtResource("4_818yx")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -317.0
+offset_top = 54.0
+offset_right = 295.0
+offset_bottom = 175.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_j6ulg")
+theme_override_font_sizes/font_size = 133
+text = "Injection Attacker"
+horizontal_alignment = 1
+
+[node name="Home6" type="Button" parent="."]
+layout_mode = 2
+offset_left = 36.0
+offset_top = 606.0
+offset_right = 94.0
+offset_bottom = 638.0
+theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
+theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
+theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
+theme_override_fonts/font = ExtResource("5_j6ulg")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hj6gj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7e8gu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4as3i")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xdy3")
+text = "Back"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -236.5
+offset_top = -132.0
+offset_right = 236.5
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 22
+
+[node name="Home" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
+theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
+theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
+theme_override_fonts/font = ExtResource("5_j6ulg")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6pt34")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wkj4t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u7gas")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uc464")
+text = "Level 1
+"
+
+[node name="Home2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
+theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
+theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
+theme_override_fonts/font = ExtResource("5_j6ulg")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6pt34")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wkj4t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u7gas")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uc464")
+text = "Level 2
+"
+
+[node name="Home3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
+theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
+theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
+theme_override_fonts/font = ExtResource("5_j6ulg")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6pt34")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wkj4t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u7gas")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uc464")
+text = "Level 3
+"
+
+[node name="Home4" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
+theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
+theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
+theme_override_fonts/font = ExtResource("5_j6ulg")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6pt34")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wkj4t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u7gas")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uc464")
+text = "Level 4
+"
+
+[node name="Home5" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
+theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
+theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
+theme_override_fonts/font = ExtResource("5_j6ulg")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6pt34")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wkj4t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u7gas")
+theme_override_styles/normal = SubResource("StyleBoxFlat_uc464")
+text = "Level 5
+"
+
+[node name="CloudLonely" type="Sprite2D" parent="."]
+position = Vector2(51, 592)
+texture = ExtResource("7_ksql5")
+
+[node name="CloudLonely2" type="Sprite2D" parent="."]
+position = Vector2(275, 560)
+flip_h = true
+
+[node name="CloudLonely3" type="Sprite2D" parent="."]
+position = Vector2(96, 597)
+texture = ExtResource("7_ksql5")
+
+[node name="CloudLonely4" type="Sprite2D" parent="."]
+position = Vector2(1153.75, 74.5)
+scale = Vector2(0.88151, 0.976852)
+texture = ExtResource("7_ksql5")
+flip_h = true
+flip_v = true
+
+[node name="CloudLonely5" type="Sprite2D" parent="."]
+position = Vector2(1047, 599)
+texture = ExtResource("7_ksql5")
+
+[node name="CloudLonely6" type="Sprite2D" parent="."]
+position = Vector2(1022, 170)
+texture = ExtResource("7_ksql5")
+
+[node name="CloudLonely7" type="Sprite2D" parent="."]
+position = Vector2(910, 271)
+texture = ExtResource("7_ksql5")
+
+[node name="CloudLonely8" type="Sprite2D" parent="."]
+position = Vector2(65, 98)
+scale = Vector2(0.661458, 1)
+texture = ExtResource("7_ksql5")
+flip_v = true
+
+[connection signal="pressed" from="Home6" to="." method="_on_goBack_pressed"]

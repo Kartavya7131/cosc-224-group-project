@@ -11,9 +11,5 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_home_pressed():
-	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
-
-
-func _on_attacker_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/AttackerPage.tscn")
+func _on_goBack_pressed():
+	get_tree().change_scene_to_file("res://scenes/GameScene1.tscn")
