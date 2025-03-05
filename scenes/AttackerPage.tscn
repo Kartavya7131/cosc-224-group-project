@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://d3ykdghrl3d80"]
 
-[ext_resource type="Script" path="res://scenes/attacker_page.gd" id="1_bp4u8"]
+[ext_resource type="Script" path="res://script/attacker_page.gd" id="1_bp4u8"]
 [ext_resource type="Texture2D" uid="uid://byilwodvj55yd" path="res://sky_lightened.png" id="1_e4nit"]
 [ext_resource type="Texture2D" uid="uid://bai0ilin7ncxj" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_1_lightened.png" id="2_tky66"]
 [ext_resource type="Texture2D" uid="uid://dlqkyteso2ate" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_3.png" id="3_spdsg"]
@@ -33,6 +33,7 @@ anti_aliasing_size = 0.01
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xdy3"]
 bg_color = Color(0.591849, 0.822409, 0.999619, 1)
 skew = Vector2(0.05, 0)
+corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
@@ -66,6 +67,7 @@ anti_aliasing_size = 0.01
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uc464"]
 bg_color = Color(0.591849, 0.822409, 0.999619, 1)
 skew = Vector2(0.05, 0)
+corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
@@ -98,16 +100,19 @@ position = Vector2(580, 164)
 rotation = -3.14683
 scale = Vector2(3.0675, 1.54518)
 texture = ExtResource("2_tky66")
+metadata/_edit_lock_ = true
 
 [node name="CloudsMg3" type="Sprite2D" parent="."]
 position = Vector2(577, 514)
 scale = Vector2(3.0651, 1.0787)
 texture = ExtResource("3_spdsg")
+metadata/_edit_lock_ = true
 
 [node name="CloudsMg2" type="Sprite2D" parent="CloudsMg3"]
 position = Vector2(0.326249, 5.56216)
 scale = Vector2(0.983857, 1.20601)
 texture = ExtResource("4_818yx")
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -124,7 +129,7 @@ theme_override_font_sizes/font_size = 133
 text = "Injection Attacker"
 horizontal_alignment = 1
 
-[node name="Home6" type="Button" parent="."]
+[node name="Back" type="Button" parent="."]
 layout_mode = 2
 offset_left = 36.0
 offset_top = 606.0
@@ -148,15 +153,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -236.5
-offset_top = -132.0
-offset_right = 236.5
-offset_bottom = 132.0
+offset_left = -277.0
+offset_top = -124.0
+offset_right = 277.0
+offset_bottom = 160.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 22
 
-[node name="Home" type="Button" parent="VBoxContainer"]
+[node name="Level1" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
@@ -170,7 +175,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_uc464")
 text = "Level 1
 "
 
-[node name="Home2" type="Button" parent="VBoxContainer"]
+[node name="Level2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
@@ -184,7 +189,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_uc464")
 text = "Level 2
 "
 
-[node name="Home3" type="Button" parent="VBoxContainer"]
+[node name="Level3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
@@ -198,7 +203,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_uc464")
 text = "Level 3
 "
 
-[node name="Home4" type="Button" parent="VBoxContainer"]
+[node name="Level4" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
@@ -212,7 +217,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_uc464")
 text = "Level 4
 "
 
-[node name="Home5" type="Button" parent="VBoxContainer"]
+[node name="Level5" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
@@ -262,5 +267,3 @@ position = Vector2(65, 98)
 scale = Vector2(0.661458, 1)
 texture = ExtResource("7_ksql5")
 flip_v = true
-
-[connection signal="pressed" from="Home6" to="." method="_on_goBack_pressed"]
