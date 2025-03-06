@@ -1,7 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://rhafu7ofsxx8"]
 
 [ext_resource type="Script" uid="uid://db0hebwdkldy3" path="res://script/main_menu.gd" id="1_3vale"]
-[ext_resource type="Script" uid="uid://ffvld0cduwuf" path="res://script/main_menu.gd" id="1_3vale"]
 [ext_resource type="Texture2D" uid="uid://llohm7vbc7bv" path="res://background_glacial_mountains_lightened.png" id="2_o653c"]
 [ext_resource type="FontFile" uid="uid://ctf2pk0x6asf8" path="res://School Teachers.otf" id="3_a3ru2"]
 
