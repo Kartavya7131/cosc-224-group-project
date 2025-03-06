@@ -1,4 +1,5 @@
 
+
 [ext_resource type="Script" uid="uid://df2xmubi2028r" path="res://script/attacker_page.gd" id="1_05oc7"]
 [ext_resource type="Texture2D" uid="uid://byilwodvj55yd" path="res://sky_lightened.png" id="2_xjt4h"]
 [ext_resource type="Texture2D" uid="uid://bai0ilin7ncxj" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_1_lightened.png" id="3_l35ci"]
@@ -7,10 +8,10 @@
 [ext_resource type="FontFile" uid="uid://ctf2pk0x6asf8" path="res://School Teachers.otf" id="6_mn3xd"]
 [ext_resource type="Texture2D" uid="uid://cgp2bccgs4d36" path="res://cloud_lonely.png" id="7_xm1tt"]
 
+
 [gd_scene load_steps=16 format=3 uid="uid://cdbiv308m7p4e"]
 
-
-[ext_resource type="Script" path="res://script/defender_page.gd" id="1_kls0p"]
+[ext_resource type="Script" uid="uid://c1cbsu7rqjyxt" path="res://script/defender_page.gd" id="1_kls0p"]
 [ext_resource type="Texture2D" uid="uid://byilwodvj55yd" path="res://sky_lightened.png" id="2_6xxau"]
 [ext_resource type="Texture2D" uid="uid://bai0ilin7ncxj" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_1_lightened.png" id="3_4wr4d"]
 [ext_resource type="Texture2D" uid="uid://dlqkyteso2ate" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_3.png" id="4_8mwu0"]
