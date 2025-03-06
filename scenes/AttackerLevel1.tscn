@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://5cjepprveqcp"]
+[gd_scene load_steps=12 format=3 uid="uid://bjxhcgd4ov40w"]
 
 [ext_resource type="Script" uid="uid://7leneov68kn3" path="res://script/attackerLevel1.gd" id="1_i8qm8"]
 [ext_resource type="Texture2D" uid="uid://byilwodvj55yd" path="res://sky_lightened.png" id="2_ddtph"]
@@ -72,30 +72,26 @@ scale = Vector2(0.983857, 1.20601)
 texture = ExtResource("5_dvxjj")
 metadata/_edit_lock_ = true
 
-[node name="LineEdit" type="LineEdit" parent="."]
-layout_mode = 0
-offset_left = 169.0
-offset_top = 240.0
-offset_right = 935.0
-offset_bottom = 304.0
-
 [node name="hint_label" type="Label" parent="."]
 visible = false
-layout_mode = 0
 offset_left = 172.0
 offset_top = 339.0
 offset_right = 935.0
 offset_bottom = 385.0
 
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 169.0
+offset_top = 240.0
+offset_right = 935.0
+offset_bottom = 304.0
+
 [node name="FeedbackLabel" type="Label" parent="."]
-layout_mode = 0
 offset_left = 181.0
 offset_top = 461.0
 offset_right = 927.0
 offset_bottom = 524.0
 
 [node name="question" type="Label" parent="."]
-layout_mode = 0
 offset_left = 176.0
 offset_top = 87.0
 offset_right = 918.0
@@ -106,7 +102,6 @@ The query used is:\"SELECT * FROM users WHERE username = 'INPUT' AND password = 
 Your goal: Log in without knowing the correct password!"
 
 [node name="Back" type="Button" parent="."]
-layout_mode = 0
 offset_left = 36.0
 offset_top = 606.0
 offset_right = 94.0
@@ -123,7 +118,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ve8uy")
 text = "Back"
 
 [node name="submitbutton" type="Button" parent="."]
-layout_mode = 0
 offset_left = 1054.0
 offset_top = 601.0
 offset_right = 1116.0
@@ -168,4 +162,4 @@ texture = ExtResource("6_6lvk7")
 flip_v = true
 
 [connection signal="pressed" from="Back" to="." method="_on_goBack_pressed"]
-[connection signal="pressed" from="submitbutton" to="." method="_on_SubmitButton_pressed"]
+[connection signal="pressed" from="submitbutton" to="." method="_on_submitbutton_pressed"]
