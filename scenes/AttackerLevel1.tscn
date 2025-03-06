@@ -1,11 +1,46 @@
-[gd_scene load_steps=7 format=3 uid="uid://5cjepprveqcp"]
+[gd_scene load_steps=12 format=3 uid="uid://5cjepprveqcp"]
 
-[ext_resource type="Script" path="res://script/attackerLevel1.gd" id="1_i8qm8"]
+[ext_resource type="Script" uid="uid://7leneov68kn3" path="res://script/attackerLevel1.gd" id="1_i8qm8"]
 [ext_resource type="Texture2D" uid="uid://byilwodvj55yd" path="res://sky_lightened.png" id="2_ddtph"]
 [ext_resource type="Texture2D" uid="uid://bai0ilin7ncxj" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_1_lightened.png" id="3_ykj1e"]
 [ext_resource type="Texture2D" uid="uid://dlqkyteso2ate" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_3.png" id="4_dkuy5"]
 [ext_resource type="Texture2D" uid="uid://cvht5puhcrmwt" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_2.png" id="5_dvxjj"]
 [ext_resource type="Texture2D" uid="uid://cgp2bccgs4d36" path="res://cloud_lonely.png" id="6_6lvk7"]
+[ext_resource type="FontFile" uid="uid://ctf2pk0x6asf8" path="res://School Teachers.otf" id="6_r7nn2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dohx6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a4vi7"]
+bg_color = Color(0.214923, 0.613613, 0.999999, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 10
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ansxa"]
+bg_color = Color(0.367501, 0.675869, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 10
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ve8uy"]
+bg_color = Color(0.591849, 0.822409, 0.999619, 1)
+skew = Vector2(0.05, 0)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 20
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 8
+anti_aliasing_size = 10.0
 
 [node name="AttackerLevel1" type="Control"]
 layout_mode = 3
@@ -44,6 +79,14 @@ offset_top = 240.0
 offset_right = 935.0
 offset_bottom = 304.0
 
+[node name="hint_label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 172.0
+offset_top = 339.0
+offset_right = 935.0
+offset_bottom = 385.0
+
 [node name="FeedbackLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 181.0
@@ -62,12 +105,29 @@ text = "\"You found a login form that checks for username and password.
 The query used is:\"SELECT * FROM users WHERE username = 'INPUT' AND password = 'INPUT';
 Your goal: Log in without knowing the correct password!"
 
-[node name="submitButton" type="Button" parent="."]
+[node name="Back" type="Button" parent="."]
 layout_mode = 0
-offset_left = 179.0
-offset_top = 389.0
-offset_right = 236.0
-offset_bottom = 415.0
+offset_left = 36.0
+offset_top = 606.0
+offset_right = 94.0
+offset_bottom = 638.0
+theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
+theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
+theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
+theme_override_fonts/font = ExtResource("6_r7nn2")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dohx6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a4vi7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ansxa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ve8uy")
+text = "Back"
+
+[node name="submitbutton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1054.0
+offset_top = 601.0
+offset_right = 1116.0
+offset_bottom = 632.0
 text = "submit"
 
 [node name="CloudLonely" type="Sprite2D" parent="."]
@@ -107,4 +167,5 @@ scale = Vector2(0.661458, 1)
 texture = ExtResource("6_6lvk7")
 flip_v = true
 
-[connection signal="pressed" from="submitButton" to="." method="_on_SubmitButton_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_goBack_pressed"]
+[connection signal="pressed" from="submitbutton" to="." method="_on_SubmitButton_pressed"]
