@@ -26,8 +26,8 @@ func _on_goBack_pressed():
 @onready var hint_label = $hint_label  # New hint label
 
 # When submit is pressed, validate the input
-func _on_SubmitButton_pressed():
-	var user_input = input_field.text.replace(" ", "")  # Get the input from LineEdit
+func _on_submitbutton_pressed():
+	var user_input = input_field.text  # Get the input from LineEdit
 	if user_input == correct_injection:
 		feedback_label.text = "Injection successful! You've hacked into the system."
 		# Transition to next level
