@@ -267,3 +267,5 @@ position = Vector2(65, 98)
 scale = Vector2(0.661458, 1)
 texture = ExtResource("7_ksql5")
 flip_v = true
+
+[connection signal="pressed" from="VBoxContainer/Level1" to="." method="_on_level_1_pressed"]
