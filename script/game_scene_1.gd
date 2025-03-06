@@ -17,3 +17,7 @@ func _on_home_pressed():
 
 func _on_attacker_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/AttackerPage.tscn")
+
+
+func _on_defender_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/DefenderPage.tscn")
