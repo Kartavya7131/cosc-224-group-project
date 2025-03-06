@@ -27,7 +27,7 @@ func _on_goBack_pressed():
 
 # When submit is pressed, validate the input
 func _on_submitbutton_pressed():
-	var user_input = input_field.text  # Get the input from LineEdit
+	var user_input = input_field.text.replace(" ", "")  # Get the input from LineEdit
 	if user_input == correct_injection:
 		feedback_label.text = "Injection successful! You've hacked into the system."
 		# Transition to next level
