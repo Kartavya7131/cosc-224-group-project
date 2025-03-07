@@ -1,6 +1,6 @@
 extends Control
 
-var correct_injection = "' UNION SELECT id, username, password FROM users;--"
+var correct_injection = "'UNIONSELECTid,username,passwordFROMusers;"
 var attempt_count = 0
 
 func _on_goBack_pressed():
@@ -14,7 +14,7 @@ func _ready():
 	hint_label.visible = false  
 
 func _on_SubmitButton_pressed():
-	var user_input = input_field.text.strip_edges()
+	var user_input = input_field.text.replace(" ","")
 
 	if user_input == correct_injection:
 		feedback_label.text = "✅ Data retrieved! You accessed all user records!"
