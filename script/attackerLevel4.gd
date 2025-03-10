@@ -21,4 +21,4 @@ func _on_SubmitButton_pressed():
 
 		if attempt_count >= 3:
 			hint_label.visible = true
-			hint_label.text = "💡 Hint: Try using a SLEEP function to check response time."
+			hint_label.text = "💡 Hint: Use a timing-based attack to detect vulnerabilities."

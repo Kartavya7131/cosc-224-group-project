@@ -25,4 +25,4 @@ func _on_SubmitButton_pressed():
 
 		if attempt_count >= 3:
 			hint_label.visible = true
-			hint_label.text = "💡 Hint: UNION SELECT can help retrieve additional data. or close the string"
+			hint_label.text = "💡 Hint: Look into UNION SELECT for retrieving multiple query results. or close the string"
