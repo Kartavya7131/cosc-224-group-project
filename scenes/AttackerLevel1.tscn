@@ -98,12 +98,11 @@ scale = Vector2(0.983857, 1.20601)
 texture = ExtResource("5_dvxjj")
 
 [node name="HintLabel" type="Label" parent="."]
-visible = false
 layout_mode = 0
-offset_left = 172.0
-offset_top = 339.0
-offset_right = 935.0
-offset_bottom = 385.0
+offset_left = 193.0
+offset_top = 357.0
+offset_right = 956.0
+offset_bottom = 403.0
 
 [node name="InputField" type="LineEdit" parent="."]
 layout_mode = 0
@@ -114,9 +113,9 @@ offset_bottom = 460.0
 
 [node name="FeedbackLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 181.0
+offset_left = 194.0
 offset_top = 461.0
-offset_right = 927.0
+offset_right = 940.0
 offset_bottom = 524.0
 
 [node name="question" type="Label" parent="."]
