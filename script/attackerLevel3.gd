@@ -1,6 +1,6 @@
 extends Control
 
-var correct_injection = "'; UPDATE users SET password = 'hacked' WHERE username = 'admin';--"
+var correct_injection = "';UPDATEusersSETpassword='hacked'WHEREusername='admin';"
 var attempt_count = 0
 
 @onready var input_field = $InputField
@@ -12,7 +12,7 @@ func _on_goBack_pressed():
  
 
 func _on_SubmitButton_pressed():
-	var user_input = input_field.text.strip_edges()
+	var user_input = input_field.text.replace(" ","")
 
 	if user_input == correct_injection:
 		feedback_label.text = "✅ Password changed! You modified the database!"

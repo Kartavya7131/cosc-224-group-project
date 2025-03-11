@@ -1,12 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://bjxhcgd4ov40w"]
+[gd_scene load_steps=16 format=3 uid="uid://bjxhcgd4ov40w"]
 
 [ext_resource type="Script" path="res://script/attackerLevel1.gd" id="1_i8qm8"]
 [ext_resource type="Texture2D" uid="uid://byilwodvj55yd" path="res://sky_lightened.png" id="2_ddtph"]
 [ext_resource type="Texture2D" uid="uid://bai0ilin7ncxj" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_1_lightened.png" id="3_ykj1e"]
 [ext_resource type="Texture2D" uid="uid://dlqkyteso2ate" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_3.png" id="4_dkuy5"]
 [ext_resource type="Texture2D" uid="uid://cvht5puhcrmwt" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_2.png" id="5_dvxjj"]
+[ext_resource type="Texture2D" uid="uid://bd3uhdt7g25i6" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/glacial_mountains_lightened.png" id="5_gtgqi"]
 [ext_resource type="Texture2D" uid="uid://cgp2bccgs4d36" path="res://cloud_lonely.png" id="6_6lvk7"]
+[ext_resource type="Texture2D" uid="uid://c3otrdumkk027" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/glacial_mountains_lightened_Small.png" id="6_lcuhf"]
 [ext_resource type="FontFile" uid="uid://ctf2pk0x6asf8" path="res://School Teachers.otf" id="6_r7nn2"]
+[ext_resource type="Texture2D" uid="uid://8ldjcw3efsy1" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/glacial_mountains_lightened_Long_Diff.png" id="7_t1rrm"]
+[ext_resource type="Texture2D" uid="uid://c8d1rdkydnu57" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/glacial_mountains_lightened_Other.png" id="8_u1tlr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dohx6"]
 
@@ -48,63 +52,84 @@ anchors_preset = 0
 script = ExtResource("1_i8qm8")
 
 [node name="SkyLightened" type="Sprite2D" parent="."]
-position = Vector2(577.75, 335.5)
+position = Vector2(575, 336)
 scale = Vector2(3.08203, 3.13426)
 texture = ExtResource("2_ddtph")
-metadata/_edit_lock_ = true
 
 [node name="CloudsMg1Lightened" type="Sprite2D" parent="."]
-position = Vector2(580, 164)
+position = Vector2(578.273, 127.367)
 rotation = 3.13636
-scale = Vector2(3.0675, 1.54518)
+scale = Vector2(3.00131, 1.21121)
 texture = ExtResource("3_ykj1e")
-metadata/_edit_lock_ = true
 
 [node name="CloudsMg3" type="Sprite2D" parent="."]
-position = Vector2(577, 514)
+position = Vector2(573, 523)
 scale = Vector2(3.0651, 1.0787)
 texture = ExtResource("4_dkuy5")
-metadata/_edit_lock_ = true
+
+[node name="GlacialMountainsLightened" type="Sprite2D" parent="CloudsMg3"]
+position = Vector2(125.281, 65.8199)
+scale = Vector2(0.327103, 0.768243)
+texture = ExtResource("5_gtgqi")
+
+[node name="GlacialMountainsLightenedSmall" type="Sprite2D" parent="CloudsMg3"]
+position = Vector2(3.91505, 81.5796)
+scale = Vector2(0.326254, 0.927042)
+texture = ExtResource("6_lcuhf")
+
+[node name="GlacialMountainsLightened2" type="Sprite2D" parent="CloudsMg3"]
+position = Vector2(44.6968, 53.2491)
+scale = Vector2(0.106441, 0.605669)
+texture = ExtResource("5_gtgqi")
+
+[node name="GlacialMountainsLightenedLongDiff" type="Sprite2D" parent="CloudsMg3"]
+position = Vector2(-101.791, 38.0086)
+scale = Vector2(0.326254, 0.927042)
+texture = ExtResource("7_t1rrm")
+
+[node name="GlacialMountainsLightenedOther" type="Sprite2D" parent="CloudsMg3"]
+position = Vector2(-29.3628, 67.674)
+scale = Vector2(0.326254, 0.927042)
+texture = ExtResource("8_u1tlr")
 
 [node name="CloudsMg2" type="Sprite2D" parent="CloudsMg3"]
 position = Vector2(0.326249, 5.56216)
 scale = Vector2(0.983857, 1.20601)
 texture = ExtResource("5_dvxjj")
-metadata/_edit_lock_ = true
 
 [node name="HintLabel" type="Label" parent="."]
-visible = false
 layout_mode = 0
-offset_left = 172.0
-offset_top = 339.0
-offset_right = 935.0
-offset_bottom = 385.0
+offset_left = 193.0
+offset_top = 357.0
+offset_right = 956.0
+offset_bottom = 403.0
 
 [node name="InputField" type="LineEdit" parent="."]
 layout_mode = 0
-offset_left = 169.0
-offset_top = 240.0
-offset_right = 935.0
-offset_bottom = 304.0
+offset_left = 194.0
+offset_top = 396.0
+offset_right = 960.0
+offset_bottom = 460.0
 
 [node name="FeedbackLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 181.0
+offset_left = 194.0
 offset_top = 461.0
-offset_right = 927.0
+offset_right = 940.0
 offset_bottom = 524.0
 
 [node name="question" type="Label" parent="."]
 layout_mode = 0
-offset_left = 176.0
-offset_top = 87.0
-offset_right = 918.0
-offset_bottom = 200.0
-text = "\"You found a login form that checks for username and password. 
+offset_left = 198.0
+offset_top = 185.0
+offset_right = 1142.0
+offset_bottom = 347.0
+theme_override_font_sizes/font_size = 21
+text = "You found a login form that checks for username and password. 
 
 The query used is:\"SELECT * FROM users WHERE username = 'INPUT' AND password = 'INPUT';
 
-Your goal: Log in without knowing the correct password!"
+You must log in without knowing the correct password!"
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 0
@@ -125,14 +150,14 @@ text = "Back"
 
 [node name="submitbutton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1054.0
-offset_top = 601.0
-offset_right = 1116.0
-offset_bottom = 632.0
+offset_left = 982.0
+offset_top = 420.0
+offset_right = 1065.0
+offset_bottom = 460.0
 text = "submit"
 
 [node name="CloudLonely" type="Sprite2D" parent="."]
-position = Vector2(51, 592)
+position = Vector2(178, 596)
 texture = ExtResource("6_6lvk7")
 
 [node name="CloudLonely2" type="Sprite2D" parent="."]
@@ -140,7 +165,7 @@ position = Vector2(275, 560)
 flip_h = true
 
 [node name="CloudLonely3" type="Sprite2D" parent="."]
-position = Vector2(96, 597)
+position = Vector2(37, 430)
 texture = ExtResource("6_6lvk7")
 
 [node name="CloudLonely4" type="Sprite2D" parent="."]
@@ -151,7 +176,7 @@ flip_h = true
 flip_v = true
 
 [node name="CloudLonely5" type="Sprite2D" parent="."]
-position = Vector2(1047, 599)
+position = Vector2(829, 617)
 texture = ExtResource("6_6lvk7")
 
 [node name="CloudLonely6" type="Sprite2D" parent="."]
@@ -159,21 +184,24 @@ position = Vector2(1022, 170)
 texture = ExtResource("6_6lvk7")
 
 [node name="CloudLonely7" type="Sprite2D" parent="."]
-position = Vector2(910, 271)
+position = Vector2(758, 398)
 texture = ExtResource("6_6lvk7")
 
 [node name="CloudLonely8" type="Sprite2D" parent="."]
-position = Vector2(65, 98)
+position = Vector2(-4, 24)
 scale = Vector2(0.661458, 1)
 texture = ExtResource("6_6lvk7")
 flip_v = true
 
 [node name="level1" type="Label" parent="."]
-offset_left = 569.0
-offset_top = 37.0
-offset_right = 619.0
-offset_bottom = 60.0
-text = "level 1"
+layout_mode = 0
+offset_left = 536.0
+offset_top = 84.0
+offset_right = 673.0
+offset_bottom = 141.0
+theme_override_font_sizes/font_size = 41
+text = "Level 1"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Back" to="." method="_on_goBack_pressed"]
 [connection signal="pressed" from="submitbutton" to="." method="_on_submitbutton_pressed"]
