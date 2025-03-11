@@ -24,3 +24,12 @@ func _on_SubmitButton_pressed():
 		if attempt_count >= max_attempts:
 			hint_label.visible = true
 			hint_label.text = "💡 Hint: Try using a SLEEP function to check response time."
+
+# Define the process_input method that will handle the SQL injection input
+func process_input(input: String) -> bool:
+	# Check if the input matches the correct SQL injection for this level
+	if input == correct_injection:
+		print("Blind SQL Injection successful! Triggered delay.")
+		return true  # Successful attack (SQL injection worked)
+	print("Blind SQL Injection failed with input: ", input)
+	return false  # Failed attempt
