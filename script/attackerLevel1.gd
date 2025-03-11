@@ -38,3 +38,12 @@ func _on_submitbutton_pressed():
 		if attempt_count >= 3:
 			hint_label.visible = true   # Show hint after 3 failed attempts
 			hint_label.text = "💡 Hint: Try using 'OR' to make the condition always TRUE."
+
+# Define the process_input method that will handle the SQL injection input
+func process_input(input: String) -> bool:
+	# Check if the input matches the correct SQL injection for this level
+	if input == correct_injection:
+		print("Login bypass successful!")
+		return true  # Successful attack (SQL injection worked)
+	print("Login failed with input: ", input)
+	return false  # Failed attempt

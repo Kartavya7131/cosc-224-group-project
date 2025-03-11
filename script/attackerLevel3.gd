@@ -24,3 +24,12 @@ func _on_SubmitButton_pressed():
 		if attempt_count >= 3:
 			hint_label.visible = true
 			hint_label.text = "💡 Hint: Try injecting an UPDATE statement. try ending the string first"
+
+# Define the process_input method that will handle the SQL injection input
+func process_input(input: String) -> bool:
+	# Check if the input matches the correct SQL injection for this level
+	if input == correct_injection:
+		print("Password modification successful!")
+		return true  # Successful attack (SQL injection worked)
+	print("Password modification failed with input: ", input)
+	return false  # Failed attempt
