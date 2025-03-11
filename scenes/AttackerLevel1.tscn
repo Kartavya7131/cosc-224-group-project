@@ -169,7 +169,6 @@ texture = ExtResource("6_6lvk7")
 flip_v = true
 
 [node name="level1" type="Label" parent="."]
-layout_mode = 0
 offset_left = 569.0
 offset_top = 37.0
 offset_right = 619.0
