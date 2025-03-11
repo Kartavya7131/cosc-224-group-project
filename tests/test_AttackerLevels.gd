@@ -18,7 +18,7 @@ func test_attacker_level_1_invalid_input():
 var attacker_level_2 = preload("res://scenes/AttackerLevel2.tscn").instantiate()
 
 func test_attacker_level_2_data_extraction():
-	var result = attacker_level_2.process_input("' UNION SELECT id, username, password FROM users;--")
+	var result = attacker_level_2.process_input("'UNIONSELECTid,username,passwordFROMusers;")
 	assert_true(result, "SQL injection should retrieve user data.")
 
 func test_attacker_level_2_invalid_input():
@@ -29,7 +29,7 @@ func test_attacker_level_2_invalid_input():
 var attacker_level_3 = preload("res://scenes/AttackerLevel3.tscn").instantiate()
 
 func test_attacker_level_3_modify_data():
-	var result = attacker_level_3.process_input("'; UPDATE users SET password = 'hacked' WHERE username = 'admin';--")
+	var result = attacker_level_3.process_input("';UPDATEusersSETpassword='hacked'WHEREusername='admin';")
 	assert_true(result, "SQL injection should modify user password.")
 
 func test_attacker_level_3_secure_input():
@@ -40,7 +40,7 @@ func test_attacker_level_3_secure_input():
 var attacker_level_4 = preload("res://scenes/AttackerLevel4.tscn").instantiate()
 
 func test_attacker_level_4_blind_sql_injection():
-	var result = attacker_level_4.process_input("' OR IF(1=1, SLEEP(5), 0);--")
+	var result = attacker_level_4.process_input("'ORIF(1=1,SLEEP(5),0);--")
 	assert_true(result, "Blind SQL Injection should introduce delay.")
 
 func test_attacker_level_4_invalid_attempt():
