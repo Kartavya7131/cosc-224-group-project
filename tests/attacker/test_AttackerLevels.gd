@@ -1,7 +1,7 @@
 extends "res://addons/gut/test.gd"  # Ensure it extends GUT
 
 # Create a test suite for attacker levels
-class_name AttackerLevels
+class_name test_AttackerLevels
 
 # Load the script managing Attacker Level 1
 var attacker_level_1 = preload("res://scenes/AttackerLevel1.tscn").instantiate()
