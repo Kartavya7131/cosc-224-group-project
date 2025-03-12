@@ -77,7 +77,7 @@ offset_right = 236.0
 offset_bottom = 128.0
 text = "Defense Puzzle 1"
 
-[node name="LineEdit" type="LineEdit" parent="."]
+[node name="InputField" type="LineEdit" parent="."]
 layout_mode = 0
 offset_left = 259.0
 offset_top = 277.0

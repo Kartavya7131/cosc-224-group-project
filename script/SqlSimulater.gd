@@ -75,11 +75,69 @@ func ColumnSort(a, b, column):
 		return 1
 	return 0
 	
-func ExecuteQuery(query):
-	var keywords = query.split(" ")
+func ExecuteQuery(query: String):
+	query = query.replace(",", "").replace(";", "").to_lower()
+	var keywords = query.replace(",", "").split(" ")
 	
-	print(query)
+	keywords.append(";")
+	
+	print(keywords)
+	
+	var mode = ""
+	var count = 0
+	
+	var colIds = []
+	var table = ""
+	var conditions = []
+	
+	# Select age, name from users WHERE age >= 32
+	
+	if (keywords[0] == "select"):
+		var args = []
+		for key in keywords:
+			if key == ";":
+				break
+			
+			match key:
+				"select":
+					mode = "sel"
+					count += 1
+					continue
+				"from":
+					mode = "frm"
+					count += 1
+					continue
+				"where":
+					mode = "whr"
+					count += 1
+					continue
+				"and", "or":
+					count += 1
+					conditions.append(key)
+					continue
+					
+					
+			if mode == "sel":
+				args.append(key)
+				if keywords[count+1] == "from":
+					colIds.append_array(args)
+					args.clear()
+					
+			if mode == "frm":
+				table = key
+				
+			if mode == "whr":
+				args.append(key)
+				if keywords[count+1] == "and" || keywords[count+1] == "or" || keywords[count+1] == ";":
+					conditions.append(args.duplicate())
+					args.clear()
+					
+			count += 1
+			
+	print("Columns: ", colIds)
+	print("Table: ", table)
+	print("Conditions: ", conditions)
 	
 @onready var input_field = $InputField
 func _on_level_check_button_down() -> void:
-	pass
+	ExecuteQuery(input_field.text)
