@@ -14,6 +14,10 @@ func test_attacker_level_1_invalid_input():
 	var result = attacker_level_1.process_input("wrongpassword")
 	assert_false(result, "Invalid login attempt should fail.")
 
+func test_attacker_level_1_invalid_input1():
+	var result = attacker_level_1.process_input("'or'1'='1'")
+	assert_false(result, "Invalid login attempt should fail.")
+
 # Load the script managing Attacker Level 2
 var attacker_level_2 = preload("res://scenes/AttackerLevel2.tscn").instantiate()
 
@@ -23,6 +27,10 @@ func test_attacker_level_2_data_extraction():
 
 func test_attacker_level_2_invalid_input():
 	var result = attacker_level_2.process_input("123")
+	assert_false(result, "Input should not return unauthorized data.")
+	
+func test_attacker_level_2_invalid_input1():
+	var result = attacker_level_2.process_input("union select id, user, password")
 	assert_false(result, "Input should not return unauthorized data.")
 
 # Load the script managing Attacker Level 3

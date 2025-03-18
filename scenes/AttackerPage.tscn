@@ -1,43 +1,12 @@
 [gd_scene load_steps=16 format=3 uid="uid://d3ykdghrl3d80"]
 
 [ext_resource type="Texture2D" uid="uid://byilwodvj55yd" path="res://sky_lightened.png" id="1_e4nit"]
+[ext_resource type="Script" path="res://script/attacker_page.gd" id="1_pid0f"]
 [ext_resource type="Texture2D" uid="uid://bai0ilin7ncxj" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_1_lightened.png" id="2_tky66"]
 [ext_resource type="Texture2D" uid="uid://dlqkyteso2ate" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_3.png" id="3_spdsg"]
 [ext_resource type="Texture2D" uid="uid://cvht5puhcrmwt" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_2.png" id="4_818yx"]
 [ext_resource type="FontFile" uid="uid://ctf2pk0x6asf8" path="res://School Teachers.otf" id="5_j6ulg"]
 [ext_resource type="Texture2D" uid="uid://cgp2bccgs4d36" path="res://cloud_lonely.png" id="7_ksql5"]
-
-[sub_resource type="GDScript" id="GDScript_fgfiq"]
-script/source = "extends Control
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func _on_goBack_pressed():
-	get_tree().change_scene_to_file(\"res://scenes/GameScene1.tscn\")
-
-
-func _on_level_1_pressed():
-	get_tree().change_scene_to_file(\"res://scenes/AttackerLevel1.tscn\")
-
-
-func _on_level_2_pressed():
-	get_tree().change_scene_to_file(\"res://scenes/AttackerLevel2.tscn\")
-
-func _on_level_3_pressed():
-	get_tree().change_scene_to_file(\"res://scenes/AttackerLevel3.tscn\")
-
-func _on_level_4_pressed():
-	get_tree().change_scene_to_file(\"res://scenes/AttackerLevel4.tscn\")
-"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hj6gj"]
 
@@ -118,7 +87,7 @@ offset_right = -1.0
 offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
-script = SubResource("GDScript_fgfiq")
+script = ExtResource("1_pid0f")
 
 [node name="SkyLightened" type="Sprite2D" parent="."]
 position = Vector2(577.75, 335.5)
@@ -304,3 +273,4 @@ flip_v = true
 [connection signal="pressed" from="VBoxContainer/Level2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/Level3" to="." method="_on_level_3_pressed"]
 [connection signal="pressed" from="VBoxContainer/Level4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="VBoxContainer/Level5" to="." method="_on_level_5_pressed"]

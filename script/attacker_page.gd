@@ -23,3 +23,5 @@ func _on_level_3_pressed():
 	get_tree().change_scene_to_file("res://scenes/AttackerLevel3.tscn")
 func _on_level_4_pressed():
 	get_tree().change_scene_to_file("res://scenes/AttackerLevel4.tscn")
+func _on_level_5_pressed():
+	get_tree().change_scene_to_file("res://scenes/AttackerLevel1_Modified.tscn")
