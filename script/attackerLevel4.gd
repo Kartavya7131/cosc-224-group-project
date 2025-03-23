@@ -1,6 +1,7 @@
 extends Control
 
 var correct_injection = "'ORIF(1=1,SLEEP(5),0);--"
+var correct_injection_2 = "'ORIF(1=1,SLEEP(10),0);--"
 var attempt_count = 0
 
 @onready var input_field = $InputField
@@ -12,7 +13,7 @@ func _on_goBack_pressed():
  
 func _on_SubmitButton_pressed():
 	var user_input = input_field.text.replace(" ","")
-	if user_input == correct_injection:
+	if user_input == correct_injection or correct_injection_2:
 		feedback_label.text = "✅ Success! You've detected a blind SQL injection vulnerability!"
 		#get_tree().change_scene("res://DefenderLevel1.tscn")
 	else:
@@ -26,7 +27,7 @@ func _on_SubmitButton_pressed():
 # Define the process_input method that will handle the SQL injection input
 func process_input(input: String) -> bool:
 	# Check if the input matches the correct SQL injection for this level
-	if input == correct_injection:
+	if input == correct_injection or input == correct_injection_2:
 		print("Blind SQL Injection successful! Triggered delay.")
 		return true  # Successful attack (SQL injection worked)
 	print("Blind SQL Injection failed with input: ", input)

@@ -1,6 +1,7 @@
 extends Control
 
 var correct_injection = "'UNIONSELECTid,username,passwordFROMusers;"
+
 var attempt_count = 0
 
 func _on_goBack_pressed():

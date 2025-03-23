@@ -9,6 +9,10 @@ var attacker_level_1 = preload("res://scenes/AttackerLevel1.tscn").instantiate()
 func test_attacker_level_1_bypass_login():
 	var result = attacker_level_1.process_input("OR'1'='1';")
 	assert_true(result, "Login bypass should be successful with SQL injection.")
+	
+func test_attacker_level_1_bypass_login_2():
+	var result = attacker_level_1.process_input("OR'2'='2';")
+	assert_true(result, "Login bypass should be successful with SQL injection.")
 
 func test_attacker_level_1_invalid_input():
 	var result = attacker_level_1.process_input("wrongpassword")
@@ -22,7 +26,7 @@ func test_attacker_level_2_data_extraction():
 	assert_true(result, "SQL injection should retrieve user data.")
 
 func test_attacker_level_2_invalid_input():
-	var result = attacker_level_2.process_input("123")
+	var result = attacker_level_2.process_input("'UNIONSELECTid,username,passwordFROMTeacher;")
 	assert_false(result, "Input should not return unauthorized data.")
 
 # Load the script managing Attacker Level 3
@@ -33,7 +37,7 @@ func test_attacker_level_3_modify_data():
 	assert_true(result, "SQL injection should modify user password.")
 
 func test_attacker_level_3_secure_input():
-	var result = attacker_level_3.process_input("securepassword")
+	var result = attacker_level_3.process_input("usersSETpassword='hacked'WHEREusername='admin';")
 	assert_false(result, "Valid input should not trigger SQL injection.")
 
 # Load the script managing Attacker Level 4
@@ -42,7 +46,12 @@ var attacker_level_4 = preload("res://scenes/AttackerLevel4.tscn").instantiate()
 func test_attacker_level_4_blind_sql_injection():
 	var result = attacker_level_4.process_input("'ORIF(1=1,SLEEP(5),0);--")
 	assert_true(result, "Blind SQL Injection should introduce delay.")
+	
+func test_attacker_level_4_blind_sql_injection_10():
+	var result = attacker_level_4.process_input("'ORIF(1=1,SLEEP(10),0);--")
+	assert_true(result, "Blind SQL Injection should introduce delay.")
 
 func test_attacker_level_4_invalid_attempt():
-	var result = attacker_level_4.process_input("admin")
+	var result = attacker_level_4.process_input("'ORIF(1=1,SLEEP(),0);--")
 	assert_false(result, "Normal input should not trigger SQL injection.")
+	

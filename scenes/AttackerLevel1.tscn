@@ -55,6 +55,7 @@ script = ExtResource("1_i8qm8")
 position = Vector2(575, 336)
 scale = Vector2(3.08203, 3.13426)
 texture = ExtResource("2_ddtph")
+metadata/_edit_lock_ = true
 
 [node name="CloudsMg1Lightened" type="Sprite2D" parent="."]
 position = Vector2(578.273, 127.367)
@@ -194,14 +195,14 @@ texture = ExtResource("6_6lvk7")
 flip_v = true
 
 [node name="level1" type="Label" parent="."]
-layout_mode = 0
-offset_left = 536.0
-offset_top = 84.0
-offset_right = 673.0
-offset_bottom = 141.0
+layout_mode = 1
+anchors_preset = -1
+offset_left = 505.0
+offset_top = 73.0
+offset_right = 642.0
+offset_bottom = 130.0
 theme_override_font_sizes/font_size = 41
 text = "Level 1"
-horizontal_alignment = 1
 
 [connection signal="pressed" from="Back" to="." method="_on_goBack_pressed"]
 [connection signal="pressed" from="submitbutton" to="." method="_on_submitbutton_pressed"]
