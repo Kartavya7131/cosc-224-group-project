@@ -133,10 +133,10 @@ You must log in without knowing the correct password!"
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 0
-offset_left = 36.0
-offset_top = 606.0
-offset_right = 94.0
-offset_bottom = 638.0
+offset_left = 37.0
+offset_top = 588.0
+offset_right = 95.0
+offset_bottom = 620.0
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
 theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)

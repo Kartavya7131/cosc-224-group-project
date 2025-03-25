@@ -16,7 +16,7 @@ func _on_goBack_pressed():
 
 
 func _on_level_1_pressed():
-	get_tree().change_scene_to_file("res://scenes/AttackerLevel1.tscn")
+	get_tree().change_scene_to_file("res://scenes/AttackerLevel1_Modified.tscn")
 func _on_level_2_pressed():
 	get_tree().change_scene_to_file("res://scenes/AttackerLevel2.tscn")
 func _on_level_3_pressed():
