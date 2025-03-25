@@ -25,5 +25,9 @@ var database = {
 	]
 }
 
-func GetTable(table_name):
-	return database[table_name];
+func GetTable(table_name : String):
+	if (database.has(table_name)):
+		return database[table_name];
+	else:
+		print(table_name, " is not a valid table")
+		return []

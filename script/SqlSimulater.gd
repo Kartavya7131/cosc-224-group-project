@@ -15,45 +15,28 @@ func SelectFromColumns(data, columns):
 		
 	return function_result
 	
-func WhereBool(data, funct):
-	var function = Callable(self, funct)
-	
-	var result = []
-	for row in data:
-		if function.call(row):
-			result.append(row)
-	return result
-	
-func WhereData(data, funct, expected):
-	var function = Callable(self, funct)
-	
-	var result = []
-	for row in data:
-		if function.call(row) == expected:
-			result.append(row)
-	return result
-	
-func OrderData(data, column, ascending=true):
-	return data.sort_custom(self, "ColumnSort", ascending, column)
-
-func ColumnSort(a, b, column):
-	if a[column] < b[column]:
-		return -1
-	elif a[column] > b[column]:
-		return 1
-	return 0
-	
 func ExecuteQuery(query: String):
 	var querydata = DecodeQuery(query)
 	var table = SqlDatabase.GetTable(querydata[0])
 	
-	var columns = SelectFromColumns(table, querydata[1])
+	var whereTable = []
+	for row in table:
+		var whereCheck = querydata[2].duplicate()
+		
+		for i in range(0, whereCheck.size(), 2):
+			whereCheck[i] = conditionResult(row, whereCheck[i])
+			
+		if (EvalLogicArray(whereCheck)):
+			whereTable.append(row)
+	
+	var columns = SelectFromColumns(whereTable, querydata[1])
 	
 	print("Table: ", querydata[0], "; Columns: ", querydata[1], "; Where: ", querydata[2], " -> ")
 	print(columns)
+	print("total rows: ", columns.size())
 	
 func DecodeQuery(query: String):
-	query = query.replace(",", "").replace(";", "").to_lower()
+	query = query.replace(",", "").replace(";", "").replace("\"", "").to_lower()
 	var keywords = query.replace(",", "").split(" ")
 	keywords.append(";")
 	
@@ -109,8 +92,42 @@ func DecodeQuery(query: String):
 	
 func conditionResult(dataRow, conditionQuery):
 	var key = conditionQuery[0]
-	var opperator = conditionQuery[1]
-	return 0
+	var operator = conditionQuery[1]
+	var value = conditionQuery[2];
+	
+	if value.is_valid_float():
+		value = float(value)
+	elif value.is_valid_int():
+		value = int(value)
+		
+	var dataValue = dataRow[key];
+	
+	if operator == "like":
+		return value in dataValue.to_lower()  # Case-insensitive match
+		
+	var expr = Expression.new()
+	var condition_string = "x %s y" % operator
+	
+	if expr.parse(condition_string, ["x", "y"]) == OK:
+		var result = expr.execute([dataValue, value], self)
+		return result
+		
+	return 'Err'
+	
+func EvalLogicArray(logic):
+	var logicStr = ""
+	
+	for val in logic:
+		if typeof(val) == TYPE_BOOL:
+			logicStr += "true" if val else "false"
+		else:
+			logicStr += " %s " % val
+			
+	var expr = Expression.new()
+	if expr.parse(logicStr) == OK:
+		return expr.execute()
+		
+	return 'Err'
 	
 @onready var input_field = $InputField
 func _on_level_check_button_down() -> void:
