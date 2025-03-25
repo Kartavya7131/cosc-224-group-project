@@ -58,7 +58,7 @@ func _on_SubmitButton_pressed():
 	if selected_sequence == correct_sequence:
 		feedback_label.text = "✅ Injection successful! You've hacked into the system."
 		feedback_label.modulate = Color.GREEN
-		next_level_timer.start()
+		get_tree().change_scene_to_file("res://scenes/AttackWin1.tscn")
 	else:
 		attempt_count += 1
 		feedback_label.text = "❌ Incorrect SQL injection. Attempts: " + str(attempt_count)
@@ -70,10 +70,10 @@ func _on_SubmitButton_pressed():
 			hint_label.visible = true
 			hint_label.text = "💡 Hint: Focus on SQL logic that forces a TRUE condition."
 
-# 🚀 Transition to the next level when timer ends
+# Transition to the next level when timer ends
 func _on_NextLevelTimer_timeout():
 	get_tree().change_scene_to_file("res://scenes/AttackerLevel2.tscn")
 
-# 🔙 Go back to AttackerPage
+# Go back to AttackerPage
 func _on_GoBackButton_pressed():
 	get_tree().change_scene_to_file("res://scenes/AttackerPage.tscn")

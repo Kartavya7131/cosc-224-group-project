@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://yuarraols215"]
 
 [ext_resource type="Texture2D" uid="uid://byilwodvj55yd" path="res://sky_lightened.png" id="1_mio7j"]
-[ext_resource type="Script" uid="uid://comg5o2hxpr7q" path="res://script/game_scene_1.gd" id="1_snxjp"]
+[ext_resource type="Script" path="res://script/game_scene_1.gd" id="1_snxjp"]
 [ext_resource type="Texture2D" uid="uid://drs5eo8v3mfsp" path="res://clouds_bg.png" id="2_6h7lw"]
 [ext_resource type="FontFile" uid="uid://ctf2pk0x6asf8" path="res://School Teachers.otf" id="3_8s13w"]
 [ext_resource type="Texture2D" uid="uid://ch1kbe2vmr5fi" path="res://clouds_mg_1_lightened.png" id="4_vi75b"]
@@ -32,6 +32,7 @@ anti_aliasing_size = 0.01
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onvso"]
 bg_color = Color(0.591849, 0.822409, 0.999619, 1)
 skew = Vector2(0.05, 0)
+corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
@@ -131,10 +132,10 @@ vertical_alignment = 1
 
 [node name="Home" type="Button" parent="."]
 layout_mode = 0
-offset_left = -4.0
-offset_top = 547.0
-offset_right = 105.0
-offset_bottom = 592.0
+offset_left = 56.0
+offset_top = 542.0
+offset_right = 165.0
+offset_bottom = 587.0
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
 theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
