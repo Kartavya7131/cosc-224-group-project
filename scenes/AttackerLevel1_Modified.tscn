@@ -225,7 +225,7 @@ theme_override_font_sizes/font_size = 85
 text = "Level 1"
 horizontal_alignment = 1
 
-[node name="SubmitButton2" type="Button" parent="."]
+[node name="ResetButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1000.0
 offset_top = 440.0
@@ -242,7 +242,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ansxa")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ve8uy")
 text = "REset"
 
-[node name="SubmitButton" type="Button" parent="SubmitButton2"]
+[node name="SubmitButton" type="Button" parent="ResetButton"]
 layout_mode = 0
 offset_left = 1000.0
 offset_top = 499.0
@@ -259,7 +259,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ansxa")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ve8uy")
 text = "submit"
 
-[node name="SubmitButton3" type="Button" parent="."]
+[node name="GoBackButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 26.0
 offset_top = 586.0
@@ -277,12 +277,15 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ve8uy")
 text = "Go Back
 "
 
-[node name="SubmitButton" type="Button" parent="SubmitButton3"]
-layout_mode = 0
+[node name="SubmitButton" type="Button" parent="GoBackButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 1000.0
 offset_top = 499.0
-offset_right = 1083.0
-offset_bottom = 539.0
+offset_right = 950.0
+offset_bottom = 490.0
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
 theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
@@ -297,7 +300,7 @@ text = "submit"
 [connection signal="pressed" from="SubmitButton" to="." method="_on_SubmitButton_pressed"]
 [connection signal="pressed" from="SubmitButton/SubmitButton" to="." method="_on_SubmitButton_pressed"]
 [connection signal="timeout" from="NextLevelTimer" to="." method="_on_NextLevelTimer_timeout"]
-[connection signal="pressed" from="SubmitButton2" to="." method="_on_ResetButton_pressed"]
-[connection signal="pressed" from="SubmitButton2/SubmitButton" to="." method="_on_SubmitButton_pressed"]
-[connection signal="pressed" from="SubmitButton3" to="." method="_on_GoBackButton_pressed"]
-[connection signal="pressed" from="SubmitButton3/SubmitButton" to="." method="_on_SubmitButton_pressed"]
+[connection signal="pressed" from="ResetButton" to="." method="_on_ResetButton_pressed"]
+[connection signal="pressed" from="ResetButton/SubmitButton" to="." method="_on_SubmitButton_pressed"]
+[connection signal="pressed" from="GoBackButton" to="." method="_on_GoBackButton_pressed"]
+[connection signal="pressed" from="GoBackButton/SubmitButton" to="." method="_on_SubmitButton_pressed"]
