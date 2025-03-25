@@ -95,29 +95,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="Home" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.968
-offset_left = 49.0
-offset_top = 560.0
-offset_right = -981.0
-offset_bottom = -19.264
-theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
-theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
-theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
-theme_override_fonts/font = ExtResource("3_j2d5r")
-theme_override_font_sizes/font_size = 35
-theme_override_styles/focus = SubResource("StyleBoxEmpty_24o6c")
-theme_override_styles/hover = SubResource("StyleBoxFlat_r2nnn")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_12tps")
-theme_override_styles/normal = SubResource("StyleBoxFlat_ay0vb")
-action_mode = 0
-button_mask = 0
-text = "Level Select
-"
-
 [node name="NextLevel" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -137,6 +114,26 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_r2nnn")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_12tps")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ay0vb")
 text = "Next Level"
+
+[node name="NextLevel2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 67.0
+offset_top = 555.0
+offset_right = -976.0
+offset_bottom = -48.0
+theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
+theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
+theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
+theme_override_fonts/font = ExtResource("3_j2d5r")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_24o6c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r2nnn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_12tps")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ay0vb")
+text = "Level Select"
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 1
@@ -169,3 +166,4 @@ text = "Password : **** OR '1' = '1';"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="NextLevel" to="." method="_on_next_level_pressed"]
+[connection signal="pressed" from="NextLevel2" to="." method="_on_Level_Select_pressed"]
