@@ -35,6 +35,11 @@ func ExecuteQuery(query: String):
 	print(columns)
 	print("total rows: ", columns.size())
 	
+	return columns
+	
+func CountRows(data):
+	return data.size()
+	
 func DecodeQuery(query: String):
 	query = query.replace(",", "").replace(";", "").replace("\"", "").to_lower()
 	var keywords = query.replace(",", "").split(" ")
@@ -128,7 +133,3 @@ func EvalLogicArray(logic):
 		return expr.execute()
 		
 	return 'Err'
-	
-@onready var input_field = $InputField
-func _on_level_check_button_down() -> void:
-	ExecuteQuery(input_field.text)
