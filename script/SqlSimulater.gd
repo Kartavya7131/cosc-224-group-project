@@ -41,7 +41,7 @@ func CountRows(data):
 	return data.size()
 	
 func DecodeQuery(query: String):
-	query = query.replace(",", "").replace(";", "").replace("\"", "").to_lower()
+	query = query.replace(",", "").replace(";", "").replace("\"", "").replace("\'", "").to_lower()
 	var keywords = query.replace(",", "").split(" ")
 	keywords.append(";")
 	
