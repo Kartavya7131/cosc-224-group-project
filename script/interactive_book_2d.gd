@@ -1,24 +1,26 @@
 extends AnimatedSprite2D
 class_name InteractiveBook2D
 
-@export var page_count : int = 6 # total pages in the book, keep this to at leat 5 if you want all animations to work
-
+@export var page_count : int = 4 # total pages in the book, keep this to at leat 5 if you want all animations to work
+@onready var pagelabel = $page_Label
 var current_page : int = 0 # tracks the current page the book is displaying
 
 # - Text to be displayed on each page
 var page_text = [
-	"",
+	"Page 0: Test for page 0",
 	"Page 1: Test for page 1",
 	"Page 2: Test for page 2",
-	"Page 3: Test for page 3"
-]
+	"Page 3: Test for page 3",
+	"Page 4: Test for page 4"
+	]
 
 func update_page_text():
-	page_label.txt = page_text[current_page]
+	pagelabel.text = page_text[current_page]
 
 # - set the book to be closed when the scene is loaded
 func _ready():
 	current_page = 0
+	update_page_text()
 	go_to_page(current_page)
 
 # - Use this to always get a page number that is within the set page count

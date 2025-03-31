@@ -1,7 +1,8 @@
-[gd_scene load_steps=107 format=3 uid="uid://kf64j7pluy7o"]
+[gd_scene load_steps=108 format=3 uid="uid://kf64j7pluy7o"]
 
 [ext_resource type="Texture2D" uid="uid://cf1ll0dc1tpw3" path="res://assets/Book_Sheet_64x64.png" id="1_nusbk"]
 [ext_resource type="Script" uid="uid://brj0w8eic8gpk" path="res://script/interactive_book_2d.gd" id="2_j3gqr"]
+[ext_resource type="FontFile" uid="uid://ctf2pk0x6asf8" path="res://School Teachers.otf" id="3_e0bqm"]
 [ext_resource type="Texture2D" uid="uid://bx1s75my8d6lp" path="res://assets/Back_Button.png" id="3_fg802"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ag3u"]
@@ -793,32 +794,54 @@ animations = [{
 
 [node name="InteractiveBook2D" type="AnimatedSprite2D"]
 texture_filter = 1
-position = Vector2(699, 257)
-scale = Vector2(10, 10)
+position = Vector2(729.5, 295)
+scale = Vector2(9.04688, 8.8125)
 sprite_frames = SubResource("SpriteFrames_vxube")
-animation = &"next_page"
+animation = &"next_from_first"
 autoplay = "closed_front"
 script = ExtResource("2_j3gqr")
+
+[node name="page_label1" type="Label" parent="."]
+offset_left = 39.5768
+offset_top = -27.0283
+offset_right = 62.5769
+offset_bottom = 9.97163
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 166.667
-offset_top = 78.0
-offset_right = 228.667
-offset_bottom = 124.0
+offset_left = -34.5
+offset_top = -18.0
+offset_right = 27.5
+offset_bottom = 28.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -23.8575
+offset_top = 11.5319
+offset_right = 39.1425
+offset_bottom = 20.5319
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_e0bqm")
+theme_override_font_sizes/font_size = 10
+text = "Injection Attacker"
+horizontal_alignment = 1
+justification_flags = 0
 
 [node name="NextPageButton" type="TextureButton" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 1.0
+anchor_left = 0.565
 anchor_top = 0.007
 anchor_right = 1.0
-anchor_bottom = 1.007
-offset_left = -33.0
-offset_top = -0.322
-offset_right = -1.0
-offset_bottom = -0.322002
+anchor_bottom = 1.0
+offset_left = -0.0299988
+offset_top = -1.322
+offset_right = 4.0
+offset_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
 
@@ -826,30 +849,33 @@ grow_vertical = 2
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = -179.0
-offset_top = -66.3333
-offset_right = -150.0
-offset_bottom = -66.3333
+offset_left = 4.99997
+offset_top = -0.699997
+offset_right = 34.0
+offset_bottom = -0.699997
 grow_vertical = 2
 
 [node name="CloseButton" type="TextureButton" parent="Control"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -2.677
-anchor_top = -1.609
-anchor_right = -2.677
-anchor_bottom = -1.609
-offset_left = -8.02602
-offset_top = 33.3473
-offset_right = 7.97398
-offset_bottom = 49.3473
+anchor_left = -0.525
+anchor_top = -0.126
+anchor_right = 1.261
+anchor_bottom = 1.243
+offset_left = 13.55
+offset_top = 46.796
+offset_right = -81.182
+offset_bottom = -0.178001
 texture_normal = ExtResource("3_fg802")
 
-[node name="page_label" type="Label" parent="Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="page_Label" type="Label" parent="."]
+offset_left = -74.0
+offset_top = -30.0
+offset_right = 32.0
+offset_bottom = -7.0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = -3
 
 [connection signal="button_down" from="Control/NextPageButton" to="." method="_on_next_page_button_button_down"]
 [connection signal="button_down" from="Control/PreviousPageButton" to="." method="_on_previous_page_button_button_down"]
