@@ -112,7 +112,7 @@ layout_mode = 2
 offset_left = 132.0
 offset_top = 444.0
 offset_right = 981.0
-offset_bottom = 467.0
+offset_bottom = 473.0
 
 [node name="HintLabel" type="Label" parent="."]
 layout_mode = 0
