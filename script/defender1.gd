@@ -1,14 +1,13 @@
 extends Node
 
 # ✅ Correct sequence to solve the challenge
-@export var correct_sequence: Array = ["OR 1=1;", "--"]
+@export var correct_sequence: Array = ["SELECT *", "FROM users", "WHERE", "username =", "QUOTE('Input');"]
 
 # Stores player-selected sequence
 var selected_sequence: Array = []
 var attempt_count = 0
 
 # UI Elements
-@onready var question_label = $QuestionLabel
 @onready var hint_label = $HintLabel
 @onready var feedback_label = $FeedbackLabel
 @onready var submit_button = $SubmitButton
@@ -25,7 +24,7 @@ func _ready():
 
 # 🔹 Creates buttons dynamically from the correct sequence and distractors
 func setup_buttons():
-	var all_buttons = correct_sequence + ["1=2", "DROP TABLE users", "UPDATE users SET"]
+	var all_buttons = correct_sequence + ["NULL", "PROCESS('Input');"]
 	all_buttons.shuffle()
 
 	for sql_fragment in all_buttons:
@@ -56,19 +55,19 @@ func _on_ResetButton_pressed():
 # 🔎 When Submit is pressed, check the sequence
 func _on_SubmitButton_pressed():
 	if selected_sequence == correct_sequence:
-		feedback_label.text = "✅ Injection successful! You've hacked into the system."
+		feedback_label.text = "✅ Injection Unsuccessful; You stopped the attack!"
 		feedback_label.modulate = Color.GREEN
-		get_tree().change_scene_to_file("res://scenes/AttackWin1.tscn")
+		#get_tree().change_scene_to_file("res://scenes/AttackWin1.tscn")
 	else:
 		attempt_count += 1
-		feedback_label.text = "❌ Incorrect SQL injection. Attempts: " + str(attempt_count)
+		feedback_label.text = "❌ Incorrect Solution. Attempts: " + str(attempt_count)
 		feedback_label.modulate = Color.RED
 		selected_sequence.clear()
 		update_selected_label()  # Reset display
 
 		if attempt_count >= 3:
 			hint_label.visible = true
-			hint_label.text = "💡 Hint: Focus on SQL logic that forces a TRUE condition."
+			hint_label.text = "💡 Hint: QUOTE() function automatically avoids special characters like '."
 
 # Transition to the next level when timer ends
 func _on_NextLevelTimer_timeout():
