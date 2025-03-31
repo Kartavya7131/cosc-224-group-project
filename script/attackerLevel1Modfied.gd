@@ -1,7 +1,7 @@
 extends Node
 
 # ✅ Correct sequence to solve the challenge
-@export var correct_sequence: Array = ["OR 1=1", "--"]
+@export var correct_sequence: Array = ["OR 1=1;", "--"]
 
 # Stores player-selected sequence
 var selected_sequence: Array = []
