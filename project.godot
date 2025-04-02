@@ -22,3 +22,11 @@ SqlDatabase="*res://script/SqlDatabase.gd"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/gut/plugin.cfg")
+
+[gui]
+
+fonts/dynamic_fonts/use_oversampling=false
+
+[rendering]
+
+viewport/hdr_2d=true

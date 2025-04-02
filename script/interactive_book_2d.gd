@@ -2,20 +2,20 @@ extends AnimatedSprite2D
 class_name InteractiveBook2D
 
 @export var page_count : int = 4 # total pages in the book, keep this to at leat 5 if you want all animations to work
-@onready var pagelabel = $page_Label
+@onready var pagelabel = $RichTextLabel
 var current_page : int = 0 # tracks the current page the book is displaying
 
-# - Text to be displayed on each page
 var page_text = [
-	"Page 0: Test for page 0",
-	"Page 1: Test for page 1",
-	"Page 2: Test for page 2",
-	"Page 3: Test for page 3",
-	"Page 4: Test for page 4"
-	]
+	"[b]Welcome![/b] Prepare to explore SQL Injection!",
+	"[color=green]In this lab, we’ll explore[/color] [u]SQL injection concepts.[/u]",
+	"[i]Try using basic SQL commands[/i] like [code]SELECT[/code] and [code]WHERE[/code].",
+	"[color=red]Watch out![/color] Attackers may try to inject malicious queries.",
+	"[b]You’ve reached the end![/b] Ready to secure the database?"
+]
 
 func update_page_text():
-	pagelabel.text = page_text[current_page]
+	pagelabel.clear()
+	pagelabel.append_text(page_text[current_page])
 
 # - set the book to be closed when the scene is loaded
 func _ready():
