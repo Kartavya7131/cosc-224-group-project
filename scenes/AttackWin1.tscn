@@ -1,8 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://qby1y1jc8657"]
+[gd_scene load_steps=14 format=3 uid="uid://qby1y1jc8657"]
 
 [ext_resource type="Texture2D" uid="uid://byilwodvj55yd" path="res://sky_lightened.png" id="1_3iw4r"]
 [ext_resource type="Script" uid="uid://drmpgujih3nqb" path="res://script/attack_win_1.gd" id="1_61n42"]
 [ext_resource type="FontFile" uid="uid://ctf2pk0x6asf8" path="res://School Teachers.otf" id="3_j2d5r"]
+[ext_resource type="Texture2D" uid="uid://d1h3g5an1dhu3" path="res://assets/BG_DesertMountains/cloud4.png" id="3_jwy57"]
+[ext_resource type="Texture2D" uid="uid://m3xfe3gc5k2i" path="res://assets/BG_DesertMountains/cloud1.png" id="5_elml2"]
+[ext_resource type="Texture2D" uid="uid://dt2nrkr2cmevy" path="res://assets/BG_DesertMountains/cloud3.png" id="6_hqgtq"]
+[ext_resource type="Texture2D" uid="uid://da10ex0gor5r8" path="res://assets/BG_DesertMountains/cloud8.png" id="7_ern50"]
+[ext_resource type="Texture2D" uid="uid://dsx4jo0smqce5" path="res://assets/BG_DesertMountains/cloud2.png" id="8_vj6y8"]
+[ext_resource type="Texture2D" uid="uid://2jbmeexywkoc" path="res://assets/BG_DesertMountains/cloud6.png" id="9_e4ist"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_24o6c"]
 
@@ -56,6 +62,10 @@ position = Vector2(580, 329)
 scale = Vector2(3.09115, 3.11574)
 texture = ExtResource("1_3iw4r")
 metadata/_edit_lock_ = true
+
+[node name="Cloud4" type="Sprite2D" parent="."]
+position = Vector2(145, 619)
+texture = ExtResource("3_jwy57")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -164,6 +174,46 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 34
 text = "Password : **** OR '1' = '1';"
 horizontal_alignment = 1
+
+[node name="Cloud1" type="Sprite2D" parent="."]
+position = Vector2(74, 52)
+scale = Vector2(2.3913, 2.40476)
+texture = ExtResource("5_elml2")
+
+[node name="Cloud3" type="Sprite2D" parent="."]
+position = Vector2(254, 629)
+scale = Vector2(2.3, 1.67857)
+texture = ExtResource("6_hqgtq")
+
+[node name="Cloud8" type="Sprite2D" parent="."]
+position = Vector2(1028, 48)
+texture = ExtResource("7_ern50")
+
+[node name="Cloud9" type="Sprite2D" parent="."]
+position = Vector2(845.75, 543.75)
+scale = Vector2(2.10759, 1.81707)
+texture = ExtResource("7_ern50")
+
+[node name="Cloud2" type="Sprite2D" parent="."]
+position = Vector2(923, 546)
+texture = ExtResource("5_elml2")
+
+[node name="Cloud5" type="Sprite2D" parent="."]
+position = Vector2(724, 281)
+texture = ExtResource("5_elml2")
+
+[node name="Cloud6" type="Sprite2D" parent="."]
+position = Vector2(99.875, 264)
+scale = Vector2(1.70238, 2.53704)
+texture = ExtResource("8_vj6y8")
+
+[node name="Cloud7" type="Sprite2D" parent="."]
+position = Vector2(875, 562)
+texture = ExtResource("9_e4ist")
+
+[node name="Cloud10" type="Sprite2D" parent="."]
+position = Vector2(821, 571)
+texture = ExtResource("5_elml2")
 
 [connection signal="pressed" from="NextLevel" to="." method="_on_next_level_pressed"]
 [connection signal="pressed" from="NextLevel2" to="." method="_on_Level_Select_pressed"]
