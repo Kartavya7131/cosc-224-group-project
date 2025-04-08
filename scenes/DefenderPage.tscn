@@ -27,6 +27,18 @@ func _on_goBack_pressed():
 
 func _on_level_1_button_down() -> void:
 	get_tree().change_scene_to_file(\"res://scenes/Defender1.tscn\")
+
+func _on_level_2_button_down() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/Defender2.tscn\")
+
+func _on_level_3_button_down() -> void:
+	pass # Replace with function body.
+
+func _on_level_4_button_down() -> void:
+	pass # Replace with function body.
+
+func _on_level_5_button_down() -> void:
+	pass # Replace with function body.
 "
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hj6gj"]
@@ -293,3 +305,7 @@ flip_v = true
 
 [connection signal="pressed" from="Back" to="." method="_on_goBack_pressed"]
 [connection signal="button_down" from="VBoxContainer/Level1" to="." method="_on_level_1_button_down"]
+[connection signal="button_down" from="VBoxContainer/Level2" to="." method="_on_level_2_button_down"]
+[connection signal="button_down" from="VBoxContainer/Level3" to="." method="_on_level_3_button_down"]
+[connection signal="button_down" from="VBoxContainer/Level4" to="." method="_on_level_4_button_down"]
+[connection signal="button_down" from="VBoxContainer/Level5" to="." method="_on_level_5_button_down"]

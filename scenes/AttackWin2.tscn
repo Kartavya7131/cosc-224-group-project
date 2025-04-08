@@ -1,14 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://qby1y1jc8657"]
-
-[ext_resource type="Texture2D" uid="uid://byilwodvj55yd" path="res://sky_lightened.png" id="1_3iw4r"]
-[ext_resource type="Script" uid="uid://drmpgujih3nqb" path="res://script/attack_win_1.gd" id="1_61n42"]
-[ext_resource type="FontFile" uid="uid://ctf2pk0x6asf8" path="res://School Teachers.otf" id="3_j2d5r"]
-[ext_resource type="Texture2D" uid="uid://d1h3g5an1dhu3" path="res://assets/BG_DesertMountains/cloud4.png" id="3_jwy57"]
-[ext_resource type="Texture2D" uid="uid://m3xfe3gc5k2i" path="res://assets/BG_DesertMountains/cloud1.png" id="5_elml2"]
-[ext_resource type="Texture2D" uid="uid://dt2nrkr2cmevy" path="res://assets/BG_DesertMountains/cloud3.png" id="6_hqgtq"]
-[ext_resource type="Texture2D" uid="uid://da10ex0gor5r8" path="res://assets/BG_DesertMountains/cloud8.png" id="7_ern50"]
-[ext_resource type="Texture2D" uid="uid://dsx4jo0smqce5" path="res://assets/BG_DesertMountains/cloud2.png" id="8_vj6y8"]
-[ext_resource type="Texture2D" uid="uid://2jbmeexywkoc" path="res://assets/BG_DesertMountains/cloud6.png" id="9_e4ist"]
+[gd_scene load_steps=8 format=3 uid="uid://c36ofsfxjbu6h"]
+[ext_resource type="Script" uid="uid://drmpgujih3nqb" path="res://script/attack_win_1.gd" id="1_hmy0e"]
+[ext_resource type="Texture2D" uid="uid://byilwodvj55yd" path="res://sky_lightened.png" id="2_ibvvv"]
+[ext_resource type="FontFile" uid="uid://ctf2pk0x6asf8" path="res://School Teachers.otf" id="3_81ia0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_24o6c"]
 
@@ -54,18 +47,14 @@ offset_right = -13.0
 offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_61n42")
+script = ExtResource("1_hmy0e")
 metadata/_edit_lock_ = true
 
 [node name="SkyLightened" type="Sprite2D" parent="."]
 position = Vector2(580, 329)
 scale = Vector2(3.09115, 3.11574)
-texture = ExtResource("1_3iw4r")
+texture = ExtResource("2_ibvvv")
 metadata/_edit_lock_ = true
-
-[node name="Cloud4" type="Sprite2D" parent="."]
-position = Vector2(145, 619)
-texture = ExtResource("3_jwy57")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -78,7 +67,7 @@ offset_top = 8.0
 offset_right = 0.119934
 offset_bottom = 0.111992
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("3_j2d5r")
+theme_override_fonts/font = ExtResource("3_81ia0")
 theme_override_font_sizes/font_size = 100
 text = "Level Complete! "
 horizontal_alignment = 1
@@ -91,16 +80,17 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -507.0
-offset_top = -213.0
+offset_top = -106.0
 offset_right = 522.0
-offset_bottom = -111.0
+offset_bottom = 67.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_j2d5r")
+theme_override_fonts/font = ExtResource("3_81ia0")
 theme_override_font_sizes/font_size = 45
-text = "With your correct injection statment you gained access to their
- credentials Without knowledge of their password by Making the statment 
-always return true"
+text = "1 Alice  	p@ssw0rD
+2	 Bob	   qwerty123
+3	 Charlie	  letmein
+This means an attacker could extract all usernames and passwords from the database."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
@@ -117,7 +107,7 @@ offset_bottom = -48.0
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
 theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
-theme_override_fonts/font = ExtResource("3_j2d5r")
+theme_override_fonts/font = ExtResource("3_81ia0")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/focus = SubResource("StyleBoxEmpty_24o6c")
 theme_override_styles/hover = SubResource("StyleBoxFlat_r2nnn")
@@ -137,83 +127,13 @@ offset_bottom = -48.0
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
 theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
-theme_override_fonts/font = ExtResource("3_j2d5r")
+theme_override_fonts/font = ExtResource("3_81ia0")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/focus = SubResource("StyleBoxEmpty_24o6c")
 theme_override_styles/hover = SubResource("StyleBoxFlat_r2nnn")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_12tps")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ay0vb")
 text = "Level Select"
-
-[node name="Label3" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 365.5
-offset_top = 315.0
-offset_right = -402.5
-offset_bottom = -278.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 40
-text = "User name : Player1"
-horizontal_alignment = 1
-
-[node name="Label4" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 341.5
-offset_top = 390.0
-offset_right = -367.5
-offset_bottom = -211.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 34
-text = "Password : **** OR '1' = '1';"
-horizontal_alignment = 1
-
-[node name="Cloud1" type="Sprite2D" parent="."]
-position = Vector2(74, 52)
-scale = Vector2(2.3913, 2.40476)
-texture = ExtResource("5_elml2")
-
-[node name="Cloud3" type="Sprite2D" parent="."]
-position = Vector2(254, 629)
-scale = Vector2(2.3, 1.67857)
-texture = ExtResource("6_hqgtq")
-
-[node name="Cloud8" type="Sprite2D" parent="."]
-position = Vector2(1028, 48)
-texture = ExtResource("7_ern50")
-
-[node name="Cloud9" type="Sprite2D" parent="."]
-position = Vector2(845.75, 543.75)
-scale = Vector2(2.10759, 1.81707)
-texture = ExtResource("7_ern50")
-
-[node name="Cloud2" type="Sprite2D" parent="."]
-position = Vector2(923, 546)
-texture = ExtResource("5_elml2")
-
-[node name="Cloud5" type="Sprite2D" parent="."]
-position = Vector2(724, 281)
-texture = ExtResource("5_elml2")
-
-[node name="Cloud6" type="Sprite2D" parent="."]
-position = Vector2(99.875, 264)
-scale = Vector2(1.70238, 2.53704)
-texture = ExtResource("8_vj6y8")
-
-[node name="Cloud7" type="Sprite2D" parent="."]
-position = Vector2(875, 562)
-texture = ExtResource("9_e4ist")
-
-[node name="Cloud10" type="Sprite2D" parent="."]
-position = Vector2(821, 571)
-texture = ExtResource("5_elml2")
 
 [connection signal="pressed" from="NextLevel" to="." method="_on_next_level_pressed"]
 [connection signal="pressed" from="NextLevel2" to="." method="_on_Level_Select_pressed"]

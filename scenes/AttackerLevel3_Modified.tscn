@@ -1,16 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://buf63yh62bdga"]
+[gd_scene load_steps=16 format=3 uid="uid://dlyf08usjj4if"]
 
-[ext_resource type="Script" uid="uid://2p102j3bxkuc" path="res://script/defenderLevel1_modified.gd" id="1_xwjqg"]
-[ext_resource type="Texture2D" uid="uid://byilwodvj55yd" path="res://sky_lightened.png" id="2_isisp"]
-[ext_resource type="Texture2D" uid="uid://bai0ilin7ncxj" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_1_lightened.png" id="3_fndb1"]
-[ext_resource type="Texture2D" uid="uid://dlqkyteso2ate" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_3.png" id="4_jh50h"]
-[ext_resource type="Texture2D" uid="uid://bd3uhdt7g25i6" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/glacial_mountains_lightened.png" id="5_fqlf4"]
-[ext_resource type="Texture2D" uid="uid://c3otrdumkk027" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/glacial_mountains_lightened_Small.png" id="6_4dowk"]
-[ext_resource type="Texture2D" uid="uid://8ldjcw3efsy1" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/glacial_mountains_lightened_Long_Diff.png" id="7_xkc4m"]
-[ext_resource type="Texture2D" uid="uid://c8d1rdkydnu57" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/glacial_mountains_lightened_Other.png" id="8_r6x1l"]
-[ext_resource type="Texture2D" uid="uid://cvht5puhcrmwt" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_2.png" id="9_jkic8"]
-[ext_resource type="FontFile" uid="uid://ctf2pk0x6asf8" path="res://School Teachers.otf" id="10_ffnxc"]
-[ext_resource type="Texture2D" uid="uid://cgp2bccgs4d36" path="res://cloud_lonely.png" id="11_c7xxf"]
+[ext_resource type="Script" uid="uid://kd6loiatcfaw" path="res://script/attacker_level_3_modified.gd" id="1_s4tfs"]
+[ext_resource type="Texture2D" uid="uid://byilwodvj55yd" path="res://sky_lightened.png" id="2_33chj"]
+[ext_resource type="Texture2D" uid="uid://bai0ilin7ncxj" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_1_lightened.png" id="3_k4oaw"]
+[ext_resource type="Texture2D" uid="uid://dlqkyteso2ate" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_3.png" id="4_2i1y3"]
+[ext_resource type="Texture2D" uid="uid://cvht5puhcrmwt" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_2.png" id="5_s4tfs"]
+[ext_resource type="Texture2D" uid="uid://bd3uhdt7g25i6" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/glacial_mountains_lightened.png" id="5_yyv2o"]
+[ext_resource type="Texture2D" uid="uid://c3otrdumkk027" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/glacial_mountains_lightened_Small.png" id="6_aqfjo"]
+[ext_resource type="FontFile" uid="uid://ctf2pk0x6asf8" path="res://School Teachers.otf" id="6_yyv2o"]
+[ext_resource type="Texture2D" uid="uid://cgp2bccgs4d36" path="res://cloud_lonely.png" id="7_aqfjo"]
+[ext_resource type="Texture2D" uid="uid://8ldjcw3efsy1" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/glacial_mountains_lightened_Long_Diff.png" id="7_qb7ub"]
+[ext_resource type="Texture2D" uid="uid://c8d1rdkydnu57" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/glacial_mountains_lightened_Other.png" id="8_xua6t"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dohx6"]
 
@@ -46,115 +46,110 @@ shadow_color = Color(1, 1, 1, 0.6)
 shadow_size = 8
 anti_aliasing_size = 10.0
 
-[node name="AttackerLevel1" type="Control"]
+[node name="AttackerLevel3" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_xwjqg")
+script = ExtResource("1_s4tfs")
 
 [node name="SkyLightened" type="Sprite2D" parent="."]
 position = Vector2(575, 326)
 scale = Vector2(3.08203, 3.13426)
-texture = ExtResource("2_isisp")
+texture = ExtResource("2_33chj")
 metadata/_edit_lock_ = true
 
 [node name="CloudsMg1Lightened" type="Sprite2D" parent="."]
 position = Vector2(578.273, 127.367)
 rotation = 3.13636
 scale = Vector2(3.00131, 1.21121)
-texture = ExtResource("3_fndb1")
+texture = ExtResource("3_k4oaw")
 
 [node name="CloudsMg3" type="Sprite2D" parent="."]
 position = Vector2(573, 523)
 scale = Vector2(3.0651, 1.0787)
-texture = ExtResource("4_jh50h")
+texture = ExtResource("4_2i1y3")
 
 [node name="GlacialMountainsLightened" type="Sprite2D" parent="CloudsMg3"]
 position = Vector2(125.281, 65.8199)
 scale = Vector2(0.327103, 0.768243)
-texture = ExtResource("5_fqlf4")
+texture = ExtResource("5_yyv2o")
 
 [node name="GlacialMountainsLightenedSmall" type="Sprite2D" parent="CloudsMg3"]
 position = Vector2(3.91505, 81.5796)
 scale = Vector2(0.326254, 0.927042)
-texture = ExtResource("6_4dowk")
+texture = ExtResource("6_aqfjo")
 
 [node name="GlacialMountainsLightened2" type="Sprite2D" parent="CloudsMg3"]
 position = Vector2(44.6968, 53.2491)
 scale = Vector2(0.106441, 0.605669)
-texture = ExtResource("5_fqlf4")
+texture = ExtResource("5_yyv2o")
 
 [node name="GlacialMountainsLightenedLongDiff" type="Sprite2D" parent="CloudsMg3"]
 position = Vector2(-101.791, 38.0086)
 scale = Vector2(0.326254, 0.927042)
-texture = ExtResource("7_xkc4m")
+texture = ExtResource("7_qb7ub")
 
 [node name="GlacialMountainsLightenedOther" type="Sprite2D" parent="CloudsMg3"]
 position = Vector2(-29.3628, 67.674)
 scale = Vector2(0.326254, 0.927042)
-texture = ExtResource("8_r6x1l")
+texture = ExtResource("8_xua6t")
 
 [node name="CloudsMg2" type="Sprite2D" parent="CloudsMg3"]
 position = Vector2(0.326249, 5.56216)
 scale = Vector2(0.983857, 1.20601)
-texture = ExtResource("9_jkic8")
+texture = ExtResource("5_s4tfs")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="ButtonsParent" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 96.0
-offset_top = 495.0
-offset_right = 1066.0
-offset_bottom = 567.0
-
-[node name="ButtonsParent" type="HBoxContainer" parent="ScrollContainer"]
-layout_mode = 2
+offset_left = 118.0
+offset_top = 444.0
+offset_right = 799.0
+offset_bottom = 549.0
 
 [node name="SelectedLabel" type="Label" parent="."]
 layout_mode = 2
-offset_left = 126.0
-offset_top = 349.0
-offset_right = 975.0
-offset_bottom = 378.0
+offset_left = 132.0
+offset_top = 444.0
+offset_right = 981.0
+offset_bottom = 467.0
 
 [node name="HintLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 115.0
-offset_top = 440.0
+offset_top = 412.0
 offset_right = 881.0
-offset_bottom = 466.0
+offset_bottom = 438.0
 
 [node name="FeedbackLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 117.0
-offset_top = 405.0
-offset_right = 1017.0
-offset_bottom = 434.0
+offset_left = 120.0
+offset_top = 362.0
+offset_right = 1020.0
+offset_bottom = 391.0
 
 [node name="QuestionLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 121.0
-offset_top = 129.0
-offset_right = 1065.0
-offset_bottom = 324.0
+offset_left = 123.0
+offset_top = 188.0
+offset_right = 1067.0
+offset_bottom = 350.0
 theme_override_font_sizes/font_size = 21
-text = "Someone is trying to bypass the login page using an \"OR '1'='1'\" statement
+text = "\"A system updates user passwords with:
+ UPDATE users SET password = 'input' WHERE username = 'input'; 
 
-The Query they are giving is: 
-SELECT * FROM users WHERE username = 'name' OR '1'='1'-- AND password = 'pass';
-
-Rewrite the query to ensure that this attack is invalid!"
+How can you change the admin's password to hacked?"
 
 [node name="SubmitButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1004.0
-offset_top = 594.0
-offset_right = 1087.0
-offset_bottom = 634.0
+offset_left = 1000.0
+offset_top = 499.0
+offset_right = 1083.0
+offset_bottom = 539.0
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
 theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
-theme_override_fonts/font = ExtResource("10_ffnxc")
+theme_override_fonts/font = ExtResource("6_yyv2o")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dohx6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_a4vi7")
@@ -171,7 +166,7 @@ offset_bottom = 539.0
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
 theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
-theme_override_fonts/font = ExtResource("10_ffnxc")
+theme_override_fonts/font = ExtResource("6_yyv2o")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dohx6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_a4vi7")
@@ -181,64 +176,41 @@ text = "submit"
 
 [node name="NextLevelTimer" type="Timer" parent="."]
 
-[node name="CloudLonely" type="Sprite2D" parent="."]
-position = Vector2(159, 628)
-texture = ExtResource("11_c7xxf")
-
 [node name="CloudLonely2" type="Sprite2D" parent="."]
 position = Vector2(275, 560)
 flip_h = true
 
-[node name="CloudLonely3" type="Sprite2D" parent="."]
-position = Vector2(37, 430)
-texture = ExtResource("11_c7xxf")
-
-[node name="CloudLonely4" type="Sprite2D" parent="."]
-position = Vector2(1153.75, 74.5)
-scale = Vector2(0.88151, 0.976852)
-texture = ExtResource("11_c7xxf")
-flip_h = true
-flip_v = true
-
 [node name="CloudLonely5" type="Sprite2D" parent="."]
 position = Vector2(811, 626)
-texture = ExtResource("11_c7xxf")
-
-[node name="CloudLonely6" type="Sprite2D" parent="."]
-position = Vector2(1022, 170)
-texture = ExtResource("11_c7xxf")
-
-[node name="CloudLonely7" type="Sprite2D" parent="."]
-position = Vector2(758, 398)
-texture = ExtResource("11_c7xxf")
+texture = ExtResource("7_aqfjo")
 
 [node name="CloudLonely8" type="Sprite2D" parent="."]
 position = Vector2(-4, 24)
 scale = Vector2(0.661458, 1)
-texture = ExtResource("11_c7xxf")
+texture = ExtResource("7_aqfjo")
 flip_v = true
 
-[node name="level1" type="Label" parent="."]
+[node name="level3" type="Label" parent="."]
 layout_mode = 0
 offset_left = 536.0
 offset_top = 61.0
 offset_right = 680.0
 offset_bottom = 138.0
-theme_override_fonts/font = ExtResource("10_ffnxc")
+theme_override_fonts/font = ExtResource("6_yyv2o")
 theme_override_font_sizes/font_size = 85
-text = "Level 1"
+text = "Level 3"
 horizontal_alignment = 1
 
 [node name="ResetButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 880.0
-offset_top = 594.0
-offset_right = 963.0
-offset_bottom = 634.0
+offset_left = 1000.0
+offset_top = 440.0
+offset_right = 1083.0
+offset_bottom = 480.0
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
 theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
-theme_override_fonts/font = ExtResource("10_ffnxc")
+theme_override_fonts/font = ExtResource("6_yyv2o")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dohx6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_a4vi7")
@@ -255,7 +227,7 @@ offset_bottom = 539.0
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
 theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
-theme_override_fonts/font = ExtResource("10_ffnxc")
+theme_override_fonts/font = ExtResource("6_yyv2o")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dohx6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_a4vi7")
@@ -272,7 +244,7 @@ offset_bottom = 635.0
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
 theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
-theme_override_fonts/font = ExtResource("10_ffnxc")
+theme_override_fonts/font = ExtResource("6_yyv2o")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dohx6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_a4vi7")
@@ -295,7 +267,7 @@ grow_vertical = 2
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
 theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
-theme_override_fonts/font = ExtResource("10_ffnxc")
+theme_override_fonts/font = ExtResource("6_yyv2o")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dohx6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_a4vi7")
