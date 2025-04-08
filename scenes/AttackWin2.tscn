@@ -1,4 +1,4 @@
-
+[gd_scene load_steps=8 format=3 uid="uid://c36ofsfxjbu6h"]
 [ext_resource type="Script" uid="uid://drmpgujih3nqb" path="res://script/attack_win_1.gd" id="1_hmy0e"]
 [ext_resource type="Texture2D" uid="uid://byilwodvj55yd" path="res://sky_lightened.png" id="2_ibvvv"]
 [ext_resource type="FontFile" uid="uid://ctf2pk0x6asf8" path="res://School Teachers.otf" id="3_81ia0"]
