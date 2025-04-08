@@ -101,6 +101,7 @@ scale = Vector2(0.983857, 1.20601)
 texture = ExtResource("9_jkic8")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
 offset_left = 96.0
 offset_top = 495.0
 offset_right = 1066.0

@@ -1,5 +1,5 @@
 extends Control
-@export var correct_sequence: Array = ["UPDATEusers", "SETpassword='hacked'","WHEREusername='admin';"]
+@export var correct_sequence: Array = ["UPDATE users", "SET password = 'hacked'","WHERE username = 'admin';"]
 
 # Stores player-selected sequence
 var selected_sequence: Array = []
