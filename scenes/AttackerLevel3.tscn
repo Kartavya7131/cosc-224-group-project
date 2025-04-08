@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ueannfiu6ubv"]
+[gd_scene load_steps=12 format=3 uid="uid://c0uosit8bdtxn"]
 
 [ext_resource type="Script" uid="uid://ebn2ta48ut4g" path="res://script/attackerLevel3.gd" id="1_i7dgp"]
 [ext_resource type="Texture2D" uid="uid://byilwodvj55yd" path="res://sky_lightened.png" id="2_qy62e"]
@@ -42,7 +42,7 @@ shadow_color = Color(1, 1, 1, 0.6)
 shadow_size = 8
 anti_aliasing_size = 10.0
 
-[node name="AttackerLevel3" type="Control"]
+[node name="AttackerLevel4" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_i7dgp")

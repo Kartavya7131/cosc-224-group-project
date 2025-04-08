@@ -1,6 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://dohgunsfmf34s"]
 
 [ext_resource type="Script" uid="uid://bchfb4s5osaty" path="res://script/attacker_level_2_modified.gd" id="1_7wide"]
+
 [ext_resource type="Texture2D" uid="uid://byilwodvj55yd" path="res://sky_lightened.png" id="2_4kuf3"]
 [ext_resource type="Texture2D" uid="uid://bai0ilin7ncxj" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_1_lightened.png" id="3_sxq4o"]
 [ext_resource type="Texture2D" uid="uid://dlqkyteso2ate" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_3.png" id="4_1der2"]
@@ -212,6 +213,7 @@ scale = Vector2(0.661458, 1)
 texture = ExtResource("11_b7de0")
 flip_v = true
 
+[node name="level1" type="Label" parent="."]
 [node name="level2" type="Label" parent="."]
 layout_mode = 0
 offset_left = 536.0
