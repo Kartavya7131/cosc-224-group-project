@@ -1,6 +1,6 @@
 extends Control
 
-var correct_injection = "'UPDATEusersSETpassword='hacked'WHEREusername='admin';"
+var correct_injection = "';UPDATEusersSETpassword='hacked'WHEREusername='admin';"
 # ✅ Correct sequence to solve the challenge
 @export var correct_sequence: Array = ["UPDATEusers", "SETpassword='hacked'","WHEREusername='admin';"]
 var attempt_count = 0
