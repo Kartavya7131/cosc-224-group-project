@@ -794,12 +794,26 @@ animations = [{
 
 [node name="InteractiveBook2D" type="AnimatedSprite2D"]
 texture_filter = 1
-position = Vector2(847, 355)
-scale = Vector2(9.04688, 8.8125)
+position = Vector2(551, 264)
+scale = Vector2(10.4961, 9.61719)
 sprite_frames = SubResource("SpriteFrames_vxube")
 animation = &"next_from_first"
 autoplay = "closed_front"
 script = ExtResource("2_j3gqr")
+metadata/_edit_horizontal_guides_ = [-121.0]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 2.0
+offset_top = -16.0
+offset_right = 463.0
+offset_bottom = 744.0
+scale = Vector2(0.05, 0.05)
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 5
+text = "hi'jkl"
+justification_flags = 0
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -853,23 +867,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 2.0
-offset_top = -17.0
+offset_top = -24.7985
 offset_right = 25.0
-offset_bottom = 22.0
+offset_bottom = 14.2015
 metadata/_edit_use_anchors_ = true
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 2.21069
-offset_top = -12.9362
-offset_right = 463.211
-offset_bottom = 150.064
-scale = Vector2(0.05, 0.05)
-theme_override_font_sizes/normal_font_size = 100
-theme_override_font_sizes/bold_font_size = 5
-text = "hi'jkl"
-justification_flags = 0
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = -1
@@ -885,7 +886,6 @@ grow_horizontal = 2
 scale = Vector2(0.05, 0.05)
 theme_override_fonts/font = ExtResource("3_e0bqm")
 theme_override_font_sizes/font_size = 100
-text = "Injection Attacker"
 horizontal_alignment = 1
 justification_flags = 0
 clip_text = true

@@ -1,7 +1,7 @@
 extends Node
 
 # ✅ Correct sequence to solve the challenge
-@export var correct_sequence: Array = ["UNIONSELECTid", "username","password FROMusers;"]
+@export var correct_sequence: Array = ["UNION SELECT id", "username","password FROM users;"]
 
 # Stores player-selected sequence
 var selected_sequence: Array = []
