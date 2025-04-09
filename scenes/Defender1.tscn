@@ -1,6 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://buf63yh62bdga"]
+[gd_scene load_steps=16 format=3 uid="uid://cu2myamago04k"]
 
-[ext_resource type="Script" uid="uid://2p102j3bxkuc" path="res://script/defenderLevel1_modified.gd" id="1_xwjqg"]
+[ext_resource type="Script" path="res://script/defenderLevel1_modified.gd" id="1_xwjqg"]
 [ext_resource type="Texture2D" uid="uid://byilwodvj55yd" path="res://sky_lightened.png" id="2_isisp"]
 [ext_resource type="Texture2D" uid="uid://bai0ilin7ncxj" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_1_lightened.png" id="3_fndb1"]
 [ext_resource type="Texture2D" uid="uid://dlqkyteso2ate" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_3.png" id="4_jh50h"]
