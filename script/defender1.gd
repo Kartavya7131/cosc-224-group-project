@@ -71,8 +71,8 @@ func _on_SubmitButton_pressed():
 
 # Transition to the next level when timer ends
 func _on_NextLevelTimer_timeout():
-	get_tree().change_scene_to_file("res://scenes/AttackerLevel2.tscn")
+	get_tree().change_scene_to_file("res://scenes/Defender2.tscn")
 
 # Go back to AttackerPage
 func _on_GoBackButton_pressed():
-	get_tree().change_scene_to_file("res://scenes/AttackerPage.tscn")
+	get_tree().change_scene_to_file("res://scenes/DefenderPage.tscn")
