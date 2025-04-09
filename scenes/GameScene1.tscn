@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://yuarraols215"]
+[gd_scene load_steps=19 format=3 uid="uid://yuarraols215"]
 
 [ext_resource type="Texture2D" uid="uid://byilwodvj55yd" path="res://sky_lightened.png" id="1_mio7j"]
 [ext_resource type="Script" path="res://script/game_scene_1.gd" id="1_snxjp"]
@@ -6,6 +6,10 @@
 [ext_resource type="FontFile" uid="uid://ctf2pk0x6asf8" path="res://School Teachers.otf" id="3_8s13w"]
 [ext_resource type="Texture2D" uid="uid://ch1kbe2vmr5fi" path="res://clouds_mg_1_lightened.png" id="4_vi75b"]
 [ext_resource type="Texture2D" uid="uid://cgp2bccgs4d36" path="res://cloud_lonely.png" id="5_lmh80"]
+[ext_resource type="Texture2D" uid="uid://m3xfe3gc5k2i" path="res://assets/BG_DesertMountains/cloud1.png" id="7_qny4q"]
+[ext_resource type="Texture2D" uid="uid://d1h3g5an1dhu3" path="res://assets/BG_DesertMountains/cloud4.png" id="8_v5vur"]
+[ext_resource type="Texture2D" uid="uid://da10ex0gor5r8" path="res://assets/BG_DesertMountains/cloud8.png" id="9_xjmtg"]
+[ext_resource type="Texture2D" uid="uid://dt2nrkr2cmevy" path="res://assets/BG_DesertMountains/cloud3.png" id="10_4mmqc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6b7mx"]
 
@@ -91,6 +95,7 @@ script = ExtResource("1_snxjp")
 position = Vector2(568.5, 328)
 scale = Vector2(3.04427, 3.08333)
 texture = ExtResource("1_mio7j")
+metadata/_edit_lock_ = true
 
 [node name="CloudsBg" type="Sprite2D" parent="."]
 position = Vector2(566, 504)
@@ -103,12 +108,13 @@ scale = Vector2(3.04167, 1.50926)
 texture = ExtResource("4_vi75b")
 
 [node name="CloudLonely" type="Sprite2D" parent="."]
-position = Vector2(106, 167)
+position = Vector2(85, 168)
 scale = Vector2(0.994792, 1.05556)
 texture = ExtResource("5_lmh80")
 
 [node name="CloudLonely2" type="Sprite2D" parent="."]
-position = Vector2(732, 122)
+position = Vector2(861.978, 123.539)
+scale = Vector2(0.680176, 0.815244)
 skew = 0.389208
 texture = ExtResource("5_lmh80")
 
@@ -129,13 +135,14 @@ text = "Please
 Select a role"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_lock_ = true
 
 [node name="Home" type="Button" parent="."]
 layout_mode = 0
-offset_left = 56.0
-offset_top = 542.0
-offset_right = 165.0
-offset_bottom = 587.0
+offset_left = 46.0
+offset_top = 570.0
+offset_right = 135.0
+offset_bottom = 615.0
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
 theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
@@ -190,6 +197,46 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_gjm8u")
 theme_override_styles/normal = SubResource("StyleBoxFlat_trxlt")
 text = "Defender
 "
+
+[node name="Cloud1" type="Sprite2D" parent="."]
+position = Vector2(101, 87)
+scale = Vector2(3.02174, 3.45238)
+texture = ExtResource("7_qny4q")
+
+[node name="Cloud4" type="Sprite2D" parent="."]
+position = Vector2(933, 59)
+texture = ExtResource("8_v5vur")
+
+[node name="Cloud8" type="Sprite2D" parent="."]
+position = Vector2(943, 540)
+scale = Vector2(1.57595, 1.37805)
+texture = ExtResource("9_xjmtg")
+
+[node name="Cloud9" type="Sprite2D" parent="."]
+position = Vector2(270.75, 511.25)
+scale = Vector2(1.75316, 0.768292)
+texture = ExtResource("9_xjmtg")
+
+[node name="Cloud2" type="Sprite2D" parent="."]
+position = Vector2(47, 501.25)
+scale = Vector2(1.26087, 1.02381)
+texture = ExtResource("7_qny4q")
+
+[node name="Cloud3" type="Sprite2D" parent="."]
+position = Vector2(51, 511)
+texture = ExtResource("7_qny4q")
+
+[node name="Cloud5" type="Sprite2D" parent="."]
+position = Vector2(78, 124)
+texture = ExtResource("7_qny4q")
+
+[node name="Cloud6" type="Sprite2D" parent="."]
+position = Vector2(104, 119)
+texture = ExtResource("7_qny4q")
+
+[node name="Cloud7" type="Sprite2D" parent="."]
+position = Vector2(276, 525)
+texture = ExtResource("10_4mmqc")
 
 [connection signal="pressed" from="Home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="HBoxContainer/Attacker" to="." method="_on_attacker_pressed"]

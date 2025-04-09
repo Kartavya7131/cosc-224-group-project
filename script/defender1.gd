@@ -32,7 +32,7 @@ func setup_buttons():
 		button.text = sql_fragment
 		button.size_flags_horizontal = Control.SIZE_EXPAND
 		button.size_flags_vertical = Control.SIZE_SHRINK_CENTER  # Ensures proper size
-		button.custom_minimum_size = Vector2(150, 50)  # Adjusted size for better UI
+		button.custom_minimum_size = Vector2(100, 25)  # Adjusted size for better UI
 		button.connect("pressed", Callable(self, "_on_button_pressed").bind(sql_fragment))
 		buttons_parent.add_child(button)
 
