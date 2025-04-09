@@ -40,17 +40,17 @@ func _on_button_pressed(button_text: String):
 	update_selected_label()
 	print("Selected sequence: ", selected_sequence)
 
-# 🔄 Update the selected label with current sequence
+# Update the selected label with current sequence
 func update_selected_label():
 	selected_label.text = "Selected: " + "   ".join(selected_sequence)
 
-# 🆕 Reset button clears the selection
+# Reset button clears the selection
 func _on_ResetButton_pressed():
 	selected_sequence.clear()
 	update_selected_label()
 	print("Selection reset.")
 
-# 🔎 When Submit is pressed, check the sequence
+# When Submit is pressed, check the sequence
 func _on_SubmitButton_pressed():
 	if selected_sequence == correct_sequence:
 		feedback_label.text = "✅ Password changed! You modified the database!"
@@ -65,7 +65,7 @@ func _on_SubmitButton_pressed():
 
 		if attempt_count >= 3:
 			hint_label.visible = true
-			hint_label.text = "Hint: Try injecting an UPDATE statement"
+			hint_label.text = "💡 Hint: Try injecting an UPDATE statement"
 
 # Transition to the next level when timer ends
 func _on_NextLevelTimer_timeout():

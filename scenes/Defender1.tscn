@@ -120,9 +120,9 @@ offset_bottom = 378.0
 [node name="HintLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 115.0
-offset_top = 440.0
+offset_top = 268.0
 offset_right = 881.0
-offset_bottom = 466.0
+offset_bottom = 294.0
 
 [node name="FeedbackLabel" type="Label" parent="."]
 layout_mode = 0
@@ -140,17 +140,14 @@ offset_bottom = 324.0
 theme_override_font_sizes/font_size = 21
 text = "Someone is trying to bypass the login page using an \"OR '1'='1'\" statement
 
-The Query they are giving is: 
-SELECT * FROM users WHERE username = 'name' OR '1'='1'-- AND password = 'pass';
-
-Rewrite the query to ensure that this attack is invalid!"
+what methodes can be used to prevent the SQL injection from happening"
 
 [node name="SubmitButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1000.0
-offset_top = 534.0
-offset_right = 1083.0
-offset_bottom = 574.0
+offset_left = 973.0
+offset_top = 587.0
+offset_right = 1056.0
+offset_bottom = 627.0
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
 theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
@@ -231,10 +228,10 @@ horizontal_alignment = 1
 
 [node name="ResetButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 999.0
-offset_top = 467.0
-offset_right = 1082.0
-offset_bottom = 507.0
+offset_left = 823.0
+offset_top = 589.0
+offset_right = 906.0
+offset_bottom = 629.0
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
 theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)

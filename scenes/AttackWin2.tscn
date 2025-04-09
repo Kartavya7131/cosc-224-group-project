@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://c36ofsfxjbu6h"]
+[gd_scene load_steps=13 format=3 uid="uid://c36ofsfxjbu6h"]
 
+[ext_resource type="Script" uid="uid://b8caoiovqkvsj" path="res://script/attack_win_2.gd" id="1_gxnal"]
 [ext_resource type="Texture2D" uid="uid://byilwodvj55yd" path="res://sky_lightened.png" id="2_ibvvv"]
 [ext_resource type="Texture2D" uid="uid://m3xfe3gc5k2i" path="res://assets/BG_DesertMountains/cloud1.png" id="2_q85xl"]
 [ext_resource type="FontFile" uid="uid://ctf2pk0x6asf8" path="res://School Teachers.otf" id="3_81ia0"]
@@ -41,7 +42,7 @@ shadow_color = Color(1, 1, 1, 0.6)
 shadow_size = 8
 anti_aliasing_size = 10.0
 
-[node name="AttackWin" type="Control"]
+[node name="AttackWin2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -52,6 +53,7 @@ offset_right = -13.0
 offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_gxnal")
 metadata/_edit_lock_ = true
 
 [node name="SkyLightened" type="Sprite2D" parent="."]
@@ -123,7 +125,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_12tps")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ay0vb")
 text = "Next Level"
 
-[node name="NextLevel2" type="Button" parent="."]
+[node name="levelSelect" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -185,4 +187,4 @@ scale = Vector2(1.77848, 1.79268)
 texture = ExtResource("4_gxnal")
 
 [connection signal="pressed" from="NextLevel" to="." method="_on_next_level_pressed"]
-[connection signal="pressed" from="NextLevel2" to="." method="_on_Level_Select_pressed"]
+[connection signal="pressed" from="levelSelect" to="." method="_on_Level_Select_pressed"]

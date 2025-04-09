@@ -37,23 +37,23 @@ func setup_buttons():
 		button.connect("pressed", Callable(self, "_on_button_pressed").bind(sql_fragment))
 		buttons_parent.add_child(button)
 
-# ✅ When a button is pressed, store the selected value
+# When a button is pressed, store the selected value
 func _on_button_pressed(button_text: String):
 	selected_sequence.append(button_text)
 	update_selected_label()
 	print("Selected sequence: ", selected_sequence)
 
-# 🔄 Update the selected label with current sequence
+# Update the selected label with current sequence
 func update_selected_label():
 	selected_label.text = "Selected: " + "   ".join(selected_sequence)
 
-# 🆕 Reset button clears the selection
+# Reset button clears the selection
 func _on_ResetButton_pressed():
 	selected_sequence.clear()
 	update_selected_label()
 	print("Selection reset.")
 
-# 🔎 When Submit is pressed, check the sequence
+# When Submit is pressed, check the sequence
 func _on_SubmitButton_pressed():
 	if selected_sequence == correct_sequence:
 		feedback_label.text = "✅ Injection successful! You've hacked into the system."
