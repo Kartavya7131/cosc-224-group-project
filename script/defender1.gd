@@ -1,7 +1,7 @@
 extends Node
 
 # ✅ Correct sequence to solve the challenge
-@export var correct_sequence: Array = ["SELECT *", "FROM users", "WHERE", "username =", "QUOTE('Input');"]
+@export var correct_sequence: Array = ["SELECT *", "FROM users", "WHERE", "Username =", "QUOTE('Input');"]
 
 # Stores player-selected sequence
 var selected_sequence: Array = []
@@ -13,7 +13,7 @@ var attempt_count = 0
 @onready var submit_button = $SubmitButton
 @onready var reset_button = $ResetButton
 @onready var selected_label = $SelectedLabel  
-@onready var buttons_parent = $ButtonsParent
+@onready var buttons_parent = $ScrollContainer/ButtonsParent
 @onready var next_level_timer = $NextLevelTimer
 @onready var go_back_button = $GoBackButton
 
