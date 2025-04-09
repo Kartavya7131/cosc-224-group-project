@@ -184,7 +184,7 @@ position = Vector2(275, 560)
 flip_h = true
 
 [node name="CloudLonely3" type="Sprite2D" parent="."]
-position = Vector2(37, 430)
+position = Vector2(-5, 373)
 texture = ExtResource("11_b7de0")
 
 [node name="CloudLonely4" type="Sprite2D" parent="."]
@@ -262,10 +262,10 @@ text = "submit"
 
 [node name="GoBackButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 26.0
-offset_top = 586.0
-offset_right = 159.0
-offset_bottom = 635.0
+offset_left = 46.0
+offset_top = 570.0
+offset_right = 135.0
+offset_bottom = 615.0
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
 theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)

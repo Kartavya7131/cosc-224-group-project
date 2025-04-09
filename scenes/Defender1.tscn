@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cu2myamago04k"]
+[gd_scene load_steps=16 format=3 uid="uid://bvfypvltqbn3w"]
 
 [ext_resource type="Script" uid="uid://sdhlyg048wg" path="res://script/defender1.gd" id="1_i1mir"]
 [ext_resource type="Texture2D" uid="uid://byilwodvj55yd" path="res://sky_lightened.png" id="2_k7dwl"]
@@ -102,17 +102,17 @@ texture = ExtResource("9_c3cvn")
 
 [node name="ButtonsParent" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 36.0
-offset_top = 463.0
-offset_right = 1114.0
-offset_bottom = 568.0
+offset_left = 92.0
+offset_top = 471.0
+offset_right = 918.0
+offset_bottom = 565.0
 
 [node name="SelectedLabel" type="Label" parent="."]
 layout_mode = 2
-offset_left = 132.0
-offset_top = 444.0
-offset_right = 981.0
-offset_bottom = 473.0
+offset_left = 92.0
+offset_top = 441.0
+offset_right = 941.0
+offset_bottom = 470.0
 
 [node name="HintLabel" type="Label" parent="."]
 layout_mode = 0
@@ -145,10 +145,10 @@ Rewrite the query to ensure that this attack is invalid!"
 
 [node name="SubmitButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1004.0
-offset_top = 594.0
-offset_right = 1087.0
-offset_bottom = 634.0
+offset_left = 1000.0
+offset_top = 534.0
+offset_right = 1083.0
+offset_bottom = 574.0
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
 theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
@@ -229,10 +229,10 @@ horizontal_alignment = 1
 
 [node name="ResetButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 880.0
-offset_top = 594.0
-offset_right = 963.0
-offset_bottom = 634.0
+offset_left = 999.0
+offset_top = 467.0
+offset_right = 1082.0
+offset_bottom = 507.0
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
 theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
