@@ -1,0 +1,92 @@
+[gd_scene load_steps=2 format=3 uid="uid://djgkxj2yukby3"]
+
+[ext_resource type="Script" uid="uid://hsboey4lj27o" path="res://script/SequenceBtns.gd" id="1_yy8i8"]
+
+[node name="Temp" type="Node2D"]
+
+[node name="SequenceBtns" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 154.0
+offset_top = 105.0
+offset_right = 864.0
+offset_bottom = 234.0
+script = ExtResource("1_yy8i8")
+Sequence = Array[String](["var 1", "var 2", "var 3"])
+Duds = Array[String](["Var 7", "Var -1"])
+
+[node name="Panel" type="Panel" parent="SequenceBtns"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Selected" type="Label" parent="SequenceBtns"]
+modulate = Color(0.820977, 0.868654, 0.603199, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_bottom = 31.0
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="SequenceBtns/Selected"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="SequenceBtns"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.2
+anchor_right = 1.0
+anchor_bottom = 0.8
+offset_top = 3.2
+offset_bottom = 0.799995
+
+[node name="ButtonsParent" type="HBoxContainer" parent="SequenceBtns/CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="SequenceBtns"]
+layout_mode = 1
+anchor_top = 0.8
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.200005
+
+[node name="Panel2" type="Panel" parent="SequenceBtns/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SequenceBtns/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -94.0
+offset_top = -26.0
+offset_right = 24.0
+offset_bottom = 5.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.8, 0.8)
+alignment = 1
+
+[node name="Submit" type="Button" parent="SequenceBtns/Control/HBoxContainer"]
+layout_mode = 2
+text = "Submit"
+
+[node name="Reset" type="Button" parent="SequenceBtns/Control/HBoxContainer"]
+layout_mode = 2
+text = "Reset"
