@@ -1,14 +1,14 @@
 [gd_scene load_steps=17 format=3 uid="uid://bbvmo6vlvbnlm"]
 
 [ext_resource type="Texture2D" uid="uid://byilwodvj55yd" path="res://sky_lightened.png" id="1_35pgt"]
+[ext_resource type="Script" uid="uid://bdts61d76t4le" path="res://script/DefenderPage.gd" id="1_mv5pv"]
 [ext_resource type="Texture2D" uid="uid://bai0ilin7ncxj" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_1_lightened.png" id="2_mv5pv"]
 [ext_resource type="Texture2D" uid="uid://dlqkyteso2ate" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_3.png" id="3_pus00"]
 [ext_resource type="Texture2D" uid="uid://cvht5puhcrmwt" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_2.png" id="4_hcti7"]
 [ext_resource type="FontFile" uid="uid://ctf2pk0x6asf8" path="res://School Teachers.otf" id="5_xcqf4"]
-[ext_resource type="Script" uid="uid://c1cbsu7rqjyxt" path="res://script/defender_page.gd" id="6_mv5pv"]
 [ext_resource type="Texture2D" uid="uid://cgp2bccgs4d36" path="res://cloud_lonely.png" id="7_egpk1"]
 
-[sub_resource type="GDScript" id="GDScript_fgfiq"]
+[sub_resource type="GDScript" id="GDScript_pus00"]
 script/source = "extends Control
 
 
@@ -22,23 +22,8 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_goBack_pressed():
+func _on_back_pressed():
 	get_tree().change_scene_to_file(\"res://scenes/GameScene1.tscn\")
-
-func _on_level_1_button_down() -> void:
-	get_tree().change_scene_to_file(\"res://scenes/Defender1.tscn\")
-
-func _on_level_2_button_down() -> void:
-	get_tree().change_scene_to_file(\"res://scenes/Defender2.tscn\")
-
-func _on_level_3_button_down() -> void:
-	pass # Replace with function body.
-
-func _on_level_4_button_down() -> void:
-	pass # Replace with function body.
-
-func _on_level_5_button_down() -> void:
-	pass # Replace with function body.
 "
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hj6gj"]
@@ -120,7 +105,7 @@ offset_right = -1.0
 offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
-script = SubResource("GDScript_fgfiq")
+script = ExtResource("1_mv5pv")
 
 [node name="SkyLightened" type="Sprite2D" parent="."]
 position = Vector2(577.75, 335.5)
@@ -161,7 +146,7 @@ theme_override_fonts/font = ExtResource("5_xcqf4")
 theme_override_font_sizes/font_size = 133
 text = "Injection Defender"
 horizontal_alignment = 1
-script = ExtResource("6_mv5pv")
+script = SubResource("GDScript_pus00")
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 2
@@ -179,7 +164,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_7e8gu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4as3i")
 theme_override_styles/normal = SubResource("StyleBoxFlat_0xdy3")
 text = "Back"
-script = ExtResource("6_mv5pv")
+script = SubResource("GDScript_pus00")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
