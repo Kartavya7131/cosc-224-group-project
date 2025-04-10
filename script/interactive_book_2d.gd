@@ -1,16 +1,19 @@
 extends AnimatedSprite2D
 class_name InteractiveBook2D
 
-@export var page_count : int = 4 # total pages in the book, keep this to at leat 5 if you want all animations to work
+@export var page_count : int = 5 # total pages in the book, keep this to at leat 5 if you want all animations to work
 @onready var pagelabel = $RichTextLabel
 var current_page : int = 0 # tracks the current page the book is displaying
 
 var page_text = [
-	"[b]Welcome![/b] Prepare to explore SQL Injection!",
-	"[color=green]In this lab, we’ll explore[/color] [u]SQL injection concepts.[/u]",
+	"           [b]Welcome![/b] 
+	Prepare to explore 
+	SQL Injection!",
+	"[color=green]In this lab, we’ll explore[/color] 
+[u]SQL injection concepts.[/u]",
 	"[i]Try using basic SQL commands[/i] like [code]SELECT[/code] and [code]WHERE[/code].",
 	"[color=red]Watch out![/color] Attackers may try to inject malicious queries.",
-	"[b]You’ve reached the end![/b] Ready to secure the database?"
+	" "," "
 ]
 
 func update_page_text():
@@ -20,8 +23,9 @@ func update_page_text():
 # - set the book to be closed when the scene is loaded
 func _ready():
 	current_page = 0
-	update_page_text()
 	go_to_page(current_page)
+	connect("animation_finished", Callable(self, "_on_animation_finished"))
+	update_page_text()
 
 # - Use this to always get a page number that is within the set page count
 # - Cycles the number when a value outside the accepted range is provided
@@ -49,6 +53,9 @@ func go_to_page(page : int):
 	# do nothing if given a negative number or a number outside the page count
 	if page < 0 or page > page_count:
 		return
+		
+	pagelabel.visible = false
+	
 	# going to the first page - closed from front
 	if page == 0:
 		if current_page == 1: # on the first page
@@ -103,3 +110,7 @@ func _on_previous_page_button_button_down():
 # - recieves signal from CloseButton
 func _on_close_button_button_down():
 	go_to_page(clamp_current_page(0))
+
+func _on_animation_finished():
+	pagelabel.visible = true  # Show the label after animation ends
+	update_page_text()              # Make sure text is refreshed

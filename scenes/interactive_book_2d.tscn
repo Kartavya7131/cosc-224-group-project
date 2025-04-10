@@ -1,8 +1,7 @@
-[gd_scene load_steps=108 format=3 uid="uid://kf64j7pluy7o"]
+[gd_scene load_steps=107 format=3 uid="uid://kf64j7pluy7o"]
 
 [ext_resource type="Texture2D" uid="uid://cf1ll0dc1tpw3" path="res://assets/Book_Sheet_64x64.png" id="1_nusbk"]
 [ext_resource type="Script" uid="uid://brj0w8eic8gpk" path="res://script/interactive_book_2d.gd" id="2_j3gqr"]
-[ext_resource type="FontFile" uid="uid://ctf2pk0x6asf8" path="res://School Teachers.otf" id="3_e0bqm"]
 [ext_resource type="Texture2D" uid="uid://bx1s75my8d6lp" path="res://assets/Back_Button.png" id="3_fg802"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ag3u"]
@@ -797,7 +796,7 @@ texture_filter = 1
 position = Vector2(551, 264)
 scale = Vector2(10.4961, 9.61719)
 sprite_frames = SubResource("SpriteFrames_vxube")
-animation = &"next_from_first"
+animation = &"closed_front"
 autoplay = "closed_front"
 script = ExtResource("2_j3gqr")
 metadata/_edit_horizontal_guides_ = [-121.0]
@@ -808,9 +807,11 @@ offset_top = -16.0
 offset_right = 463.0
 offset_bottom = 744.0
 scale = Vector2(0.05, 0.05)
-theme_override_font_sizes/normal_font_size = 50
-theme_override_font_sizes/bold_font_size = 5
-text = "hi'jkl"
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
 justification_flags = 0
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
@@ -863,33 +864,6 @@ offset_top = 46.796
 offset_right = -81.182
 offset_bottom = -0.178001
 texture_normal = ExtResource("3_fg802")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label2" type="Label" parent="."]
-offset_left = 2.0
-offset_top = -24.7985
-offset_right = 25.0
-offset_bottom = 14.2015
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="."]
-anchors_preset = -1
-anchor_left = 0.531
-anchor_top = 0.25
-anchor_right = 0.891
-anchor_bottom = 0.855
-offset_left = -31.8286
-offset_top = -32.4539
-offset_right = 405.131
-offset_bottom = 702.826
-grow_horizontal = 2
-scale = Vector2(0.05, 0.05)
-theme_override_fonts/font = ExtResource("3_e0bqm")
-theme_override_font_sizes/font_size = 100
-horizontal_alignment = 1
-justification_flags = 0
-clip_text = true
-text_overrun_behavior = 1
 metadata/_edit_use_anchors_ = true
 
 [connection signal="button_down" from="Control/NextPageButton" to="." method="_on_next_page_button_button_down"]
