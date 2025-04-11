@@ -5,11 +5,23 @@ extends Node
 @export var Sequence: Array[String]
 @export var Duds: Array[String]
 
-@onready var label = $Selected
-@onready var buttons = $CenterContainer/ButtonsParent
+@onready var label = $Body/TopBar/MarginContainer/Selected
+@onready var buttons = $Body/CenterContainer/ButtonsParent
 
-@onready var submit = $Control/HBoxContainer/Submit
-@onready var reset = $Control/HBoxContainer/Reset
+@onready var submit = $Body/Buttons/MarginSubmit/Submit
+@onready var reset = $Body/Buttons/MarginReset/Reset
+
+@onready var attempts
+var hint
+
+func Init(seq : Array[String], duds: Array[String], hintLabel):
+	Sequence = seq
+	Duds = duds
+	
+	hint = hintLabel
+	attempts = 0
+	
+	Initialize()
 
 func Clear():
 	label.text = "Selected: "
@@ -22,6 +34,12 @@ func Submit():
 		print("Correct")
 	else:
 		print("Wrong")
+		Reset()
+		
+		attempts += 1
+		
+		if attempts >= 3:
+			hint.show()
 	
 func Reset():
 	SelSequence.clear()
@@ -29,7 +47,6 @@ func Reset():
 
 func Initialize():
 	Clear()
-	
 	print(label.text)
 	
 	var all_buttons = Sequence + Duds
@@ -39,8 +56,8 @@ func Initialize():
 		var button = Button.new()
 		button.text = sql_fragment
 		button.size_flags_horizontal = Control.SIZE_EXPAND
-		button.size_flags_vertical = Control.SIZE_SHRINK_CENTER  # Ensures proper size
-		button.custom_minimum_size = Vector2(120, 35)  # Adjusted size for better UI
+		button.size_flags_vertical = Control.SIZE_EXPAND
+		button.custom_minimum_size = Vector2(135, 40)  # Adjusted size for better 
 		button.connect("pressed", Callable(self, "appendSequence").bind(sql_fragment))
 		buttons.add_child(button)
 		
@@ -55,6 +72,3 @@ func appendSequence(button_text: String):
 	SelSequence.append(button_text)
 	update_selected_label()
 	print("Selected sequence: ", SelSequence)
-	
-func _ready() -> void:
-	Initialize()
