@@ -6,13 +6,11 @@ extends Node2D
 @onready var hintLabel = $UI/Margins/Body/BottomBar/HBoxContainer2/HBoxContainer/Label
 @onready var attemptLabel = $UI/Margins/Body/BottomBar/HBoxContainer2/MarginContainer/Label2
 
-var levelId
-var levelType
+@export var levelId: int
+@export var levelType: bool
 
-func LoadLevel(attacker: bool, levelId: int):
-	levelType = attacker
-	self.levelId = levelId
-	var data = LevelsData.GetLevelData(attacker, levelId)
+func LoadLevel():
+	var data = LevelsData.GetLevelData(levelType, levelId)
 	
 	TitleLabel.text = data[0]
 	descLabel.text = data[1]
@@ -27,4 +25,11 @@ func LoadLevel(attacker: bool, levelId: int):
 	sequencer.Init(seq, dud, hintLabel, attemptLabel)
 	
 func _ready() -> void:
-	LoadLevel(false, 0)
+	LoadLevel()
+
+
+func GoBack_pressed() -> void:
+	if levelType:
+		get_tree().change_scene_to_file("res://scenes/AttackerPage.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/DefenderPage.tscn")
