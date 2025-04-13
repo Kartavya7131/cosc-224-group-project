@@ -13,13 +13,17 @@ extends Node
 
 @onready var attempts
 var hint
+var attempt
 
-func Init(seq : Array[String], duds: Array[String], hintLabel):
+func Init(seq : Array[String], duds: Array[String], hintLabel, attemptLabel):
 	Sequence = seq
 	Duds = duds
 	
 	hint = hintLabel
+	
+	attempt = attemptLabel
 	attempts = 0
+	attempt.text = "Attempts: %d" % attempts
 	
 	Initialize()
 
@@ -37,6 +41,7 @@ func Submit():
 		Reset()
 		
 		attempts += 1
+		attempt.text = "Attempts: %d" % attempts
 		
 		if attempts >= 3:
 			hint.show()

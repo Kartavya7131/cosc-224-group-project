@@ -3,7 +3,8 @@ extends Node2D
 @onready var sequencer = $UI/Margins/Body/Sequencer
 @onready var descLabel = $UI/Margins/Body/Description/CenterContainer/Label
 @onready var TitleLabel = $UI/Margins/Body/Question/MarginContainer/Label
-@onready var hintLabel = $UI/Margins/Body/BottomBar/HBoxContainer/Label
+@onready var hintLabel = $UI/Margins/Body/BottomBar/HBoxContainer2/HBoxContainer/Label
+@onready var attemptLabel = $UI/Margins/Body/BottomBar/HBoxContainer2/MarginContainer/Label2
 
 var levelId
 var levelType
@@ -23,7 +24,7 @@ func LoadLevel(attacker: bool, levelId: int):
 	var dud: Array[String]
 	dud.append_array(data[4])
 	
-	sequencer.Init(seq, dud, hintLabel)
+	sequencer.Init(seq, dud, hintLabel, attemptLabel)
 	
 func _ready() -> void:
 	LoadLevel(false, 0)
