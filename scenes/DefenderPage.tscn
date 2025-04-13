@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bbvmo6vlvbnlm"]
+[gd_scene load_steps=18 format=3 uid="uid://bbvmo6vlvbnlm"]
 
 [ext_resource type="Texture2D" uid="uid://byilwodvj55yd" path="res://sky_lightened.png" id="1_35pgt"]
 [ext_resource type="Script" uid="uid://bdts61d76t4le" path="res://script/DefenderPage.gd" id="1_mv5pv"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cvht5puhcrmwt" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_2.png" id="4_hcti7"]
 [ext_resource type="FontFile" uid="uid://ctf2pk0x6asf8" path="res://School Teachers.otf" id="5_xcqf4"]
 [ext_resource type="Texture2D" uid="uid://cgp2bccgs4d36" path="res://cloud_lonely.png" id="7_egpk1"]
+[ext_resource type="Script" uid="uid://nj5rouxmcbj" path="res://script/LevelSelector.gd" id="7_mv5pv"]
 
 [sub_resource type="GDScript" id="GDScript_pus00"]
 script/source = "extends Control
@@ -194,6 +195,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_u7gas")
 theme_override_styles/normal = SubResource("StyleBoxFlat_uc464")
 text = "Level 1
 "
+script = ExtResource("7_mv5pv")
 
 [node name="Level2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -208,6 +210,8 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_u7gas")
 theme_override_styles/normal = SubResource("StyleBoxFlat_uc464")
 text = "Level 2
 "
+script = ExtResource("7_mv5pv")
+LevelId = 1
 
 [node name="Level3" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -223,6 +227,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_uc464")
 disabled = true
 text = "Level 3
 "
+script = ExtResource("7_mv5pv")
+LevelId = 2
 
 [node name="Level4" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -238,6 +244,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_uc464")
 disabled = true
 text = "Level 4
 "
+script = ExtResource("7_mv5pv")
+LevelId = 3
 
 [node name="Level5" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -253,6 +261,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_uc464")
 disabled = true
 text = "Level 5
 "
+script = ExtResource("7_mv5pv")
+LevelId = 4
 
 [node name="CloudLonely" type="Sprite2D" parent="."]
 position = Vector2(51, 592)
@@ -292,8 +302,3 @@ texture = ExtResource("7_egpk1")
 flip_v = true
 
 [connection signal="pressed" from="Back" to="." method="_on_goBack_pressed"]
-[connection signal="button_down" from="VBoxContainer/Level1" to="." method="_on_level_1_button_down"]
-[connection signal="button_down" from="VBoxContainer/Level2" to="." method="_on_level_2_button_down"]
-[connection signal="button_down" from="VBoxContainer/Level3" to="." method="_on_level_3_button_down"]
-[connection signal="button_down" from="VBoxContainer/Level4" to="." method="_on_level_4_button_down"]
-[connection signal="button_down" from="VBoxContainer/Level5" to="." method="_on_level_5_button_down"]
