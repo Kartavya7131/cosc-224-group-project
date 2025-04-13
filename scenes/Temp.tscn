@@ -172,11 +172,18 @@ layout_mode = 2
 text = "Selected: <NULL>"
 vertical_alignment = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="UI/Margins/Body/Sequencer/Body"]
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/Margins/Body/Sequencer/Body"]
+clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
+vertical_scroll_mode = 0
 
-[node name="ButtonsParent" type="HBoxContainer" parent="UI/Margins/Body/Sequencer/Body/CenterContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="UI/Margins/Body/Sequencer/Body/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ButtonsParent" type="HBoxContainer" parent="UI/Margins/Body/Sequencer/Body/ScrollContainer/CenterContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_vertical = 3

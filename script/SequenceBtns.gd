@@ -6,7 +6,7 @@ extends Node
 @export var Duds: Array[String]
 
 @onready var label = $Body/TopBar/MarginContainer/Selected
-@onready var buttons = $Body/CenterContainer/ButtonsParent
+@onready var buttons = $Body/ScrollContainer/CenterContainer/ButtonsParent
 
 @onready var submit = $Body/Buttons/MarginSubmit/Submit
 @onready var reset = $Body/Buttons/MarginReset/Reset
