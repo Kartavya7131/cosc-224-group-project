@@ -302,7 +302,7 @@ text = "book"
 [node name="BookPopup" type="PopupPanel" parent="."]
 mode = 3
 initial_position = 1
-size = Vector2i(1150, 650)
+size = Vector2i(1100, 600)
 visible = true
 
 [node name="BookContainer" type="Control" parent="BookPopup"]
