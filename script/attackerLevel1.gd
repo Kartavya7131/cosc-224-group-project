@@ -18,11 +18,31 @@ var attempt_count = 0
 @onready var next_level_timer = $NextLevelTimer
 @onready var go_back_button = $GoBackButton
 
+@onready var popup = $BookPopup
+@onready var container = $BookPopup/BookContainer
+@onready var open_btn = $OpenBookButton
+
+# Adjust the path if your book is somewhere else
+const BOOK_SCENE = preload("res://scenes/interactive_book_2d.tscn")
+
+
 func _ready():
+	popup.visible = false
+	open_btn.pressed.connect(_on_open_book_pressed)
 	hint_label.visible = false
 	selected_label.text = "Selected: "  # Initialize empty
 	setup_buttons()
 
+func _on_open_book_pressed():
+	# Clear previous content if reloading
+	for child in container.get_children():
+		child.queue_free()
+
+	# Instance the book and add to container
+	var book = BOOK_SCENE.instantiate()
+	container.add_child(book)
+	popup.visible = true
+	
 # 🔹 Creates buttons dynamically from the correct sequence and distractors
 func setup_buttons():
 	var all_buttons = correct_sequence + ["1=2", "DROP TABLE users", "UPDATE users SET"]
