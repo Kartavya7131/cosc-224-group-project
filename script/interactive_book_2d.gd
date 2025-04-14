@@ -62,6 +62,10 @@ func go_to_page(page : int):
 			play("close_from_first") # play animation for closing the book from the first page
 		elif current_page == page_count: # book closed from back
 			play("closed_front") # go directly to closed front animation. As if flipping the book
+			current_page = 0
+			pagelabel.visible = true
+			update_page_text()
+			return # skip the rest
 		else: # close from the middle otherwise
 			play("close_from_middle")
 	# going to the last page - closed from back
@@ -100,17 +104,18 @@ func go_to_page(page : int):
 # - recieves signal from NextPageButton
 func _on_next_page_button_button_down():
 	go_to_page(clamp_current_page(current_page + 1))
-	update_page_text()
+	
 
 # - recieves signal from PreviousPageButton
 func _on_previous_page_button_button_down():
 	go_to_page(clamp_current_page(current_page - 1))
-	update_page_text()
+	
 
 # - recieves signal from CloseButton
 func _on_close_button_button_down():
 	go_to_page(clamp_current_page(0))
 
 func _on_animation_finished():
+	print("Animation finished. Current page:", current_page)
 	pagelabel.visible = true  # Show the label after animation ends
 	update_page_text()              # Make sure text is refreshed
