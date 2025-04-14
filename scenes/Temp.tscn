@@ -1,0 +1,290 @@
+[gd_scene load_steps=13 format=3 uid="uid://djgkxj2yukby3"]
+
+[ext_resource type="FontFile" uid="uid://ctf2pk0x6asf8" path="res://School Teachers.otf" id="1_3us3r"]
+[ext_resource type="Texture2D" uid="uid://bai0ilin7ncxj" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_1_lightened.png" id="1_7byrd"]
+[ext_resource type="Script" uid="uid://2gvwkw6kk7fw" path="res://script/DynamicLoader.gd" id="1_f75ws"]
+[ext_resource type="Script" uid="uid://hsboey4lj27o" path="res://script/SequenceBtns.gd" id="1_yy8i8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7byrd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f75ws"]
+bg_color = Color(0.214923, 0.613613, 0.999999, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 10
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dysao"]
+bg_color = Color(0.367501, 0.675869, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 10
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fusle"]
+bg_color = Color(0.591849, 0.822409, 0.999619, 1)
+skew = Vector2(0.05, 0)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 20
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 8
+anti_aliasing_size = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g3dcp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_168um"]
+bg_color = Color(0.214923, 0.613613, 0.999999, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 10
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vqt71"]
+bg_color = Color(0.367501, 0.675869, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 10
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vdeje"]
+bg_color = Color(0.591849, 0.822409, 0.999619, 1)
+skew = Vector2(0.05, 0)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 20
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 8
+anti_aliasing_size = 10.0
+
+[node name="Temp" type="Node2D"]
+script = ExtResource("1_f75ws")
+
+[node name="UI" type="ColorRect" parent="."]
+offset_right = 1155.0
+offset_bottom = 649.0
+color = Color(0.341176, 0.72549, 0.984314, 1)
+
+[node name="Background" type="MarginContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CloudsMg1Lightened" type="Sprite2D" parent="UI/Background"]
+position = Vector2(548.58, 135.43)
+rotation = 3.13636
+scale = Vector2(3.19889, 1.27676)
+texture = ExtResource("1_7byrd")
+
+[node name="Margins" type="MarginContainer" parent="UI"]
+layout_mode = 2
+offset_right = 1155.0
+offset_bottom = 649.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 15
+
+[node name="Body" type="VBoxContainer" parent="UI/Margins"]
+layout_mode = 2
+
+[node name="Question" type="HBoxContainer" parent="UI/Margins/Body"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Margins/Body/Question"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 15
+
+[node name="Label" type="Label" parent="UI/Margins/Body/Question/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_3us3r")
+theme_override_font_sizes/font_size = 85
+text = "Attacker Level 1"
+horizontal_alignment = 1
+
+[node name="Description" type="MarginContainer" parent="UI/Margins/Body"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="CenterContainer" type="CenterContainer" parent="UI/Margins/Body/Description"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/Margins/Body/Description/CenterContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 22
+text = "You found a login form that checks for username and password. 
+The query used is:\"SELECT * FROM users WHERE username = 'INPUT' AND password = 'INPUT';
+
+You must log in without knowing the correct password!"
+horizontal_alignment = 1
+
+[node name="Sequencer" type="MarginContainer" parent="UI/Margins/Body"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+script = ExtResource("1_yy8i8")
+Sequence = Array[String](["UNION SELECT", "id,", "username,", "password", "FROM users;"])
+Duds = Array[String](["age,", "clients"])
+
+[node name="Body" type="VBoxContainer" parent="UI/Margins/Body/Sequencer"]
+layout_mode = 2
+
+[node name="TopBar" type="PanelContainer" parent="UI/Margins/Body/Sequencer/Body"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Margins/Body/Sequencer/Body/TopBar"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 25
+
+[node name="Selected" type="Label" parent="UI/Margins/Body/Sequencer/Body/TopBar/MarginContainer"]
+modulate = Color(0.820977, 0.868654, 0.603199, 1)
+layout_mode = 2
+text = "Selected: <NULL>"
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/Margins/Body/Sequencer/Body"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="UI/Margins/Body/Sequencer/Body/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ButtonsParent" type="HBoxContainer" parent="UI/Margins/Body/Sequencer/Body/ScrollContainer/CenterContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="UI/Margins/Body/Sequencer/Body"]
+layout_mode = 2
+size_flags_vertical = 10
+alignment = 2
+
+[node name="MarginSubmit" type="MarginContainer" parent="UI/Margins/Body/Sequencer/Body/Buttons"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="Submit" type="Button" parent="UI/Margins/Body/Sequencer/Body/Buttons/MarginSubmit"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
+theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
+theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
+theme_override_fonts/font = ExtResource("1_3us3r")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7byrd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f75ws")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dysao")
+theme_override_styles/normal = SubResource("StyleBoxFlat_fusle")
+text = "submit"
+
+[node name="MarginReset" type="MarginContainer" parent="UI/Margins/Body/Sequencer/Body/Buttons"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="Reset" type="Button" parent="UI/Margins/Body/Sequencer/Body/Buttons/MarginReset"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
+theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
+theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
+theme_override_fonts/font = ExtResource("1_3us3r")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7byrd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f75ws")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dysao")
+theme_override_styles/normal = SubResource("StyleBoxFlat_fusle")
+text = "REset"
+
+[node name="BottomBar" type="MarginContainer" parent="UI/Margins/Body"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/Margins/Body/BottomBar"]
+layout_mode = 2
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Margins/Body/BottomBar/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Margins/Body/BottomBar/HBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 35
+
+[node name="GoBackButton" type="Button" parent="UI/Margins/Body/BottomBar/HBoxContainer2/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
+theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
+theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
+theme_override_fonts/font = ExtResource("1_3us3r")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g3dcp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_168um")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vqt71")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vdeje")
+text = "Go Back
+"
+
+[node name="Label" type="Label" parent="UI/Margins/Body/BottomBar/HBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
+text = "*HINT* : Use the given Buttons to access the data"
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Margins/Body/BottomBar/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_right = 120
+
+[node name="Label2" type="Label" parent="UI/Margins/Body/BottomBar/HBoxContainer2/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 21
+text = "Attempts: 0"
+
+[connection signal="pressed" from="UI/Margins/Body/BottomBar/HBoxContainer2/HBoxContainer/MarginContainer/GoBackButton" to="." method="GoBack_pressed"]
