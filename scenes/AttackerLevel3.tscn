@@ -135,8 +135,8 @@ offset_top = 188.0
 offset_right = 1067.0
 offset_bottom = 350.0
 theme_override_font_sizes/font_size = 21
-text = "\"A system updates user passwords with:
- UPDATE users SET password = 'input' WHERE username = 'input'; 
+text = "You have find a system updates user passwords with:
+UPDATE users SET password = 'input' WHERE username = 'input'; 
 
 How can you change the admin's password to hacked?"
 

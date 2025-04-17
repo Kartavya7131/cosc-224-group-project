@@ -1,6 +1,6 @@
 extends Control
 
-var correct_injection = "'ORIF(1=1,SLEEP(5),0);--"
+var correct_injection = "'OR IF(1=1,SLEEP(5),0);--"
 var attempt_count = 0
 
 @onready var input_field = $InputField
