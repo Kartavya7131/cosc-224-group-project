@@ -15,11 +15,15 @@ extends Node
 var hint
 var attempt
 
-func Init(seq : Array[String], duds: Array[String], hintLabel, attemptLabel):
+var hasOrder = true
+
+func Init(seq : Array[String], duds: Array[String], hintLabel, attemptLabel, order:bool):
 	Sequence = seq
 	Duds = duds
 	
 	hint = hintLabel
+	
+	hasOrder = order
 	
 	attempt = attemptLabel
 	attempts = 0
@@ -34,17 +38,34 @@ func Clear():
 		buttons.remove_child(child)
 		
 func Submit():
-	if SelSequence == Sequence:
-		print("Correct")
+	if (hasOrder):
+		if SelSequence == Sequence:
+			print("Correct")
+		else:
+			print("Wrong")
+			Reset()
+			
+			attempts += 1
+			attempt.text = "Attempts: %d" % attempts
+			
+			if attempts >= 3:
+				hint.show()
 	else:
-		print("Wrong")
-		Reset()
+		var matches = true
+		for item in SelSequence:
+			if (!Sequence.has(item)):
+				matches = false
+				break
 		
-		attempts += 1
-		attempt.text = "Attempts: %d" % attempts
-		
-		if attempts >= 3:
-			hint.show()
+		if (matches):
+			if (SelSequence.size() == Sequence.size()):
+				print("Correct")
+			else:
+				print("Your Missing Some Answers")
+		else:
+			print("Incorrect")
+			
+			
 	
 func Reset():
 	SelSequence.clear()

@@ -1,9 +1,9 @@
 [gd_scene load_steps=13 format=3 uid="uid://djgkxj2yukby3"]
 
-[ext_resource type="FontFile" uid="uid://ctf2pk0x6asf8" path="res://School Teachers.otf" id="1_3us3r"]
-[ext_resource type="Texture2D" uid="uid://bai0ilin7ncxj" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_1_lightened.png" id="1_7byrd"]
-[ext_resource type="Script" uid="uid://2gvwkw6kk7fw" path="res://script/DynamicLoader.gd" id="1_f75ws"]
-[ext_resource type="Script" uid="uid://hsboey4lj27o" path="res://script/SequenceBtns.gd" id="1_yy8i8"]
+[ext_resource type="Script" uid="uid://2gvwkw6kk7fw" path="res://script/DynamicLoader.gd" id="1_qpyb5"]
+[ext_resource type="Texture2D" uid="uid://bai0ilin7ncxj" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_1_lightened.png" id="2_0i2aa"]
+[ext_resource type="FontFile" uid="uid://ctf2pk0x6asf8" path="res://School Teachers.otf" id="3_ycdxj"]
+[ext_resource type="Script" uid="uid://hsboey4lj27o" path="res://script/SequenceBtns.gd" id="4_vuvn0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7byrd"]
 
@@ -74,7 +74,7 @@ shadow_size = 8
 anti_aliasing_size = 10.0
 
 [node name="Temp" type="Node2D"]
-script = ExtResource("1_f75ws")
+script = ExtResource("1_qpyb5")
 
 [node name="UI" type="ColorRect" parent="."]
 offset_right = 1155.0
@@ -93,7 +93,7 @@ grow_vertical = 2
 position = Vector2(548.58, 135.43)
 rotation = 3.13636
 scale = Vector2(3.19889, 1.27676)
-texture = ExtResource("1_7byrd")
+texture = ExtResource("2_0i2aa")
 
 [node name="Margins" type="MarginContainer" parent="UI"]
 layout_mode = 2
@@ -122,7 +122,7 @@ theme_override_constants/margin_bottom = 15
 [node name="Label" type="Label" parent="UI/Margins/Body/Question/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("1_3us3r")
+theme_override_fonts/font = ExtResource("3_ycdxj")
 theme_override_font_sizes/font_size = 85
 text = "Attacker Level 1"
 horizontal_alignment = 1
@@ -149,7 +149,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.0
-script = ExtResource("1_yy8i8")
+script = ExtResource("4_vuvn0")
 Sequence = Array[String](["UNION SELECT", "id,", "username,", "password", "FROM users;"])
 Duds = Array[String](["age,", "clients"])
 
@@ -206,7 +206,7 @@ layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
 theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
-theme_override_fonts/font = ExtResource("1_3us3r")
+theme_override_fonts/font = ExtResource("3_ycdxj")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/focus = SubResource("StyleBoxEmpty_7byrd")
 theme_override_styles/hover = SubResource("StyleBoxFlat_f75ws")
@@ -225,7 +225,7 @@ layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
 theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
-theme_override_fonts/font = ExtResource("1_3us3r")
+theme_override_fonts/font = ExtResource("3_ycdxj")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/focus = SubResource("StyleBoxEmpty_7byrd")
 theme_override_styles/hover = SubResource("StyleBoxFlat_f75ws")
@@ -261,7 +261,7 @@ size_flags_stretch_ratio = 2.0
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
 theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
-theme_override_fonts/font = ExtResource("1_3us3r")
+theme_override_fonts/font = ExtResource("3_ycdxj")
 theme_override_font_sizes/font_size = 35
 theme_override_styles/focus = SubResource("StyleBoxEmpty_g3dcp")
 theme_override_styles/hover = SubResource("StyleBoxFlat_168um")

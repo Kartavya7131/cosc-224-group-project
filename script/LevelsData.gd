@@ -10,7 +10,8 @@ var DefenderLevels = {
 		"desc": "Someone is trying to bypass the login page using an \"OR '1'='1'\" \n statement what methodes can be used to prevent the SQL injection from happening?",
 		"hint": "this is a hint",
 		"seq": ["var 1", "var 2", "var3"],
-		"dud": ["dud 1", "dud 2"]
+		"dud": ["dud 1", "dud 2"],
+		"hasOrder": false
 		}
 }
 
@@ -59,6 +60,10 @@ func GetLevelData(Attacker: bool, levelId: int):
 	else:
 		data = DefenderLevels.get(levelId)
 		title = "Defender Level %d" % (levelId + 1)
+	
+	var order:bool = true
+	if data.has("hasOrder"):
+		order = data.get("hasOrder")
 		
-	return [title, data.get("desc"), data.get("hint"), data.get("seq"), data.get("dud")]
+	return [title, data.get("desc"), data.get("hint"), data.get("seq"), data.get("dud"), order]
 	
