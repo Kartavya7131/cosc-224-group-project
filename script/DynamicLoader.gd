@@ -1,6 +1,8 @@
 extends Node2D
 
 @onready var sequencer = $UI/Margins/Body/Sequencer
+@onready var winpopup = $UI/Margins/WinPopup
+
 @onready var descLabel = $UI/Margins/Body/Description/CenterContainer/Label
 @onready var TitleLabel = $UI/Margins/Body/Question/MarginContainer/Label
 @onready var hintLabel = $UI/Margins/Body/BottomBar/HBoxContainer2/HBoxContainer/Label
@@ -22,13 +24,13 @@ func LoadLevel():
 	var dud: Array[String]
 	dud.append_array(data[4])
 	
-	var order:bool = data[5]
+	var order:bool = data[6]
 	
-	sequencer.Init(seq, dud, hintLabel, attemptLabel, order)
+	winpopup.Init(levelType, levelId, data[5])
+	sequencer.Init(seq, dud, hintLabel, attemptLabel, order, winpopup)
 	
 func _ready() -> void:
 	LoadLevel()
-
 
 func GoBack_pressed() -> void:
 	if levelType:

@@ -17,7 +17,9 @@ var attempt
 
 var hasOrder = true
 
-func Init(seq : Array[String], duds: Array[String], hintLabel, attemptLabel, order:bool):
+var WinPopup
+
+func Init(seq : Array[String], duds: Array[String], hintLabel, attemptLabel, order:bool, winpop):
 	Sequence = seq
 	Duds = duds
 	
@@ -28,6 +30,8 @@ func Init(seq : Array[String], duds: Array[String], hintLabel, attemptLabel, ord
 	attempt = attemptLabel
 	attempts = 0
 	attempt.text = "Attempts: %d" % attempts
+	
+	WinPopup = winpop
 	
 	Initialize()
 
@@ -41,6 +45,8 @@ func Submit():
 	if (hasOrder):
 		if SelSequence == Sequence:
 			print("Correct")
+			WinPopup.show()
+			
 		else:
 			print("Wrong")
 			Reset()
@@ -60,10 +66,24 @@ func Submit():
 		if (matches):
 			if (SelSequence.size() == Sequence.size()):
 				print("Correct")
+				WinPopup.show()
 			else:
 				print("Your Missing Some Answers")
+				
+				attempts += 1
+				attempt.text = "Attempts: %d" % attempts
+			
+				if attempts >= 3:
+					hint.show()
 		else:
 			print("Incorrect")
+			Reset()
+			
+			attempts += 1
+			attempt.text = "Attempts: %d" % attempts
+			
+			if attempts >= 3:
+				hint.show()
 			
 			
 	

@@ -11,6 +11,7 @@ var DefenderLevels = {
 		"hint": "this is a hint",
 		"seq": ["var 1", "var 2", "var3"],
 		"dud": ["dud 1", "dud 2"],
+		"windesc": "temp",
 		"hasOrder": false
 		}
 }
@@ -20,25 +21,29 @@ var AttackerLevels = {
 		"desc": "You found a login form that checks for username and password\n The query used is: SELECT * FROM users WHERE username = 'INPUT' AND password = 'INPUT';\n You must log in without knowing the correct password! ",
 		"hint": "Try creating an SQL statment that will always equate to true",
 		"seq": ["OR 1=1;", "--"],
-		"dud": ["1=2", "DROP TABLE users", "UPDATE users SET"]
+		"dud": ["1=2", "DROP TABLE users", "UPDATE users SET"],
+		"windesc": "temp"
 		},
 	1: {
 		"desc": "You are trying to access a data base using this SQL statment\n SELECT id, username, password FROM users WHERE id = 'input'; \n How can you extract all user data? ",
 		"hint": "Try using UNION SELECT for retrieving multiple query results.",
 		"seq": ["UNION SELECT id,", "username,","password FROM users;"],
-		"dud": ["SELECT *", "WHERE TABLE = 'users';", "UPDATE users SET"]
+		"dud": ["SELECT *", "WHERE TABLE = 'users';", "UPDATE users SET"],
+		"windesc": "temp"
 		},
 	2: {
 		"desc": "You have find a system updates user passwords with:\n UPDATE users SET password = 'input' WHERE username = 'input'; \n How can you change the admin's password to hacked?",
 		"hint": "Try using UNION SELECT for retrieving multiple query results.",
 		"seq": ["UPDATE users", "SET password = 'hacked'","WHERE username = 'admin';"],
-		"dud": ["SelectTable", "From TABLE = 'users';"]
+		"dud": ["SelectTable", "From TABLE = 'users';"],
+		"windesc": "temp"
 		},
 	3: {
 		"desc": "A system verifies user access using:\n SELECT * FROM users WHERE username = 'input'; \n  How can you check if the system is vulnerable without seeing output?",
 		"hint": "Use a timing-based attack to detect vulnerabilities.",
 		"seq": ["OR IF(", "1=1,","SLEEP(5),","0",");--"],
-		"dud": ["ELSE IF(", "Password=1","Sleep()"]
+		"dud": ["ELSE IF(", "Password=1","Sleep()"],
+		"windesc": "temp"
 		}
 }
 
@@ -65,5 +70,5 @@ func GetLevelData(Attacker: bool, levelId: int):
 	if data.has("hasOrder"):
 		order = data.get("hasOrder")
 		
-	return [title, data.get("desc"), data.get("hint"), data.get("seq"), data.get("dud"), order]
+	return [title, data.get("desc"), data.get("hint"), data.get("seq"), data.get("dud"), data.get("windesc"), order]
 	
