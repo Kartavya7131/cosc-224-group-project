@@ -21,11 +21,8 @@ var attempt_count = 0
 @onready var popup = $BookPopup
 @onready var container = $BookPopup/BookContainer
 @onready var open_btn = $OpenBookButton
-
 # Adjust the path if your book is somewhere else
 const BOOK_SCENE = preload("res://scenes/interactive_book_2d.tscn")
-
-
 func _ready():
 	popup.visible = false
 	open_btn.pressed.connect(_on_open_book_pressed)
