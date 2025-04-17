@@ -25,11 +25,13 @@ var attempt_count = 0
 const BOOK_SCENE = preload("res://scenes/interactive_book_2d.tscn")
 func _ready():
 	popup.visible = false
-	open_btn.pressed.connect(_on_open_book_pressed)
 	hint_label.visible = false
 	selected_label.text = "Selected: "  # Initialize empty
 	setup_buttons()
-
+	var transparent_style = StyleBoxEmpty.new()
+	popup.set("theme_override_styles/panel", transparent_style)
+	
+	
 func _on_open_book_pressed():
 	# Clear previous content if reloading
 	for child in container.get_children():
@@ -38,7 +40,7 @@ func _on_open_book_pressed():
 	# Instance the book and add to container
 	var book = BOOK_SCENE.instantiate()
 	container.add_child(book)
-	popup.visible = true
+	popup.visible = !popup.visible
 	
 # 🔹 Creates buttons dynamically from the correct sequence and distractors
 func setup_buttons():

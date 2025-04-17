@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cf1ll0dc1tpw3" path="res://assets/Book_Sheet_64x64.png" id="1_nusbk"]
 [ext_resource type="Script" uid="uid://brj0w8eic8gpk" path="res://script/interactive_book_2d.gd" id="2_j3gqr"]
-[ext_resource type="Texture2D" uid="uid://bx1s75my8d6lp" path="res://assets/Back_Button.png" id="3_fg802"]
+[ext_resource type="FontFile" uid="uid://ctf2pk0x6asf8" path="res://School Teachers.otf" id="3_5mdr6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ag3u"]
 atlas = ExtResource("1_nusbk")
@@ -792,53 +792,51 @@ animations = [{
 }]
 
 [node name="InteractiveBook2D" type="AnimatedSprite2D"]
+top_level = true
 texture_filter = 1
-position = Vector2(683.562, 263)
-scale = Vector2(12.5762, 9.61719)
+position = Vector2(334, 313)
+scale = Vector2(11, 10)
 sprite_frames = SubResource("SpriteFrames_vxube")
-animation = &"closed_front"
+animation = &"previous_to_first"
 autoplay = "closed_front"
 script = ExtResource("2_j3gqr")
 metadata/_edit_horizontal_guides_ = [-121.0]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 1.63623
+offset_left = 2.0
 offset_top = -16.0
-offset_right = 493.636
+offset_right = 474.0
 offset_bottom = 744.0
-scale = Vector2(0.05, 0.05)
-theme_override_font_sizes/bold_italics_font_size = 30
-theme_override_font_sizes/italics_font_size = 30
-theme_override_font_sizes/mono_font_size = 30
-theme_override_font_sizes/normal_font_size = 30
-theme_override_font_sizes/bold_font_size = 30
+scale = Vector2(0.06, 0.06)
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_5mdr6")
+theme_override_fonts/mono_font = ExtResource("3_5mdr6")
+theme_override_fonts/italics_font = ExtResource("3_5mdr6")
+theme_override_fonts/bold_italics_font = ExtResource("3_5mdr6")
+theme_override_fonts/bold_font = ExtResource("3_5mdr6")
+theme_override_font_sizes/bold_italics_font_size = 60
+theme_override_font_sizes/italics_font_size = 60
+theme_override_font_sizes/mono_font_size = 60
+theme_override_font_sizes/normal_font_size = 60
+theme_override_font_sizes/bold_font_size = 60
 justification_flags = 0
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
-
-[node name="CloseButton" type="TextureButton" parent="."]
-texture_filter = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = -53.3201
-offset_top = -46.3233
-offset_right = -37.3201
-offset_bottom = -30.3233
-grow_vertical = 0
-texture_normal = ExtResource("3_fg802")
+metadata/_edit_lock_ = true
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchor_right = 0.93
 anchor_bottom = 0.937
-offset_left = -34.5
-offset_top = -18.0
-offset_right = -32.02
-offset_bottom = -31.968
+offset_left = -31.0
+offset_top = -21.0
+offset_right = -28.52
+offset_bottom = -28.968
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
+metadata/_edit_lock_ = true
 
 [node name="NextPageButton" type="TextureButton" parent="Control"]
 layout_mode = 1
@@ -847,24 +845,24 @@ anchor_left = 0.507479
 anchor_top = 0.0538513
 anchor_right = 0.942479
 anchor_bottom = 1.04685
-offset_left = -0.0299988
-offset_top = -1.322
-offset_right = 4.0
-offset_bottom = 1.0
+offset_left = -0.5637
+offset_top = -1.70027
+offset_right = 2.4663
+offset_bottom = -3.3362
 grow_horizontal = 0
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="PreviousPageButton" type="TextureButton" parent="Control"]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = 4.99997
-offset_top = -0.699997
-offset_right = 34.0
-offset_bottom = -0.699997
+offset_left = 0.9
+offset_top = 1.1
+offset_right = 30.9
+offset_bottom = -0.900002
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
-[connection signal="button_down" from="CloseButton" to="." method="_on_close_button_button_down"]
 [connection signal="button_down" from="Control/NextPageButton" to="." method="_on_next_page_button_button_down"]
 [connection signal="button_down" from="Control/PreviousPageButton" to="." method="_on_previous_page_button_button_down"]
