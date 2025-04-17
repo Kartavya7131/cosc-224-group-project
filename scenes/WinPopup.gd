@@ -31,10 +31,11 @@ func LoadNextLevel():
 	scene.levelType = levelType
 	
 	get_tree().root.add_child(scene)
-	
 	hide()
 
 func _on_menu_button_down() -> void:
+	hide()
+	
 	if levelType:
 		get_tree().change_scene_to_file("res://scenes/AttackerPage.tscn")
 	else:
