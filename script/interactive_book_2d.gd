@@ -6,13 +6,17 @@ class_name InteractiveBook2D
 var current_page : int = 0 # tracks the current page the book is displaying
 
 var page_text = [
-	"           [b]Welcome![/b] 
+	"           [color=white][b]Welcome![/b] 
 	Prepare to explore 
-	SQL Injection!",
-	"[color=green]In this lab, we’ll explore[/color] 
+	SQL Injection![/color]",
+	"In this lab, we’ll explore 
 [u]SQL injection concepts.[/u]",
-	"[i]Try using basic SQL commands[/i] like [code]SELECT[/code] and [code]WHERE[/code].",
-	"[color=red]Watch out![/color] Attackers may try to inject malicious queries.",
+"[i]Try using basic SQL 
+commands[/i] like [code]SELECT[/code] 
+and [code]WHERE[/code].",
+	"[color=red]Watch out![/color] Attackers may 
+try to inject malicious 
+queries.",
 	" "," "
 ]
 
