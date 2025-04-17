@@ -1,5 +1,10 @@
 extends Node
 
+#desc is the level description
+#hint will appear when attempts = 5
+#seq is the answer to the level
+#dud is the other incorrect buttons
+
 var DefenderLevels = {
 	0: {
 		"desc": "Someone is trying to bypass the login page using an \"OR '1'='1'\" \n statement what methodes can be used to prevent the SQL injection from happening?",
@@ -10,7 +15,30 @@ var DefenderLevels = {
 }
 
 var AttackerLevels = {
-	
+	0: {
+		"desc": "You found a login form that checks for username and password\n The query used is: SELECT * FROM users WHERE username = 'INPUT' AND password = 'INPUT';\n You must log in without knowing the correct password! ",
+		"hint": "Try creating an SQL statment that will always equate to true",
+		"seq": ["OR 1=1;", "--"],
+		"dud": ["1=2", "DROP TABLE users", "UPDATE users SET"]
+		},
+	1: {
+		"desc": "You are trying to access a data base using this SQL statment\n SELECT id, username, password FROM users WHERE id = 'input'; \n How can you extract all user data? ",
+		"hint": "Try using UNION SELECT for retrieving multiple query results.",
+		"seq": ["UNION SELECT id,", "username,","password FROM users;"],
+		"dud": ["SELECT *", "WHERE TABLE = 'users';", "UPDATE users SET"]
+		},
+	2: {
+		"desc": "You have find a system updates user passwords with:\n UPDATE users SET password = 'input' WHERE username = 'input'; \n How can you change the admin's password to hacked?",
+		"hint": "Try using UNION SELECT for retrieving multiple query results.",
+		"seq": ["UPDATE users", "SET password = 'hacked'","WHERE username = 'admin';"],
+		"dud": ["SelectTable", "From TABLE = 'users';"]
+		},
+	3: {
+		"desc": "A system verifies user access using:\n SELECT * FROM users WHERE username = 'input'; \n  How can you check if the system is vulnerable without seeing output?",
+		"hint": "Use a timing-based attack to detect vulnerabilities.",
+		"seq": ["OR IF(", "1=1,","SLEEP(5),","0",");--"],
+		"dud": ["ELSE IF(", "Password=1","Sleep()"]
+		}
 }
 
 func hasNextLevel(Attacker: bool, levelId: int):
