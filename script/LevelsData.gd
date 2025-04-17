@@ -8,10 +8,18 @@ extends Node
 var DefenderLevels = {
 	0: {
 		"desc": "Someone is trying to bypass the login page using an \"OR '1'='1'\" \n statement what methodes can be used to prevent the SQL injection from happening?",
-		"hint": "this is a hint",
-		"seq": ["var 1", "var 2", "var3"],
-		"dud": ["dud 1", "dud 2"]
+		"hint": "Avoid relying on tricks like string concat or client-side checks.",
+		"seq": ["Use Prepared Statement","Input Validation","ORM Framework", "Least Privilege"],
+		"dud": ["Use String Concatenation","Disable Errors", "Trust Admin Input", "Client-side Checks Only"],
+		"hasOrder": false
+		},
+	1: {
+		"desc": "Someone is trying to bypass the login page using an \"OR '1'='1'\" statement \n\nThe Query they are giving is:\nSELECT * FROM users WHERE username = 'name' OR '1'='1'-- AND password = 'pass'; \nRewrite the query to ensure that this attack is invalid!",
+		"hint": "QUOTE() function automatically avoids special characters like '.",
+		"seq": ["SELECT *", "FROM users", "WHERE", "Username =", "QUOTE('Input');"],
+		"dud": ["NULL", "PROCESS('Input');"],
 		}
+		
 }
 
 var AttackerLevels = {
@@ -59,6 +67,10 @@ func GetLevelData(Attacker: bool, levelId: int):
 	else:
 		data = DefenderLevels.get(levelId)
 		title = "Defender Level %d" % (levelId + 1)
+	
+	var order:bool = true
+	if data.has("hasOrder"):
+		order = data.get("hasOrder")
 		
-	return [title, data.get("desc"), data.get("hint"), data.get("seq"), data.get("dud")]
+	return [title, data.get("desc"), data.get("hint"), data.get("seq"), data.get("dud"), order]
 	

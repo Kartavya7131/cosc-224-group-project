@@ -22,7 +22,9 @@ func LoadLevel():
 	var dud: Array[String]
 	dud.append_array(data[4])
 	
-	sequencer.Init(seq, dud, hintLabel, attemptLabel)
+	var order:bool = data[5]
+	
+	sequencer.Init(seq, dud, hintLabel, attemptLabel, order)
 	
 func _ready() -> void:
 	LoadLevel()

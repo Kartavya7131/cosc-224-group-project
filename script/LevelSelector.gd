@@ -4,7 +4,7 @@ extends Button
 @export var IsAttacker: bool
 
 func LoadLevel():
-	var scene = preload("res://scenes/Temp.tscn").instantiate()
+	var scene = preload("res://scenes/DynamicLevel.tscn").instantiate()
 	
 	scene.levelId = self.LevelId
 	scene.levelType = self.IsAttacker
