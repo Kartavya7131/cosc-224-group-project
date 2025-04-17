@@ -19,6 +19,7 @@ var DefenderLevels = {
 		"hint": "QUOTE() function automatically avoids special characters like '.",
 		"seq": ["SELECT *", "FROM users", "WHERE", "Username =", "QUOTE('Input');"],
 		"dud": ["NULL", "PROCESS('Input');"],
+		"windesc": "temp",
 		}
 		
 }
