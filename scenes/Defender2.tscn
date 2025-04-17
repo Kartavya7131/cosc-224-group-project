@@ -143,7 +143,6 @@ text = "Someone is trying to bypass the login page using an \"OR '1'='1'\" state
 
 The Query they are giving is: 
 SELECT * FROM users WHERE username = 'name' OR '1'='1'-- AND password = 'pass';
-
 Rewrite the query to ensure that this attack is invalid!"
 
 [node name="SubmitButton" type="Button" parent="."]
