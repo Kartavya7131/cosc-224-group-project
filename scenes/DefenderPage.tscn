@@ -224,7 +224,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_6pt34")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wkj4t")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_u7gas")
 theme_override_styles/normal = SubResource("StyleBoxFlat_uc464")
-disabled = true
 text = "Level 3
 "
 script = ExtResource("7_mv5pv")

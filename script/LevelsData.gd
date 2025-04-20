@@ -20,10 +20,16 @@ var DefenderLevels = {
 		"seq": ["SELECT *", "FROM users", "WHERE", "Username =", "QUOTE('Input');"],
 		"dud": ["NULL", "PROCESS('Input');"],
 		"windesc": "temp",
-		}
-		
+		},
+	2: {
+	"desc": "The following code is used to store user comments:\n\nINSERT INTO comments (text) VALUES ('\" +   user_input + \"');\n\nFix the query to prevent SQL Injection attacks from malicious comment input.",
+	"hint": "Use functions or methods that prevent raw input from being executed as code.",
+	"seq": ["PREPARE stmt", "INSERT INTO comments (text) VALUES (?)", "BIND user_input", "EXECUTE stmt;"],
+	"dud": ["INSERT 'user_input'", "STRING user_input", "SELECT ALL", "CONCAT(user_input)"],
+	"windesc": "You’ve safely stored user comments using prepared statements. Well done!",
+	"hasOrder": true
+	}
 }
-
 var AttackerLevels = {
 	0: {
 		"desc": "You found a login form that checks for username and password\n The query used is: SELECT * FROM users WHERE username = 'INPUT' AND password = 'INPUT';\n You must log in without knowing the correct password! ",
