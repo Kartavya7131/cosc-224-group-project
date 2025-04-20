@@ -61,7 +61,6 @@ func hasNextLevel(Attacker: bool, levelId: int):
 		data = AttackerLevels
 	else:
 		data = DefenderLevels
-		
 	return data.has((levelId + 1))
 
 func GetLevelData(Attacker: bool, levelId: int):
@@ -79,4 +78,3 @@ func GetLevelData(Attacker: bool, levelId: int):
 		order = data.get("hasOrder")
 		
 	return [title, data.get("desc"), data.get("hint"), data.get("seq"), data.get("dud"), data.get("windesc"), order]
-	
