@@ -1,10 +1,22 @@
-[gd_scene load_steps=14 format=3 uid="uid://djgkxj2yukby3"]
+[gd_scene load_steps=26 format=3 uid="uid://djgkxj2yukby3"]
 
 [ext_resource type="Script" uid="uid://2gvwkw6kk7fw" path="res://script/DynamicLoader.gd" id="1_qpyb5"]
 [ext_resource type="Texture2D" uid="uid://bai0ilin7ncxj" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_1_lightened.png" id="2_0i2aa"]
+[ext_resource type="Texture2D" uid="uid://8ldjcw3efsy1" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/glacial_mountains_lightened_Long_Diff.png" id="2_2ysum"]
+[ext_resource type="Script" uid="uid://w45lbd87frvd" path="res://script/background.gd" id="2_71cwf"]
+[ext_resource type="Texture2D" uid="uid://cvht5puhcrmwt" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_2.png" id="2_ywy2r"]
 [ext_resource type="Script" uid="uid://bkvr1coosdhlx" path="res://scenes/WinPopup.gd" id="3_0i2aa"]
+[ext_resource type="Texture2D" uid="uid://ddb7sngaqsi0s" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_1.png" id="3_aa7vf"]
+[ext_resource type="Texture2D" uid="uid://c3otrdumkk027" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/glacial_mountains_lightened_Small.png" id="3_bwo3e"]
 [ext_resource type="FontFile" uid="uid://ctf2pk0x6asf8" path="res://School Teachers.otf" id="3_ycdxj"]
 [ext_resource type="Script" uid="uid://hsboey4lj27o" path="res://script/SequenceBtns.gd" id="4_vuvn0"]
+[ext_resource type="Texture2D" uid="uid://bd3uhdt7g25i6" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/glacial_mountains_lightened.png" id="4_xgm7k"]
+[ext_resource type="Texture2D" uid="uid://c8d1rdkydnu57" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/glacial_mountains_lightened_Other.png" id="5_ywy2r"]
+[ext_resource type="Texture2D" uid="uid://dsx4jo0smqce5" path="res://assets/BG_DesertMountains/cloud2.png" id="9_miyxp"]
+[ext_resource type="Texture2D" uid="uid://m3xfe3gc5k2i" path="res://assets/BG_DesertMountains/cloud1.png" id="10_dd1u6"]
+[ext_resource type="Texture2D" uid="uid://dr7t0t2hheydd" path="res://assets/BG_DesertMountains/cloud5.png" id="11_miyxp"]
+[ext_resource type="Texture2D" uid="uid://da10ex0gor5r8" path="res://assets/BG_DesertMountains/cloud8.png" id="12_dd1u6"]
+[ext_resource type="Texture2D" uid="uid://b4mgloarrn1ko" path="res://assets/BG_DesertMountains/cloud7.png" id="13_dd1u6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7byrd"]
 
@@ -83,18 +95,167 @@ offset_bottom = 649.0
 color = Color(0.341176, 0.72549, 0.984314, 1)
 
 [node name="Background" type="MarginContainer" parent="UI"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
+offset_right = 1155.0
+offset_bottom = 649.0
+script = ExtResource("2_71cwf")
 
-[node name="CloudsMg1Lightened" type="Sprite2D" parent="UI/Background"]
-position = Vector2(548.58, 135.43)
-rotation = 3.13636
-scale = Vector2(3.19889, 1.27676)
+[node name="CloudTop" type="Sprite2D" parent="UI/Background"]
+position = Vector2(958, 107)
+rotation = -3.11192
+texture = ExtResource("2_ywy2r")
+
+[node name="CloudsMg1Lightened" type="Sprite2D" parent="UI/Background/CloudTop"]
+position = Vector2(379.259, -21.8367)
+rotation = -0.0349033
+scale = Vector2(3.00179, 1.11288)
 texture = ExtResource("2_0i2aa")
+
+[node name="CloudsMg1" type="Sprite2D" parent="UI/Background/CloudTop"]
+position = Vector2(470.044, -22.3526)
+scale = Vector2(1.5888, 1.04167)
+texture = ExtResource("3_aa7vf")
+
+[node name="GlacialMountains" type="Sprite2D" parent="UI/Background"]
+position = Vector2(250.875, 624.5)
+scale = Vector2(0.925266, 0.412037)
+texture = ExtResource("2_2ysum")
+
+[node name="GlacialMountainsLightenedSmall" type="Sprite2D" parent="UI/Background/GlacialMountains"]
+position = Vector2(262.412, 82.7999)
+scale = Vector2(0.990233, 1.45)
+texture = ExtResource("3_bwo3e")
+
+[node name="GlacialMountainsLightenedSmall2" type="Sprite2D" parent="UI/Background/GlacialMountains"]
+position = Vector2(701.085, 79.1999)
+scale = Vector2(0.990233, 1.8)
+texture = ExtResource("3_bwo3e")
+
+[node name="GlacialMountainsLightened" type="Sprite2D" parent="UI/Background/GlacialMountains/GlacialMountainsLightenedSmall2"]
+position = Vector2(-80, -22.3125)
+scale = Vector2(1.07943, 0.586227)
+texture = ExtResource("4_xgm7k")
+
+[node name="GlacialMountainsLightenedOther" type="Sprite2D" parent="UI/Background/GlacialMountains/GlacialMountainsLightenedSmall2"]
+position = Vector2(194.204, -16)
+scale = Vector2(1.28186, 1)
+texture = ExtResource("5_ywy2r")
+
+[node name="GlacialMountainsLightened" type="Sprite2D" parent="UI/Background/GlacialMountains"]
+position = Vector2(392.539, 0.529324)
+scale = Vector2(1.11817, 0.838235)
+texture = ExtResource("4_xgm7k")
+
+[node name="Clouds1" type="MarginContainer" parent="UI/Background"]
+visible = false
+layout_mode = 2
+
+[node name="Cloud2" type="Sprite2D" parent="UI/Background/Clouds1"]
+position = Vector2(1023, 436)
+texture = ExtResource("9_miyxp")
+
+[node name="Cloud1" type="Sprite2D" parent="UI/Background/Clouds1"]
+position = Vector2(176.5, 482.75)
+scale = Vector2(3.23913, 2.78571)
+texture = ExtResource("10_dd1u6")
+
+[node name="Cloud3" type="Sprite2D" parent="UI/Background/Clouds1"]
+position = Vector2(145, 148.25)
+scale = Vector2(2.69565, 3.97619)
+texture = ExtResource("10_dd1u6")
+
+[node name="Cloud4" type="Sprite2D" parent="UI/Background/Clouds1"]
+position = Vector2(1002, 464)
+texture = ExtResource("9_miyxp")
+
+[node name="Clouds2" type="MarginContainer" parent="UI/Background"]
+visible = false
+layout_mode = 2
+
+[node name="Cloud5" type="Sprite2D" parent="UI/Background/Clouds2"]
+position = Vector2(1014, 119)
+scale = Vector2(2.1, 2.35714)
+texture = ExtResource("11_miyxp")
+
+[node name="Cloud8" type="Sprite2D" parent="UI/Background/Clouds2"]
+position = Vector2(70, 493)
+texture = ExtResource("12_dd1u6")
+
+[node name="Cloud9" type="Sprite2D" parent="UI/Background/Clouds2"]
+position = Vector2(330, 89)
+texture = ExtResource("12_dd1u6")
+
+[node name="Cloud1" type="Sprite2D" parent="UI/Background/Clouds2"]
+position = Vector2(201, 81)
+scale = Vector2(1.69565, 1.59524)
+texture = ExtResource("10_dd1u6")
+
+[node name="Cloud2" type="Sprite2D" parent="UI/Background/Clouds2"]
+position = Vector2(428.75, 135.5)
+scale = Vector2(0.758503, 0.759259)
+texture = ExtResource("9_miyxp")
+
+[node name="Clouds3" type="MarginContainer" parent="UI/Background"]
+visible = false
+layout_mode = 2
+
+[node name="Cloud8" type="Sprite2D" parent="UI/Background/Clouds3"]
+position = Vector2(405.75, 535.25)
+scale = Vector2(1.44937, 1.18293)
+texture = ExtResource("12_dd1u6")
+
+[node name="Cloud7" type="Sprite2D" parent="UI/Background/Clouds3"]
+position = Vector2(507, 551)
+texture = ExtResource("13_dd1u6")
+
+[node name="Cloud9" type="Sprite2D" parent="UI/Background/Clouds3"]
+position = Vector2(785, 537)
+texture = ExtResource("13_dd1u6")
+
+[node name="Cloud1" type="Sprite2D" parent="UI/Background/Clouds3"]
+position = Vector2(96, 534)
+texture = ExtResource("10_dd1u6")
+
+[node name="Cloud2" type="Sprite2D" parent="UI/Background/Clouds3"]
+position = Vector2(661, 29)
+texture = ExtResource("9_miyxp")
+
+[node name="Cloud3" type="Sprite2D" parent="UI/Background/Clouds3"]
+position = Vector2(228, 40)
+scale = Vector2(1.76087, 1.92857)
+texture = ExtResource("10_dd1u6")
+
+[node name="Cloud10" type="Sprite2D" parent="UI/Background/Clouds3"]
+position = Vector2(975, 57)
+texture = ExtResource("12_dd1u6")
+
+[node name="Clouds4" type="MarginContainer" parent="UI/Background"]
+visible = false
+layout_mode = 2
+
+[node name="Cloud5" type="Sprite2D" parent="UI/Background/Clouds4"]
+position = Vector2(969, 124)
+texture = ExtResource("9_miyxp")
+
+[node name="Cloud7" type="Sprite2D" parent="UI/Background/Clouds4"]
+position = Vector2(115, 100)
+texture = ExtResource("13_dd1u6")
+
+[node name="Cloud1" type="Sprite2D" parent="UI/Background/Clouds4"]
+position = Vector2(846, 108)
+texture = ExtResource("10_dd1u6")
+
+[node name="Cloud2" type="Sprite2D" parent="UI/Background/Clouds4"]
+position = Vector2(899, 136)
+texture = ExtResource("10_dd1u6")
+
+[node name="Cloud4" type="Sprite2D" parent="UI/Background/Clouds4"]
+position = Vector2(882, 124)
+texture = ExtResource("10_dd1u6")
+
+[node name="Cloud3" type="Sprite2D" parent="UI/Background/Clouds4"]
+position = Vector2(900, 112)
+texture = ExtResource("10_dd1u6")
 
 [node name="Margins" type="MarginContainer" parent="UI"]
 layout_mode = 2
@@ -293,6 +454,7 @@ theme_override_font_sizes/font_size = 21
 text = "Attempts: 0"
 
 [node name="WinPopup" type="MarginContainer" parent="UI/Margins"]
+visible = false
 z_index = 1
 layout_mode = 2
 mouse_filter = 0
