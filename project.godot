@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 SqlDatabase="*res://script/SqlDatabase.gd"
 LevelsData="*res://script/LevelsData.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/gut/plugin.cfg")
