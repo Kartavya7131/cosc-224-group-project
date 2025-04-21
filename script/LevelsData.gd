@@ -22,12 +22,11 @@ var DefenderLevels = {
 		"windesc": "temp",
 		},
 	2: {
-		"desc": "The following code segment is used to store a users comments and is vulnerable to SQL injection:\n\nINSERT INTO comments (text) VALUES ('\" + Hacking the database + \"');\nYour job is to fix the query to prevent malicious injection attacks.",
+		"desc": "The following code segment is used to store a users comments and is vulnerable to SQL injection:\n\nINSERT INTO comments (text) VALUES ('\" + Hacking the database + \"');\nYour job is to fix the query to prevent malicious injection attacks.\n\n *note* : Define the method before defining variable(s)",
 		"hint": "Use  a methods that prevent raw input from being executed as code.",
-		"seq": ["PREPARE stmt", "INSERT INTO comments (text) VALUES (?)", "BIND user_input", "EXECUTE stmt;"],
+		"seq": ["PREPARE stmt FROM", "\'INSERT INTO comments (text) VALUES (?)\';", "SET @input = [user_input];", "EXECUTE stmt", "USING @input;"],
 		"dud": ["INSERT 'user_input'", "STRING user_input", "SELECT ALL", "CONCAT(user_input)"],
-		"windesc": "You’ve safely stored user comments using prepared statements. Well done!",
-		"hasOrder": true
+		"windesc": "You’ve safely stored user comments using prepared statements. \nWell done!",
 		},
 	3: {
 		"desc": "A system is using query to check a user's existence:\nSELECT * FROM users WHERE username = '\" + MyAccount + \"';\n\nAn attacker is using the statment:\n' OR IF(1=1, SLEEP(5), 0);--\n\n This statment causes a delay to check vulnerablility. \nYou must write a query to defend against this type of SQL injection attack.",
@@ -35,7 +34,6 @@ var DefenderLevels = {
 		"seq": ["PREPARE stmt", "SELECT * FROM users WHERE username = MyAccount", "BIND input", "EXECUTE stmt;"],
 		"dud": ["USE CONCAT", "TRIM input", "LOG delay", "SET timeout = 0"],
 		"windesc": "Well done! You've blocked time-based attacks by using prepared statements, closing the blind injection vector.",
-		"hasOrder": true
 		}
 }
 var AttackerLevels = {
