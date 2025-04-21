@@ -240,28 +240,10 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_6pt34")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wkj4t")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_u7gas")
 theme_override_styles/normal = SubResource("StyleBoxFlat_uc464")
-disabled = true
 text = "Level 4
 "
 script = ExtResource("7_mv5pv")
 LevelId = 3
-
-[node name="Level5" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
-theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
-theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
-theme_override_fonts/font = ExtResource("5_xcqf4")
-theme_override_font_sizes/font_size = 35
-theme_override_styles/focus = SubResource("StyleBoxEmpty_6pt34")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wkj4t")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_u7gas")
-theme_override_styles/normal = SubResource("StyleBoxFlat_uc464")
-disabled = true
-text = "Level 5
-"
-script = ExtResource("7_mv5pv")
-LevelId = 4
 
 [node name="CloudLonely" type="Sprite2D" parent="."]
 position = Vector2(51, 592)

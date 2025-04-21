@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://2gvwkw6kk7fw" path="res://script/DynamicLoader.gd" id="1_qpyb5"]
 [ext_resource type="Texture2D" uid="uid://bai0ilin7ncxj" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_1_lightened.png" id="2_0i2aa"]
 [ext_resource type="Texture2D" uid="uid://8ldjcw3efsy1" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/glacial_mountains_lightened_Long_Diff.png" id="2_2ysum"]
-[ext_resource type="Script" path="res://script/background.gd" id="2_71cwf"]
+[ext_resource type="Script" uid="uid://w45lbd87frvd" path="res://script/background.gd" id="2_71cwf"]
 [ext_resource type="Texture2D" uid="uid://cvht5puhcrmwt" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_2.png" id="2_ywy2r"]
 [ext_resource type="Script" uid="uid://bkvr1coosdhlx" path="res://scenes/WinPopup.gd" id="3_0i2aa"]
 [ext_resource type="Texture2D" uid="uid://ddb7sngaqsi0s" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_1.png" id="3_aa7vf"]

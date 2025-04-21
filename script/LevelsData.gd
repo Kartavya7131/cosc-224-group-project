@@ -22,13 +22,21 @@ var DefenderLevels = {
 		"windesc": "temp",
 		},
 	2: {
-	"desc": "The following code is used to store user comments:\n\nINSERT INTO comments (text) VALUES ('\" +   user_input + \"');\n\nFix the query to prevent SQL Injection attacks from malicious comment input.",
-	"hint": "Use functions or methods that prevent raw input from being executed as code.",
-	"seq": ["PREPARE stmt", "INSERT INTO comments (text) VALUES (?)", "BIND user_input", "EXECUTE stmt;"],
-	"dud": ["INSERT 'user_input'", "STRING user_input", "SELECT ALL", "CONCAT(user_input)"],
-	"windesc": "You’ve safely stored user comments using prepared statements. Well done!",
-	"hasOrder": true
-	}
+		"desc": "The following code segment is used to store a users comments and is vulnerable to SQL injection:\n\nINSERT INTO comments (text) VALUES ('\" + Hacking the database + \"');\nYour job is to fix the query to prevent malicious injection attacks.",
+		"hint": "Use  a methods that prevent raw input from being executed as code.",
+		"seq": ["PREPARE stmt", "INSERT INTO comments (text) VALUES (?)", "BIND user_input", "EXECUTE stmt;"],
+		"dud": ["INSERT 'user_input'", "STRING user_input", "SELECT ALL", "CONCAT(user_input)"],
+		"windesc": "You’ve safely stored user comments using prepared statements. Well done!",
+		"hasOrder": true
+		},
+	3: {
+		"desc": "A system is using query to check a user's existence:\nSELECT * FROM users WHERE username = '\" + MyAccount + \"';\n\nAn attacker is using the statment:\n' OR IF(1=1, SLEEP(5), 0);--\n\n This statment causes a delay to check vulnerablility. \nYou must write a query to defend against this type of SQL injection attack.",
+		"hint": "you shouldn't allow raw input in logic branches. Prepared statements prevent conditional injections like IF(...).",
+		"seq": ["PREPARE stmt", "SELECT * FROM users WHERE username = MyAccount", "BIND input", "EXECUTE stmt;"],
+		"dud": ["USE CONCAT", "TRIM input", "LOG delay", "SET timeout = 0"],
+		"windesc": "Well done! You've blocked time-based attacks by using prepared statements, closing the blind injection vector.",
+		"hasOrder": true
+		}
 }
 var AttackerLevels = {
 	0: {
