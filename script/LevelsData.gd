@@ -11,7 +11,7 @@ var DefenderLevels = {
 		"hint": "Avoid relying on tricks like string concat or client-side checks.",
 		"seq": ["Use Prepared Statement","Input Validation","ORM Framework", "Least Privilege"],
 		"dud": ["Use String Concatenation","Disable Errors", "Trust Admin Input", "Client-side Checks Only"],
-		"windesc": " SQL INJECTION BLOCKED USING DEFENSE-IN-DEPTH. INPUT WAS VALIDATED AND EXECUTED VIA SAFE DATABASE INTERFACES.\n'OR 1=1' HAD NO EFFECT ON THE QUERY EXECUTION.",
+		"windesc": " SQL INJECTION BLOCKED USING DEFENSE-IN-DEPTH.\nINPUT WAS VALIDATED AND EXECUTED VIA SAFE DATABASE INTERFACES.\n'OR 1=1' HAD NO EFFECT ON THE QUERY EXECUTION.",
 		"hasOrder": false
 		},
 	1: {
@@ -19,9 +19,7 @@ var DefenderLevels = {
 		"hint": "QUOTE() function automatically avoids special characters like '.",
 		"seq": ["SELECT *", "FROM users", "WHERE", "Username =", "QUOTE('Input');"],
 		"dud": ["NULL", "PROCESS('Input');"],
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-		"windesc": "temp",
+		"windesc": "BY USING DATABASE ESCAPING WITH QUOTE(), \nYOU NEUTRALIZED MALICIOUS INPUT. \nSPECIAL CHARACTERS WERE HANDLED SAFELY, PREVENTING THE INJECTION.",
 		},
 	2: {
 		"desc": "The following code segment is used to store a users comments and is vulnerable to SQL injection:\n\nINSERT INTO comments (text) VALUES ('\" + Hacking the database + \"');\nYour job is to fix the query to prevent malicious injection attacks.\n\n *note* : Define the method before defining variable(s)",
@@ -35,13 +33,7 @@ var DefenderLevels = {
 		"hint": "you shouldn't allow raw input in logic branches. Prepared statements prevent conditional injections like IF(...).",
 		"seq": ["PREPARE stmt", "SELECT * FROM users WHERE username = MyAccount", "BIND input", "EXECUTE stmt;"],
 		"dud": ["USE CONCAT", "TRIM input", "LOG delay", "SET timeout = 0"],
-		"windesc": "Well done! You've blocked time-based attacks by using prepared statements, closing the blind injection vector.",
-=======
-		"windesc": "BY USING DATABASE ESCAPING WITH QUOTE(), YOU NEUTRALIZED MALICIOUS INPUT. SPECIAL CHARACTERS WERE HANDLED SAFELY, PREVENTING THE INJECTION.",
->>>>>>> Stashed changes
-=======
-		"windesc": "BY USING DATABASE ESCAPING WITH QUOTE(), YOU NEUTRALIZED MALICIOUS INPUT. SPECIAL CHARACTERS WERE HANDLED SAFELY, PREVENTING THE INJECTION.",
->>>>>>> Stashed changes
+		"windesc": "temp",
 		}
 }
 var AttackerLevels = {
@@ -50,28 +42,28 @@ var AttackerLevels = {
 		"hint": "Try creating an SQL statment that will always equate to true",
 		"seq": ["OR 1=1;", "--"],
 		"dud": ["1=2", "DROP TABLE users", "UPDATE users SET"],
-		"windesc": "WITH A CORRECT INJECTION STATEMENT, YOU GAINED ACCESS TO THE ACCOUNT WITHOUT A PASSWORD. THE LOGIN QUERY RETURNED TRUE FOR ALL INPUTS.\nUSERNAME: Player 1\nPASSWORD: **** OR '1' = '1';"
+		"windesc": "WITH A CORRECT INJECTION STATEMENT,\n YOU GAINED ACCESS TO THE ACCOUNT WITHOUT A PASSWORD.\n THE LOGIN QUERY RETURNED TRUE FOR ALL INPUTS.\nUSERNAME: Player 1\nPASSWORD: **** OR '1' = '1';"
 		},
 	1: {
 		"desc": "You are trying to access a data base using this SQL statment\n SELECT id, username, password FROM users WHERE id = 'input'; \n How can you extract all user data? ",
 		"hint": "Try using UNION SELECT for retrieving multiple query results.",
 		"seq": ["UNION SELECT id,", "username,","password FROM users;"],
 		"dud": ["SELECT *", "WHERE TABLE = 'users';", "UPDATE users SET"],
-		"windesc": "YOU INJECTED A UNION QUERY AND RETRIEVED ALL USER RECORDS FROM THE DATABASE. FULL CREDENTIAL LEAK ACHIEVED.\nSTATEMENT: ' UNION SELECT id, username, password FROM users;"
+		"windesc": "YOU INJECTED A UNION QUERY AND \nRETRIEVED ALL USER RECORDS FROM THE DATABASE.\nFULL CREDENTIAL LEAK ACHIEVED."
 		},
 	2: {
 		"desc": "You have find a system updates user passwords with:\n UPDATE users SET password = 'input' WHERE username = 'input'; \n How can you change the admin's password to hacked?",
 		"hint": "Try using UNION SELECT for retrieving multiple query results.",
 		"seq": ["UPDATE users", "SET password = 'hacked'","WHERE username = 'admin';"],
 		"dud": ["SelectTable", "From TABLE = 'users';"],
-		"windesc": " YOU SUCCESSFULLY INJECTED AN UPDATE STATEMENT TO RESET THE ADMIN PASSWORD. THE DATABASE WAS MODIFIED.\nSTATEMENT: '; UPDATE users SET password='hacked' WHERE username='admin';"
+		"windesc": " YOU SUCCESSFULLY INJECTED AN UPDATE STATEMENT TO RESET THE ADMIN PASSWORD.\n THE DATABASE WAS MODIFIED.\nSTATEMENT: '; UPDATE users SET password='hacked' WHERE username='admin';"
 		},
 	3: {
 		"desc": "A system verifies user access using:\n SELECT * FROM users WHERE username = 'input'; \n  How can you check if the system is vulnerable without seeing output?",
 		"hint": "Use a timing-based attack to detect vulnerabilities.",
 		"seq": ["OR IF(", "1=1,","SLEEP(5),","0",");--"],
 		"dud": ["ELSE IF(", "Password=1","Sleep()"],
-		"windesc": "YOU DEPLOYED A TIME-BASED SQL INJECTION TO MEASURE RESPONSE DELAYS. A 5-SECOND DELAY CONFIRMS SQLI VULNERABILITY.\nPAYLOAD: ' OR IF(1=1, SLEEP(5), 0);"
+		"windesc": "YOU DEPLOYED A TIME-BASED SQL INJECTION TO MEASURE RESPONSE DELAYS. \nA 5-SECOND DELAY CONFIRMS SQLI VULNERABILITY.\nPAYLOAD: ' OR IF(1=1, SLEEP(5), 0);"
 		}
 }
 
