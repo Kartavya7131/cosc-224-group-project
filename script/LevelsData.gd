@@ -26,14 +26,14 @@ var DefenderLevels = {
 		"hint": "Use  a methods that prevent raw input from being executed as code.",
 		"seq": ["PREPARE stmt FROM", "\'INSERT INTO comments (text) VALUES (?)\';", "SET @input = [user_input];", "EXECUTE stmt", "USING @input;"],
 		"dud": ["INSERT 'user_input'", "STRING user_input", "SELECT ALL", "CONCAT(user_input)"],
-		"windesc": "You’ve safely stored user comments using prepared statements. \nWell done!",
+		"windesc": "YOU'VE SAFELY STORED USER COMMENTS USING PREPARED STATEMENTS. \nWELL DONE",
 		},
 	3: {
 		"desc": "A system is using query to check a user's existence:\nSELECT * FROM users WHERE username = '\" + MyAccount + \"';\n\nAn attacker is using the statment:\n' OR IF(1=1, SLEEP(5), 0);--\n\n This statment causes a delay to check vulnerablility. \nYou must write a query to defend against this type of SQL injection attack.",
 		"hint": "you shouldn't allow raw input in logic branches. \nPrepared statements prevent conditional injections like IF(...).",
 		"seq": ["PREPARE stmt FROM", "\'SELECT * FROM users", "WHERE username = (?)\'", "SET @input = [user_input];", "EXECUTE stmt", "USING @input;"],
 		"dud": ["USE CONCAT", "TRIM input", "LOG delay", "SET timeout = 0"],
-		"windesc": "BY USING DATABASE ESCAPING WITH QUOTE(), YOU NEUTRALIZED MALICIOUS INPUT. SPECIAL CHARACTERS WERE HANDLED SAFELY, PREVENTING THE INJECTION.",
+		"windesc": "BY USING DATABASE ESCAPING WITH QUOTE(),\n YOU NEUTRALIZED MALICIOUS INPUT.\n SPECIAL CHARACTERS WERE HANDLED SAFELY, PREVENTING THE INJECTION.",
 		}
 }
 var AttackerLevels = {
@@ -56,7 +56,7 @@ var AttackerLevels = {
 		"hint": "Try using UNION SELECT for retrieving multiple query results.",
 		"seq": ["UPDATE users", "SET password = 'hacked'","WHERE username = 'admin';"],
 		"dud": ["SelectTable", "From TABLE = 'users';"],
-		"windesc": " YOU SUCCESSFULLY INJECTED AN UPDATE STATEMENT TO RESET THE ADMIN PASSWORD.\n THE DATABASE WAS MODIFIED.\nSTATEMENT: '; UPDATE users SET password='hacked' WHERE username='admin';"
+		"windesc": " YOU SUCCESSFULLY INJECTED\n AN UPDATE STATEMENT TO RESET THE ADMIN PASSWORD.\n THE DATABASE WAS MODIFIED."
 		},
 	3: {
 		"desc": "A system verifies user access using:\n SELECT * FROM users WHERE username = 'input'; \n  How can you check if the system is vulnerable without seeing output?",
