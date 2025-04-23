@@ -456,7 +456,6 @@ theme_override_font_sizes/font_size = 21
 text = "Attempts: 0"
 
 [node name="WinPopup" type="MarginContainer" parent="UI/Margins"]
-visible = false
 z_index = 1
 layout_mode = 2
 mouse_filter = 0
