@@ -11,7 +11,11 @@ var DefenderLevels = {
 		"hint": "Avoid relying on tricks like string concat or client-side checks.",
 		"seq": ["Use Prepared Statement","Input Validation","ORM Framework", "Least Privilege"],
 		"dud": ["Use String Concatenation","Disable Errors", "Trust Admin Input", "Client-side Checks Only"],
+<<<<<<< Updated upstream
 		"windesc": " SQL INJECTION BLOCKED USING DEFENSE-IN-DEPTH. INPUT WAS VALIDATED AND EXECUTED VIA SAFE DATABASE INTERFACES.\n'OR 1=1' HAD NO EFFECT ON THE QUERY EXECUTION.",
+=======
+		"windesc": "",
+>>>>>>> Stashed changes
 		"hasOrder": false
 		},
 	1: {
@@ -32,8 +36,8 @@ var DefenderLevels = {
 		},
 	3: {
 		"desc": "A system is using query to check a user's existence:\nSELECT * FROM users WHERE username = '\" + MyAccount + \"';\n\nAn attacker is using the statment:\n' OR IF(1=1, SLEEP(5), 0);--\n\n This statment causes a delay to check vulnerablility. \nYou must write a query to defend against this type of SQL injection attack.",
-		"hint": "you shouldn't allow raw input in logic branches. Prepared statements prevent conditional injections like IF(...).",
-		"seq": ["PREPARE stmt", "SELECT * FROM users WHERE username = MyAccount", "BIND input", "EXECUTE stmt;"],
+		"hint": "you shouldn't allow raw input in logic branches. \nPrepared statements prevent conditional injections like IF(...).",
+		"seq": ["PREPARE stmt FROM", "\'SELECT * FROM users", "WHERE username = (?)\'", "SET @input = [user_input];", "EXECUTE stmt", "USING @input;"],
 		"dud": ["USE CONCAT", "TRIM input", "LOG delay", "SET timeout = 0"],
 		"windesc": "Well done! You've blocked time-based attacks by using prepared statements, closing the blind injection vector.",
 =======
