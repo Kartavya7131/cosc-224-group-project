@@ -442,8 +442,11 @@ text = "Go Back
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 21
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 20
 text = "*HINT* : Use the given Buttons to access the data"
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/Margins/Body/BottomBar/HBoxContainer2"]
 layout_mode = 2
@@ -456,20 +459,19 @@ theme_override_font_sizes/font_size = 21
 text = "Attempts: 0"
 
 [node name="WinPopup" type="MarginContainer" parent="UI/Margins"]
-visible = false
 z_index = 1
 layout_mode = 2
 mouse_filter = 0
-theme_override_constants/margin_left = 250
+theme_override_constants/margin_left = 240
 theme_override_constants/margin_top = 100
-theme_override_constants/margin_right = 250
+theme_override_constants/margin_right = 240
 theme_override_constants/margin_bottom = 50
 script = ExtResource("3_0i2aa")
 
 [node name="ColorRect" type="ColorRect" parent="UI/Margins/WinPopup"]
 layout_mode = 2
 focus_mode = 2
-color = Color(0.658824, 0.827451, 0.968627, 0.901961)
+color = Color(0.658824, 0.827451, 0.968627, 1)
 
 [node name="Background" type="MarginContainer" parent="UI/Margins/WinPopup/ColorRect"]
 layout_mode = 1
