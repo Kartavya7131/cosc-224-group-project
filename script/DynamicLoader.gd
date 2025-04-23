@@ -5,8 +5,11 @@ extends Node2D
 
 @onready var descLabel = $UI/Margins/Body/Description/CenterContainer/Label
 @onready var TitleLabel = $UI/Margins/Body/Question/MarginContainer/Label
-@onready var hintLabel = $UI/Margins/Body/BottomBar/HBoxContainer2/HBoxContainer/Label
-@onready var attemptLabel = $UI/Margins/Body/BottomBar/HBoxContainer2/MarginContainer/Label2
+@onready var hintLabel = $UI/Margins/Body/BottomBar/VBoxContainer/HBoxContainer2/MarginContainer2/Label
+@onready var attemptLabel = $UI/Margins/Body/BottomBar/VBoxContainer/HBoxContainer2/MarginContainer/Label2
+
+@onready var bookPopup = $UI/Margins/BookPopup
+@onready var BookShown = false
 
 @export var levelId: int
 @export var levelType: bool
@@ -28,6 +31,7 @@ func LoadLevel():
 	
 	winpopup.Init(levelType, levelId, data[5])
 	sequencer.Init(seq, dud, hintLabel, attemptLabel, order, winpopup)
+	bookPopup.visible = false
 	
 func _ready() -> void:
 	LoadLevel()
@@ -37,3 +41,14 @@ func GoBack_pressed() -> void:
 		get_tree().change_scene_to_file("res://scenes/AttackerPage.tscn")
 	else:
 		get_tree().change_scene_to_file("res://scenes/DefenderPage.tscn")
+
+func _on_codex_button_button_up() -> void:
+	if BookShown:
+		for child in bookPopup.get_children():
+			child.queue_free()
+	else:
+		var book = preload("res://scenes/interactive_book_2d.tscn").instantiate()
+		bookPopup.add_child(book)
+	
+	BookShown = !BookShown
+	bookPopup.visible = BookShown

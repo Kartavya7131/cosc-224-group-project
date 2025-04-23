@@ -407,21 +407,50 @@ size_flags_vertical = 3
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 0
-theme_override_constants/margin_bottom = 15
+theme_override_constants/margin_bottom = 10
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="UI/Margins/Body/BottomBar"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Margins/Body/BottomBar"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/Margins/Body/BottomBar/VBoxContainer"]
 layout_mode = 2
 alignment = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/Margins/Body/BottomBar/HBoxContainer2"]
+[node name="MarginContainer2" type="MarginContainer" parent="UI/Margins/Body/BottomBar/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="UI/Margins/Body/BottomBar/VBoxContainer/HBoxContainer2/MarginContainer2"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 20
+text = "*HINT* : Use the given Buttons to access the data"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Margins/Body/BottomBar/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 5
+
+[node name="Label2" type="Label" parent="UI/Margins/Body/BottomBar/VBoxContainer/HBoxContainer2/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 21
+text = "Attempts: 0"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Margins/Body/BottomBar/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/Margins/Body/BottomBar/HBoxContainer2/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="UI/Margins/Body/BottomBar/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_right = 35
+theme_override_constants/margin_right = 25
 
-[node name="GoBackButton" type="Button" parent="UI/Margins/Body/BottomBar/HBoxContainer2/HBoxContainer/MarginContainer"]
+[node name="GoBackButton" type="Button" parent="UI/Margins/Body/BottomBar/VBoxContainer/HBoxContainer/MarginContainer"]
 custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -438,27 +467,29 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_vdeje")
 text = "Go Back
 "
 
-[node name="Label" type="Label" parent="UI/Margins/Body/BottomBar/HBoxContainer2/HBoxContainer"]
-custom_minimum_size = Vector2(120, 0)
+[node name="MarginContainer2" type="MarginContainer" parent="UI/Margins/Body/BottomBar/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-theme_override_font_sizes/font_size = 20
-text = "*HINT* : Use the given Buttons to access the data"
-vertical_alignment = 1
-autowrap_mode = 3
+theme_override_constants/margin_right = 25
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/Margins/Body/BottomBar/HBoxContainer2"]
+[node name="CodexButton" type="Button" parent="UI/Margins/Body/BottomBar/VBoxContainer/HBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
-theme_override_constants/margin_right = 120
-
-[node name="Label2" type="Label" parent="UI/Margins/Body/BottomBar/HBoxContainer2/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 10
-theme_override_font_sizes/font_size = 21
-text = "Attempts: 0"
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
+theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
+theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
+theme_override_fonts/font = ExtResource("3_ycdxj")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g3dcp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_168um")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vqt71")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vdeje")
+text = "Codex
+"
 
 [node name="WinPopup" type="MarginContainer" parent="UI/Margins"]
+visible = false
 z_index = 1
 layout_mode = 2
 mouse_filter = 0
@@ -571,6 +602,12 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_dysao")
 theme_override_styles/normal = SubResource("StyleBoxFlat_fusle")
 text = "Next Level"
 
-[connection signal="pressed" from="UI/Margins/Body/BottomBar/HBoxContainer2/HBoxContainer/MarginContainer/GoBackButton" to="." method="GoBack_pressed"]
+[node name="BookPopup" type="MarginContainer" parent="UI/Margins"]
+layout_mode = 2
+theme_override_constants/margin_left = 350
+theme_override_constants/margin_right = 150
+
+[connection signal="pressed" from="UI/Margins/Body/BottomBar/VBoxContainer/HBoxContainer/MarginContainer/GoBackButton" to="." method="GoBack_pressed"]
+[connection signal="button_up" from="UI/Margins/Body/BottomBar/VBoxContainer/HBoxContainer/MarginContainer2/CodexButton" to="." method="_on_codex_button_button_up"]
 [connection signal="button_down" from="UI/Margins/WinPopup/ColorRect/MarginContainer/VBoxContainer/Buttons/HBoxContainer/MarginMenu/Menu" to="UI/Margins/WinPopup" method="_on_menu_button_down"]
 [connection signal="button_down" from="UI/Margins/WinPopup/ColorRect/MarginContainer/VBoxContainer/Buttons/HBoxContainer/MarginNext/Next" to="UI/Margins/WinPopup" method="LoadNextLevel"]
