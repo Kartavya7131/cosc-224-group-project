@@ -11,11 +11,7 @@ var DefenderLevels = {
 		"hint": "Avoid relying on tricks like string concat or client-side checks.",
 		"seq": ["Use Prepared Statement","Input Validation","ORM Framework", "Least Privilege"],
 		"dud": ["Use String Concatenation","Disable Errors", "Trust Admin Input", "Client-side Checks Only"],
-<<<<<<< Updated upstream
 		"windesc": " SQL INJECTION BLOCKED USING DEFENSE-IN-DEPTH. INPUT WAS VALIDATED AND EXECUTED VIA SAFE DATABASE INTERFACES.\n'OR 1=1' HAD NO EFFECT ON THE QUERY EXECUTION.",
-=======
-		"windesc": "",
->>>>>>> Stashed changes
 		"hasOrder": false
 		},
 	1: {
@@ -23,8 +19,6 @@ var DefenderLevels = {
 		"hint": "QUOTE() function automatically avoids special characters like '.",
 		"seq": ["SELECT *", "FROM users", "WHERE", "Username =", "QUOTE('Input');"],
 		"dud": ["NULL", "PROCESS('Input');"],
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 		"windesc": "temp",
 		},
 	2: {
@@ -39,13 +33,7 @@ var DefenderLevels = {
 		"hint": "you shouldn't allow raw input in logic branches. \nPrepared statements prevent conditional injections like IF(...).",
 		"seq": ["PREPARE stmt FROM", "\'SELECT * FROM users", "WHERE username = (?)\'", "SET @input = [user_input];", "EXECUTE stmt", "USING @input;"],
 		"dud": ["USE CONCAT", "TRIM input", "LOG delay", "SET timeout = 0"],
-		"windesc": "Well done! You've blocked time-based attacks by using prepared statements, closing the blind injection vector.",
-=======
 		"windesc": "BY USING DATABASE ESCAPING WITH QUOTE(), YOU NEUTRALIZED MALICIOUS INPUT. SPECIAL CHARACTERS WERE HANDLED SAFELY, PREVENTING THE INJECTION.",
->>>>>>> Stashed changes
-=======
-		"windesc": "BY USING DATABASE ESCAPING WITH QUOTE(), YOU NEUTRALIZED MALICIOUS INPUT. SPECIAL CHARACTERS WERE HANDLED SAFELY, PREVENTING THE INJECTION.",
->>>>>>> Stashed changes
 		}
 }
 var AttackerLevels = {
