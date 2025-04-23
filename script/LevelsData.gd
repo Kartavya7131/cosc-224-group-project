@@ -12,7 +12,11 @@ var DefenderLevels = {
 		"seq": ["Use Prepared Statement","Input Validation","ORM Framework", "Least Privilege"],
 		"dud": ["Use String Concatenation","Disable Errors", "Trust Admin Input", "Client-side Checks Only"],
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		"windesc": " SQL INJECTION BLOCKED USING DEFENSE-IN-DEPTH. INPUT WAS VALIDATED AND EXECUTED VIA SAFE DATABASE INTERFACES.\n'OR 1=1' HAD NO EFFECT ON THE QUERY EXECUTION.",
+=======
+		"windesc": "",
+>>>>>>> Stashed changes
 =======
 		"windesc": "",
 >>>>>>> Stashed changes
