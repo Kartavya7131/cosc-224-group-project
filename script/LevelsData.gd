@@ -30,10 +30,10 @@ var DefenderLevels = {
 		},
 	3: {
 		"desc": "A system is using query to check a user's existence:\nSELECT * FROM users WHERE username = '\" + MyAccount + \"';\n\nAn attacker is using the statment:\n' OR IF(1=1, SLEEP(5), 0);--\n\n This statment causes a delay to check vulnerablility. \nYou must write a query to defend against this type of SQL injection attack.",
-		"hint": "you shouldn't allow raw input in logic branches. Prepared statements prevent conditional injections like IF(...).",
-		"seq": ["PREPARE stmt", "SELECT * FROM users WHERE username = MyAccount", "BIND input", "EXECUTE stmt;"],
+		"hint": "you shouldn't allow raw input in logic branches. \nPrepared statements prevent conditional injections like IF(...).",
+		"seq": ["PREPARE stmt FROM", "\'SELECT * FROM users", "WHERE username = (?)\'", "SET @input = [user_input];", "EXECUTE stmt", "USING @input;"],
 		"dud": ["USE CONCAT", "TRIM input", "LOG delay", "SET timeout = 0"],
-		"windesc": "temp",
+		"windesc": "BY USING DATABASE ESCAPING WITH QUOTE(), YOU NEUTRALIZED MALICIOUS INPUT. SPECIAL CHARACTERS WERE HANDLED SAFELY, PREVENTING THE INJECTION.",
 		}
 }
 var AttackerLevels = {
