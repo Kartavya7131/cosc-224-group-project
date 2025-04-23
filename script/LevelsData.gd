@@ -20,6 +20,7 @@ var DefenderLevels = {
 		"seq": ["SELECT *", "FROM users", "WHERE", "Username =", "QUOTE('Input');"],
 		"dud": ["NULL", "PROCESS('Input');"],
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		"windesc": "temp",
 		},
 	2: {
@@ -35,6 +36,9 @@ var DefenderLevels = {
 		"seq": ["PREPARE stmt", "SELECT * FROM users WHERE username = MyAccount", "BIND input", "EXECUTE stmt;"],
 		"dud": ["USE CONCAT", "TRIM input", "LOG delay", "SET timeout = 0"],
 		"windesc": "Well done! You've blocked time-based attacks by using prepared statements, closing the blind injection vector.",
+=======
+		"windesc": "BY USING DATABASE ESCAPING WITH QUOTE(), YOU NEUTRALIZED MALICIOUS INPUT. SPECIAL CHARACTERS WERE HANDLED SAFELY, PREVENTING THE INJECTION.",
+>>>>>>> Stashed changes
 =======
 		"windesc": "BY USING DATABASE ESCAPING WITH QUOTE(), YOU NEUTRALIZED MALICIOUS INPUT. SPECIAL CHARACTERS WERE HANDLED SAFELY, PREVENTING THE INJECTION.",
 >>>>>>> Stashed changes
