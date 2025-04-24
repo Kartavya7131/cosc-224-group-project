@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://etgjuctp4kdc"]
+[gd_scene load_steps=16 format=3 uid="uid://dohgunsfmf34s"]
 
 [ext_resource type="Script" uid="uid://bchfb4s5osaty" path="res://script/attackerLevel2.gd" id="1_7t4ud"]
 [ext_resource type="Texture2D" uid="uid://byilwodvj55yd" path="res://sky_lightened.png" id="2_6vetm"]

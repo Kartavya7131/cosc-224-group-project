@@ -794,7 +794,7 @@ animations = [{
 [node name="InteractiveBook2D" type="AnimatedSprite2D"]
 top_level = true
 texture_filter = 1
-position = Vector2(649, 320)
+position = Vector2(334, 313)
 scale = Vector2(11, 10)
 sprite_frames = SubResource("SpriteFrames_vxube")
 animation = &"previous_to_first"

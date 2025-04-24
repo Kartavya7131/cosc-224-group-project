@@ -604,15 +604,9 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_fusle")
 text = "Next Level"
 
 [node name="BookPopup" type="MarginContainer" parent="UI/Margins"]
-z_index = 1
 layout_mode = 2
-mouse_filter = 2
 theme_override_constants/margin_left = 350
 theme_override_constants/margin_right = 150
-
-[node name="BookContainer" type="Control" parent="UI/Margins/BookPopup"]
-layout_mode = 2
-mouse_filter = 1
 
 [connection signal="pressed" from="UI/Margins/Body/BottomBar/VBoxContainer/HBoxContainer/MarginContainer/GoBackButton" to="." method="GoBack_pressed"]
 [connection signal="button_up" from="UI/Margins/Body/BottomBar/VBoxContainer/HBoxContainer/MarginContainer2/CodexButton" to="." method="_on_codex_button_button_up"]
