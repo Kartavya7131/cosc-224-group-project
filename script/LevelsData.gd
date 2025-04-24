@@ -12,6 +12,7 @@ var DefenderLevels = {
 		"seq": ["Use Prepared Statement","Input Validation","ORM Framework", "Least Privilege"],
 		"dud": ["Use String Concatenation","Disable Errors", "Trust Admin Input", "Client-side Checks Only"],
 		"windesc": " SQL INJECTION BLOCKED USING DEFENSE-IN-DEPTH.\nINPUT WAS VALIDATED AND EXECUTED VIA SAFE DATABASE INTERFACES.\n'OR 1=1' HAD NO EFFECT ON THE QUERY EXECUTION.",
+		"codexEntry": [],
 		"hasOrder": false
 		},
 	1: {
@@ -20,6 +21,7 @@ var DefenderLevels = {
 		"seq": ["SELECT *", "FROM users", "WHERE", "Username =", "QUOTE('Input');"],
 		"dud": ["NULL", "PROCESS('Input');"],
 		"windesc": "BY USING DATABASE ESCAPING WITH QUOTE(), \nYOU NEUTRALIZED MALICIOUS INPUT. \nSPECIAL CHARACTERS WERE HANDLED SAFELY, PREVENTING THE INJECTION.",
+		"codexEntry": []
 		},
 	2: {
 		"desc": "The following code segment is used to store a users comments and is vulnerable to SQL injection:\n\nINSERT INTO comments (text) VALUES ('\" + Hacking the database + \"');\nYour job is to fix the query to prevent malicious injection attacks.\n\n *note* : Define the method before defining variable(s)",
@@ -27,6 +29,7 @@ var DefenderLevels = {
 		"seq": ["PREPARE stmt FROM", "\'INSERT INTO comments (text) VALUES (?)\';", "SET @input = [user_input];", "EXECUTE stmt", "USING @input;"],
 		"dud": ["INSERT 'user_input'", "STRING user_input", "SELECT ALL", "CONCAT(user_input)"],
 		"windesc": "YOU'VE SAFELY STORED USER COMMENTS USING PREPARED STATEMENTS. \nWELL DONE",
+		"codexEntry": []
 		},
 	3: {
 		"desc": "A system is using query to check a user's existence:\nSELECT * FROM users WHERE username = '\" + MyAccount + \"';\n\nAn attacker is using the statment:\n' OR IF(1=1, SLEEP(5), 0);--\n\n This statment causes a delay to check vulnerablility. \nYou must write a query to defend against this type of SQL injection attack.",
@@ -34,6 +37,7 @@ var DefenderLevels = {
 		"seq": ["PREPARE stmt FROM", "\'SELECT * FROM users", "WHERE username = (?)\'", "SET @input = [user_input];", "EXECUTE stmt", "USING @input;"],
 		"dud": ["USE CONCAT", "TRIM input", "LOG delay", "SET timeout = 0"],
 		"windesc": "BY USING DATABASE ESCAPING WITH QUOTE(),\n YOU NEUTRALIZED MALICIOUS INPUT.\n SPECIAL CHARACTERS WERE HANDLED SAFELY, PREVENTING THE INJECTION.",
+		"codexEntry": []
 		}
 }
 var AttackerLevels = {
@@ -42,28 +46,32 @@ var AttackerLevels = {
 		"hint": "Try creating an SQL statment that will always equate to true",
 		"seq": ["OR 1=1;", "--"],
 		"dud": ["1=2", "DROP TABLE users", "UPDATE users SET"],
-		"windesc": "WITH A CORRECT INJECTION STATEMENT,\n YOU GAINED ACCESS TO THE ACCOUNT WITHOUT A PASSWORD.\n THE LOGIN QUERY RETURNED TRUE FOR ALL INPUTS.\nUSERNAME: Player 1\nPASSWORD: **** OR '1' = '1';"
+		"windesc": "WITH A CORRECT INJECTION STATEMENT,\n YOU GAINED ACCESS TO THE ACCOUNT WITHOUT A PASSWORD.\n THE LOGIN QUERY RETURNED TRUE FOR ALL INPUTS.\nUSERNAME: Player 1\nPASSWORD: **** OR '1' = '1';",
+		"codexEntry": []
 		},
 	1: {
 		"desc": "You are trying to access a data base using this SQL statment\n SELECT id, username, password FROM users WHERE id = 'input'; \n How can you extract all user data? ",
 		"hint": "Try using UNION SELECT for retrieving multiple query results.",
 		"seq": ["UNION SELECT id,", "username,","password FROM users;"],
 		"dud": ["SELECT *", "WHERE TABLE = 'users';", "UPDATE users SET"],
-		"windesc": "YOU INJECTED A UNION QUERY AND \nRETRIEVED ALL USER RECORDS FROM THE DATABASE.\nFULL CREDENTIAL LEAK ACHIEVED."
+		"windesc": "YOU INJECTED A UNION QUERY AND \nRETRIEVED ALL USER RECORDS FROM THE DATABASE.\nFULL CREDENTIAL LEAK ACHIEVED.",
+		"codexEntry": []
 		},
 	2: {
 		"desc": "You have find a system updates user passwords with:\n UPDATE users SET password = 'input' WHERE username = 'input'; \n How can you change the admin's password to hacked?",
 		"hint": "Try using UNION SELECT for retrieving multiple query results.",
 		"seq": ["UPDATE users", "SET password = 'hacked'","WHERE username = 'admin';"],
 		"dud": ["SelectTable", "From TABLE = 'users';"],
-		"windesc": " YOU SUCCESSFULLY INJECTED\n AN UPDATE STATEMENT TO RESET THE ADMIN PASSWORD.\n THE DATABASE WAS MODIFIED."
+		"windesc": " YOU SUCCESSFULLY INJECTED\n AN UPDATE STATEMENT TO RESET THE ADMIN PASSWORD.\n THE DATABASE WAS MODIFIED.",
+		"codexEntry": []
 		},
 	3: {
 		"desc": "A system verifies user access using:\n SELECT * FROM users WHERE username = 'input'; \n  How can you check if the system is vulnerable without seeing output?",
 		"hint": "Use a timing-based attack to detect vulnerabilities.",
 		"seq": ["OR IF(", "1=1,","SLEEP(5),","0",");--"],
 		"dud": ["ELSE IF(", "Password=1","Sleep()"],
-		"windesc": "YOU DEPLOYED A TIME-BASED SQL INJECTION TO MEASURE RESPONSE DELAYS. \nA 5-SECOND DELAY CONFIRMS SQLI VULNERABILITY.\nPAYLOAD: ' OR IF(1=1, SLEEP(5), 0);"
+		"windesc": "YOU DEPLOYED A TIME-BASED SQL INJECTION TO MEASURE RESPONSE DELAYS. \nA 5-SECOND DELAY CONFIRMS SQLI VULNERABILITY.\nPAYLOAD: ' OR IF(1=1, SLEEP(5), 0);",
+		"codexEntry": []
 		}
 }
 
@@ -89,4 +97,4 @@ func GetLevelData(Attacker: bool, levelId: int):
 	if data.has("hasOrder"):
 		order = data.get("hasOrder")
 		
-	return [title, data.get("desc"), data.get("hint"), data.get("seq"), data.get("dud"), data.get("windesc"), order]
+	return [title, data.get("desc"), data.get("hint"), data.get("seq"), data.get("dud"), data.get("windesc"), order, data.get("codexEntry")]

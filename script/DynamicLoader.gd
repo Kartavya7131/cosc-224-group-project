@@ -8,6 +8,7 @@ extends Node2D
 @onready var hintLabel = $UI/Margins/Body/BottomBar/VBoxContainer/HBoxContainer2/MarginContainer2/Label
 @onready var attemptLabel = $UI/Margins/Body/BottomBar/VBoxContainer/HBoxContainer2/MarginContainer/Label2
 
+@onready var bookScene = preload("res://scenes/interactive_book_2d.tscn")
 @onready var bookPopup = $UI/Margins/BookPopup
 @onready var bookControl = $UI/Margins/BookPopup/BookContainer
 @onready var BookShown = false
@@ -32,6 +33,9 @@ func LoadLevel():
 	
 	winpopup.Init(levelType, levelId, data[5])
 	sequencer.Init(seq, dud, hintLabel, attemptLabel, order, winpopup)
+	
+	var codexIn = data[7]
+	# Book Initialization
 	bookPopup.visible = false
 	
 func _ready() -> void:
@@ -48,7 +52,7 @@ func _on_codex_button_button_up() -> void:
 		for child in bookControl.get_children():
 			child.queue_free()
 	else:
-		var book = preload("res://scenes/interactive_book_2d.tscn").instantiate()
+		var book = bookScene.instantiate()
 		bookControl.add_child(book)
 	
 	BookShown = !BookShown

@@ -603,6 +603,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_fusle")
 text = "Next Level"
 
 [node name="BookPopup" type="MarginContainer" parent="UI/Margins"]
+visible = false
 z_index = 1
 layout_mode = 2
 mouse_filter = 2
