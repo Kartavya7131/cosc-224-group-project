@@ -1,0 +1,190 @@
+[gd_scene load_steps=14 format=3 uid="uid://w6f0ug7gumcd"]
+
+[ext_resource type="Texture2D" uid="uid://dj7gl8ts1of30" path="res://assets/Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/sky_lightened.png" id="1_jaiv0"]
+[ext_resource type="Script" uid="uid://dr0mu1s4b214t" path="res://script/info_codex.gd" id="1_q207m"]
+[ext_resource type="FontFile" uid="uid://ctf2pk0x6asf8" path="res://School Teachers.otf" id="2_psoyg"]
+[ext_resource type="Texture2D" uid="uid://m3xfe3gc5k2i" path="res://assets/BG_DesertMountains/cloud1.png" id="3_co1gm"]
+[ext_resource type="Texture2D" uid="uid://dsx4jo0smqce5" path="res://assets/BG_DesertMountains/cloud2.png" id="5_o0qe1"]
+[ext_resource type="Texture2D" uid="uid://d1h3g5an1dhu3" path="res://assets/BG_DesertMountains/cloud4.png" id="6_m7vph"]
+[ext_resource type="Texture2D" uid="uid://dt2nrkr2cmevy" path="res://assets/BG_DesertMountains/cloud3.png" id="7_hcvb6"]
+[ext_resource type="Texture2D" uid="uid://da10ex0gor5r8" path="res://assets/BG_DesertMountains/cloud8.png" id="8_vwwdq"]
+[ext_resource type="Texture2D" uid="uid://b4mgloarrn1ko" path="res://assets/BG_DesertMountains/cloud7.png" id="9_ek4l8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_psoyg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q207m"]
+bg_color = Color(0.214923, 0.613613, 0.999999, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 10
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wx0nj"]
+bg_color = Color(0.367501, 0.675869, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 10
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djae2"]
+bg_color = Color(0.591849, 0.822409, 0.999619, 1)
+skew = Vector2(0.05, 0)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 20
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 8
+anti_aliasing_size = 10.0
+
+[node name="Info-codex" type="Node2D"]
+script = ExtResource("1_q207m")
+
+[node name="SkyLightened" type="Sprite2D" parent="."]
+position = Vector2(575, 324)
+scale = Vector2(3.03125, 3.07407)
+texture = ExtResource("1_jaiv0")
+metadata/_edit_lock_ = true
+
+[node name="Cloud1" type="Sprite2D" parent="."]
+position = Vector2(169, 69)
+scale = Vector2(2.15217, 2.02381)
+texture = ExtResource("3_co1gm")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 3.0
+offset_top = -7.0
+offset_right = 1155.0
+offset_bottom = 69.0
+size_flags_horizontal = 6
+theme_override_fonts/font = ExtResource("2_psoyg")
+theme_override_font_sizes/font_size = 84
+text = "Codex/Info"
+horizontal_alignment = 1
+
+[node name="Cloud2" type="Sprite2D" parent="."]
+position = Vector2(68, 624)
+scale = Vector2(1.05102, 1.27778)
+texture = ExtResource("5_o0qe1")
+
+[node name="Back" type="Button" parent="."]
+offset_left = 12.0
+offset_top = 607.0
+offset_right = 74.0
+offset_bottom = 639.0
+theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
+theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
+theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
+theme_override_fonts/font = ExtResource("2_psoyg")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_psoyg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q207m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wx0nj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_djae2")
+text = "Back"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 3.0
+offset_top = 63.0
+offset_right = 1152.0
+offset_bottom = 576.0
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+text = " [b]Game info[/b]
+
+   - The SQL Injection Adventure is an interactive web-based game designed to teach students the dangers of injection attacks and how to mitigate
+ them. The game introduces players to SQL injection concepts through hands-on challenges. 
+
+   - Players take on the role of either an \"attacker\" or a \"defender\", with the attacker role consisting of completing scenarios from the perspective of 
+someone trying to use SQL injection techniques to maliciously access a database, and the defender role consisting of completing tasks from the 
+perspective of someone trying to prevent different types of SQL injection attacks.  
+
+[b]How to play the game[/b]
+
+   - Click the start game button.
+   - Choose between the attacking or defending role by clicking the button for either role.
+   - Click on level 1, or any of the levels that have been unlocked and begin playing the game.
+
+   - Once in a level, read the prompt and select the keywords or assemble the sql query in the correct order and click \"submit\" to check if your answer.
+   - After a level has been correctly completed, the next level will be unlocked. 
+
+[b]Link to W3 Schools SQL page[/b]
+
+  W3 Schools Sql Page: https://www.w3schools.com/sql/default.asp
+  W3 Schools Sql Injection Page: https://www.w3schools.com/sql/sql_injection.asp
+
+[b]Names of Project developers (us)[/b]
+
+   Kody Iverson
+   Jordan Newman
+   Quintin Dennison
+   Kartavya Patel
+
+[b]Name of Project Owner[/b]
+
+   Dylan Huitema
+
+[b]Credits for external assets used[/b] 
+
+BG_DesertMountains - https://szadiart.itch.io
+
+Interactive book -  https://bytechompgames.itch.io/interactive-book-2d-godot-4
+
+BackGround Scene and Colors - 
+Glacial-mountains-parallax-background_vnitti_v3
+
+This pixel art piece is licensed under a Creative Commons Atribution 4.0 International license CC BY 4.0,
+
+which reads the following:
+
+You are free to:
+	+ Share — copy and redistribute the material in any medium or format
+	+ Adapt — remix, transform, and build upon the material for any purpose, even commercially.
+
+Under the following terms:
+	+ Attribution — You must give appropriate credit, provide a link to the license, and indicate if
+	  changes were made. You may do so in any reasonable manner, but not in any way that suggests the
+	  licensor endorses you or your use.
+
+	+ No additional restrictions — You may not apply legal terms or technological measures that legally
+	  restrict others from doing anything the license permits.
+
+License - http://creativecommons.org/licenses/by/4.0/
+
+You are not required to credit this asset if you paid for it. However it will be greatly appreciated.
+
+=== FIND ME ON ===
+Twitter:   twitter.com/vnitti_art
+Itch.io:     vnitti.itch.io/
+Portfolio:  behance.net/vnitti
+                artstation.com/vnitti
+                deviantart.com/vnitti
+
+"
+metadata/_edit_lock_ = true
+
+[node name="Cloud4" type="Sprite2D" parent="."]
+position = Vector2(1058, 24)
+scale = Vector2(1.34472, 1.68519)
+texture = ExtResource("6_m7vph")
+
+[node name="Cloud3" type="Sprite2D" parent="."]
+position = Vector2(407, 23)
+texture = ExtResource("7_hcvb6")
+
+[node name="Cloud8" type="Sprite2D" parent="."]
+position = Vector2(802, 614)
+texture = ExtResource("8_vwwdq")
+
+[node name="Cloud7" type="Sprite2D" parent="."]
+position = Vector2(931, 43)
+texture = ExtResource("9_ek4l8")
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
