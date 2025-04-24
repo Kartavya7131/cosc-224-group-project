@@ -9,6 +9,7 @@ extends Node2D
 @onready var attemptLabel = $UI/Margins/Body/BottomBar/VBoxContainer/HBoxContainer2/MarginContainer/Label2
 
 @onready var bookPopup = $UI/Margins/BookPopup
+@onready var bookControl = $UI/Margins/BookPopup/BookContainer
 @onready var BookShown = false
 
 @export var levelId: int
@@ -44,11 +45,11 @@ func GoBack_pressed() -> void:
 
 func _on_codex_button_button_up() -> void:
 	if BookShown:
-		for child in bookPopup.get_children():
+		for child in bookControl.get_children():
 			child.queue_free()
 	else:
 		var book = preload("res://scenes/interactive_book_2d.tscn").instantiate()
-		bookPopup.add_child(book)
+		bookControl.add_child(book)
 	
 	BookShown = !BookShown
 	bookPopup.visible = BookShown
