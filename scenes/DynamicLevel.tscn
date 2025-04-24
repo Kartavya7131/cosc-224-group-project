@@ -478,7 +478,6 @@ size_flags_horizontal = 0
 size_flags_stretch_ratio = 2.0
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
 theme_override_colors/font_color = Color(0, 0.558128, 0.986688, 1)
-theme_override_colors/font_focus_color = Color(0, 0.556863, 0.988235, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.490196, 0.490196, 1)
 theme_override_fonts/font = ExtResource("3_ycdxj")
 theme_override_font_sizes/font_size = 35
