@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://rhafu7ofsxx8"]
 
-[ext_resource type="Script" path="res://script/main_menu.gd" id="1_3vale"]
+[ext_resource type="Script" uid="uid://bjm2ihci5byu4" path="res://script/main_menu.gd" id="1_2wh52"]
 [ext_resource type="Texture2D" uid="uid://llohm7vbc7bv" path="res://background_glacial_mountains_lightened.png" id="2_o653c"]
 [ext_resource type="FontFile" uid="uid://ctf2pk0x6asf8" path="res://School Teachers.otf" id="3_a3ru2"]
 
@@ -51,7 +51,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_3vale")
+script = ExtResource("1_2wh52")
 
 [node name="BackgroundGlacialMountainsLightened" type="Sprite2D" parent="."]
 position = Vector2(577.5, 323)
