@@ -48,12 +48,14 @@ func GoBack_pressed() -> void:
 		get_tree().change_scene_to_file("res://scenes/DefenderPage.tscn")
 
 func _on_codex_button_button_up() -> void:
+	var data = LevelsData.GetLevelData(levelType, levelId)
 	if BookShown:
 		for child in bookControl.get_children():
 			child.queue_free()
 	else:
 		var book = bookScene.instantiate()
 		bookControl.add_child(book)
+		book.init_page(levelType, levelId, LevelsData)
 	
 	BookShown = !BookShown
 	bookPopup.visible = BookShown

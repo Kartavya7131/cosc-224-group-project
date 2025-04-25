@@ -797,16 +797,16 @@ texture_filter = 1
 position = Vector2(649, 320)
 scale = Vector2(11, 10)
 sprite_frames = SubResource("SpriteFrames_vxube")
-animation = &"previous_to_first"
+animation = &"close_from_first"
 autoplay = "closed_front"
 script = ExtResource("2_j3gqr")
 metadata/_edit_horizontal_guides_ = [-121.0]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 2.0
-offset_top = -16.0
-offset_right = 474.0
-offset_bottom = 744.0
+offset_left = 1.63647
+offset_top = -16.6
+offset_right = 398.636
+offset_bottom = 605.4
 scale = Vector2(0.06, 0.06)
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)

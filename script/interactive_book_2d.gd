@@ -1,30 +1,43 @@
 extends AnimatedSprite2D
 class_name InteractiveBook2D
 
-@export var page_count : int = 5 # total pages in the book, keep this to at leat 5 if you want all animations to work
 @onready var pagelabel = $RichTextLabel
-var current_page : int = 0 # tracks the current page the book is displaying
+var current_page := 0
+var page_text := [""]  # Initialize with an empty array to store page contents
+var page_count := 0
 
-var page_text = [
-	"           [color=white][b]Welcome![/b] 
-	Prepare to explore 
-	SQL Injection![/color]",
-	"In this lab, we’ll explore 
-[u]SQL injection concepts.[/u]",
-"[i]Try using basic SQL 
-commands[/i] like [code]SELECT[/code] 
-and [code]WHERE[/code].",
-	"[color=red]Watch out![/color] Attackers may 
-try to inject malicious 
-queries.",
-	" "," "
-]
+# Initialize pages with content
+func init_page(attacker: bool, level_id: int, level_loader_ref):
+	var LevelLoader = level_loader_ref
+	var level_data = LevelLoader.GetLevelData(attacker, level_id)
+
+	page_text.clear()
+
+	# Page 0: Title
+	page_text.append("[b]      %s[/b]" % level_data[0])
+
+	# Page 1: Description
+	page_text.append("[b]Description:[/b]\n" + level_data[1])
+
+	# Page 4: Codex Entry
+	if level_data[7].size() > 0:
+		var codex = "[b]Codex Entry:[/b]\n"
+		for entry in level_data[7]:
+			codex += "- " + entry + "\n"
+		page_text.append(codex)
+	else:
+		page_text.append("[b]Codex Entry:[/b]\n[i]No entry available for this level.[/i]")
+
+	# Set page count and display
+	page_count = page_text.size()
+	current_page = 0
+	update_page_text()
 
 func update_page_text():
 	pagelabel.clear()
 	pagelabel.append_text(page_text[current_page])
 
-# - set the book to be closed when the scene is loaded
+# - Set the book to be closed when the scene is loaded
 func _ready():
 	current_page = 0
 	go_to_page(current_page)
@@ -34,22 +47,15 @@ func _ready():
 # - Use this to always get a page number that is within the set page count
 # - Cycles the number when a value outside the accepted range is provided
 func clamp_current_page(new_page : int) -> int:
-	# - negative values are interpreted as wanting to go to the last page
+	# If new_page is less than 0, go to the last page
 	if new_page < 0:
-		new_page = page_count
-	# - number greater than the page count are interpreted as wanting to go back to the first
-	elif new_page > page_count:
-		new_page = 0
-	
-	return new_page # return the updated number once in accepted range
+		return page_count - 1
+	# If new_page exceeds the page count, go to the first page
+	elif new_page >= page_count:
+		return 0
+	return new_page
 
-# - Handles all the different conditions for playing a speciic animation on the book
-# - Checks for invalid page values, and exits the method if it cannot go to the given page
-# - When a valid page number is given, it first checks for all conditions where a unique animation is needed.
-# - Unique animations are open book, close book, flip book, next / previous from first / last page
-# - Correct unique animation played if matching criteria found
-# - If no unqiue animation is needed, it plays a standard next or previous page animation
-# - Which one it chooses is based on if the given number is higher or lower than the current page 
+# - Handle page transition logic with animations
 func go_to_page(page : int):
 	# do nothing if already at the given page
 	if current_page == page:
@@ -105,21 +111,18 @@ func go_to_page(page : int):
 	
 	current_page = page # set current page to the new page
 
-# - recieves signal from NextPageButton
+
+# Button logic for cycling through pages
 func _on_next_page_button_button_down():
 	go_to_page(clamp_current_page(current_page + 1))
-	
 
-# - recieves signal from PreviousPageButton
 func _on_previous_page_button_button_down():
 	go_to_page(clamp_current_page(current_page - 1))
-	
 
-# - recieves signal from CloseButton
 func _on_close_button_button_down():
-	go_to_page(clamp_current_page(0))
+	go_to_page(0)  # Close book to first page
 
 func _on_animation_finished():
 	print("Animation finished. Current page:", current_page)
 	pagelabel.visible = true  # Show the label after animation ends
-	update_page_text()              # Make sure text is refreshed
+	update_page_text()  # Make sure text is refreshed
