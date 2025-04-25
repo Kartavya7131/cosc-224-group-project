@@ -12,7 +12,7 @@ var DefenderLevels = {
 		"seq": ["Use Prepared Statement","Input Validation","ORM Framework", "Least Privilege"],
 		"dud": ["Use String Concatenation","Disable Errors", "Trust Admin Input", "Client-side Checks Only"],
 		"windesc": " SQL INJECTION BLOCKED USING DEFENSE-IN-DEPTH.\nINPUT WAS VALIDATED AND EXECUTED VIA SAFE DATABASE INTERFACES.\n'OR 1=1' HAD NO EFFECT ON THE QUERY EXECUTION.",
-		"codexEntry": [],
+		"codexEntry": ["Avoid building queries by directly attaching user input. Instead, look into methods that separate logic from values — these techniques stop injected logic from being interpreted."],
 		"hasOrder": false
 		},
 	1: {
@@ -21,7 +21,7 @@ var DefenderLevels = {
 		"seq": ["SELECT *", "FROM users", "WHERE", "Username =", "QUOTE('Input');"],
 		"dud": ["NULL", "PROCESS('Input');"],
 		"windesc": "BY USING DATABASE ESCAPING WITH QUOTE(), \nYOU NEUTRALIZED MALICIOUS INPUT. \nSPECIAL CHARACTERS WERE HANDLED SAFELY, PREVENTING THE INJECTION.",
-		"codexEntry": []
+		"codexEntry": ["Special characters in strings can break query structure. Consider functions that neutralize input by wrapping or escaping it safely."]
 		},
 	2: {
 		"desc": "The following code segment is used to store a users comments and is vulnerable to SQL injection:\n\nINSERT INTO comments (text) VALUES ('\" + Hacking the database + \"');\nYour job is to fix the query to prevent malicious injection attacks.\n\n *note* : Define the method before defining variable(s)",
@@ -29,7 +29,7 @@ var DefenderLevels = {
 		"seq": ["PREPARE stmt FROM", "\'INSERT INTO comments (text) VALUES (?)\';", "SET @input = [user_input];", "EXECUTE stmt", "USING @input;"],
 		"dud": ["INSERT 'user_input'", "STRING user_input", "SELECT ALL", "CONCAT(user_input)"],
 		"windesc": "YOU'VE SAFELY STORED USER COMMENTS USING PREPARED STATEMENTS. \nWELL DONE",
-		"codexEntry": []
+		"codexEntry": ["When handling text input, think about whether the input is ever executed as code. Using the right database feature can force the system to treat it as plain data only."]
 		},
 	3: {
 		"desc": "A system is using query to check a user's existence:\nSELECT * FROM users WHERE username = '\" + MyAccount + \"';\n\nAn attacker is using the statment:\n' OR IF(1=1, SLEEP(5), 0);--\n\n This statment causes a delay to check vulnerablility. \nYou must write a query to defend against this type of SQL injection attack.",
@@ -37,17 +37,17 @@ var DefenderLevels = {
 		"seq": ["PREPARE stmt FROM", "\'SELECT * FROM users", "WHERE username = (?)\'", "SET @input = [user_input];", "EXECUTE stmt", "USING @input;"],
 		"dud": ["USE CONCAT", "TRIM input", "LOG delay", "SET timeout = 0"],
 		"windesc": "BY USING DATABASE ESCAPING WITH QUOTE(),\n YOU NEUTRALIZED MALICIOUS INPUT.\n SPECIAL CHARACTERS WERE HANDLED SAFELY, PREVENTING THE INJECTION.",
-		"codexEntry": []
+		"codexEntry": ["Time-based probes rely on control flow logic. To block these, ensure user inputs can't affect conditionals — enforce strict structure in query execution."]
 		}
 }
 var AttackerLevels = {
 	0: {
-		"desc": "You found a login form that checks for username and password\n The query used is: SELECT * FROM users WHERE username = 'INPUT' AND password = 'INPUT';\n You must log in without knowing the correct password! ",
+		"desc": "You found a login form that checks for username and password\n The query used is:\n SELECT * FROM users WHERE username = 'INPUT' AND password = 'INPUT';\n You must log in without knowing the correct password! ",
 		"hint": "Try creating an SQL statment that will always equate to true",
 		"seq": ["OR 1=1;", "--"],
 		"dud": ["1=2", "DROP TABLE users", "UPDATE users SET"],
 		"windesc": "WITH A CORRECT INJECTION STATEMENT,\n YOU GAINED ACCESS TO THE ACCOUNT WITHOUT A PASSWORD.\n THE LOGIN QUERY RETURNED TRUE FOR ALL INPUTS.\nUSERNAME: Player 1\nPASSWORD: **** OR '1' = '1';",
-		"codexEntry": ["hi", "hello"]
+		"codexEntry": ["Think about how logical operators in SQL behave. If any part of a WHERE clause is true, the whole thing can pass. Can you craft a condition that always returns true, regardless of the input?"]
 		},
 	1: {
 		"desc": "You are trying to access a data base using this SQL statment\n SELECT id, username, password FROM users WHERE id = 'input'; \n How can you extract all user data? ",
@@ -55,7 +55,7 @@ var AttackerLevels = {
 		"seq": ["UNION SELECT id,", "username,","password FROM users;"],
 		"dud": ["SELECT *", "WHERE TABLE = 'users';", "UPDATE users SET"],
 		"windesc": "YOU INJECTED A UNION QUERY AND \nRETRIEVED ALL USER RECORDS FROM THE DATABASE.\nFULL CREDENTIAL LEAK ACHIEVED.",
-		"codexEntry": []
+		"codexEntry": ["SQL can combine results from multiple queries using a special keyword. Explore whether your injection can extend the original result set with your own data — but make sure your columns align."]
 		},
 	2: {
 		"desc": "You have find a system updates user passwords with:\n UPDATE users SET password = 'input' WHERE username = 'input'; \n How can you change the admin's password to hacked?",
@@ -63,7 +63,7 @@ var AttackerLevels = {
 		"seq": ["UPDATE users", "SET password = 'hacked'","WHERE username = 'admin';"],
 		"dud": ["SelectTable", "From TABLE = 'users';"],
 		"windesc": " YOU SUCCESSFULLY INJECTED\n AN UPDATE STATEMENT TO RESET THE ADMIN PASSWORD.\n THE DATABASE WAS MODIFIED.",
-		"codexEntry": []
+		"codexEntry": ["Some systems don't stop you after one SQL statement. Try closing the current query cleanly and then think about how to introduce a second, malicious one."]
 		},
 	3: {
 		"desc": "A system verifies user access using:\n SELECT * FROM users WHERE username = 'input'; \n  How can you check if the system is vulnerable without seeing output?",
@@ -71,7 +71,7 @@ var AttackerLevels = {
 		"seq": ["OR IF(", "1=1,","SLEEP(5),","0",");--"],
 		"dud": ["ELSE IF(", "Password=1","Sleep()"],
 		"windesc": "YOU DEPLOYED A TIME-BASED SQL INJECTION TO MEASURE RESPONSE DELAYS. \nA 5-SECOND DELAY CONFIRMS SQLI VULNERABILITY.\nPAYLOAD: ' OR IF(1=1, SLEEP(5), 0);",
-		"codexEntry": []
+		"codexEntry": ["If you can't see data, can you still detect behavior? Look into ways SQL can delay responses — time itself can be used as a signal."]
 		}
 }
 
