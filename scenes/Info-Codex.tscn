@@ -117,8 +117,8 @@ perspective of someone trying to prevent different types of SQL injection attack
 
 [b]Link to W3 Schools SQL page[/b]
 
-  W3 Schools Sql Page: https://www.w3schools.com/sql/default.asp
-  W3 Schools Sql Injection Page: https://www.w3schools.com/sql/sql_injection.asp
+  W3 Schools Sql Page: [url]https://www.w3schools.com/sql/default.asp[/url]
+  W3 Schools Sql Injection Page: [url]https://www.w3schools.com/sql/sql_injection.asp[/url]
 
 [b]Names of Project developers (us)[/b]
 
@@ -133,9 +133,9 @@ perspective of someone trying to prevent different types of SQL injection attack
 
 [b]Credits for external assets used[/b] 
 
-BG_DesertMountains - https://szadiart.itch.io
+BG_DesertMountains - [url]https://szadiart.itch.io[/url]
 
-Interactive book -  https://bytechompgames.itch.io/interactive-book-2d-godot-4
+Interactive book -  [url]https://bytechompgames.itch.io/interactive-book-2d-godot-4[/url]
 
 BackGround Scene and Colors - 
 Glacial-mountains-parallax-background_vnitti_v3
@@ -156,7 +156,7 @@ Under the following terms:
 	+ No additional restrictions — You may not apply legal terms or technological measures that legally
 	  restrict others from doing anything the license permits.
 
-License - http://creativecommons.org/licenses/by/4.0/
+License - [url]http://creativecommons.org/licenses/by/4.0/[/url]
 
 You are not required to credit this asset if you paid for it. However it will be greatly appreciated.
 
@@ -168,7 +168,6 @@ Portfolio:  behance.net/vnitti
                 deviantart.com/vnitti
 
 "
-metadata/_edit_lock_ = true
 
 [node name="Cloud4" type="Sprite2D" parent="."]
 position = Vector2(1058, 24)
