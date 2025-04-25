@@ -803,6 +803,7 @@ script = ExtResource("2_j3gqr")
 metadata/_edit_horizontal_guides_ = [-121.0]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+texture_filter = 2
 offset_left = 1.63647
 offset_top = -16.6
 offset_right = 398.636
@@ -819,7 +820,7 @@ theme_override_font_sizes/bold_italics_font_size = 60
 theme_override_font_sizes/italics_font_size = 60
 theme_override_font_sizes/mono_font_size = 60
 theme_override_font_sizes/normal_font_size = 60
-theme_override_font_sizes/bold_font_size = 60
+theme_override_font_sizes/bold_font_size = 75
 justification_flags = 0
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false

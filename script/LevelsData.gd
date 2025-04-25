@@ -47,7 +47,7 @@ var AttackerLevels = {
 		"seq": ["OR 1=1;", "--"],
 		"dud": ["1=2", "DROP TABLE users", "UPDATE users SET"],
 		"windesc": "WITH A CORRECT INJECTION STATEMENT,\n YOU GAINED ACCESS TO THE ACCOUNT WITHOUT A PASSWORD.\n THE LOGIN QUERY RETURNED TRUE FOR ALL INPUTS.\nUSERNAME: Player 1\nPASSWORD: **** OR '1' = '1';",
-		"codexEntry": []
+		"codexEntry": ["hi", "hello"]
 		},
 	1: {
 		"desc": "You are trying to access a data base using this SQL statment\n SELECT id, username, password FROM users WHERE id = 'input'; \n How can you extract all user data? ",

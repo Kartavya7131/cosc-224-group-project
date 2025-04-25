@@ -14,28 +14,33 @@ func init_page(attacker: bool, level_id: int, level_loader_ref):
 	page_text.clear()
 
 	# Page 0: Title
-	page_text.append("[b]      %s[/b]" % level_data[0])
+	page_text.append("[b][center][color=white]\n\n%s[/color][/center][/b]" % level_data[0])
 
 	# Page 1: Description
 	page_text.append("[b]Description:[/b]\n" + level_data[1])
-
+	
 	# Page 4: Codex Entry
+	# Page 4+: Codex Pages
 	if level_data[7].size() > 0:
-		var codex = "[b]Codex Entry:[/b]\n"
-		for entry in level_data[7]:
-			codex += "- " + entry + "\n"
-		page_text.append(codex)
+		for entry_index in level_data[7].size():
+			var codex_entry = level_data[7][entry_index]
+			page_text.append("\n%s" % [codex_entry])
 	else:
-		page_text.append("[b]Codex Entry:[/b]\n[i]No entry available for this level.[/i]")
+		page_text.append("\n\n[b]Codex Entry:[/b]\n[i]No entry available for this level.[/i]")
+
+	page_text.append("")
 
 	# Set page count and display
-	page_count = page_text.size()
+	page_count = page_text.size() 
 	current_page = 0
 	update_page_text()
 
 func update_page_text():
-	pagelabel.clear()
-	pagelabel.append_text(page_text[current_page])
+	if current_page >= 0 and current_page < page_text.size():
+		pagelabel.clear()
+		pagelabel.append_text(page_text[current_page])
+	else:
+		print("Invalid page index: ", current_page)
 
 # - Set the book to be closed when the scene is loaded
 func _ready():
@@ -49,10 +54,10 @@ func _ready():
 func clamp_current_page(new_page : int) -> int:
 	# If new_page is less than 0, go to the last page
 	if new_page < 0:
-		return page_count - 1
-	# If new_page exceeds the page count, go to the first page
-	elif new_page >= page_count:
-		return 0
+		new_page = page_count
+	# - number greater than the page count are interpreted as wanting to go back to the first
+	elif new_page > page_count:
+		new_page = 0
 	return new_page
 
 # - Handle page transition logic with animations
