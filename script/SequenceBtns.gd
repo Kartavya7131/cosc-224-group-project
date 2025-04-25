@@ -16,7 +16,6 @@ var hint
 var attempt
 
 var hasOrder = true
-
 var WinPopup
 
 func Init(seq : Array[String], duds: Array[String], hintLabel, attemptLabel, order:bool, winpop):
@@ -42,51 +41,50 @@ func Clear():
 		buttons.remove_child(child)
 		
 func Submit():
-	if (hasOrder):
-		if SelSequence == Sequence:
-			print("Correct")
-			WinPopup.show()
-			
-		else:
-			print("Wrong")
-			Reset()
-			
-			attempts += 1
-			attempt.text = "Attempts: %d" % attempts
-			
-			if attempts >= 3:
-				hint.show()
-	else:
-		var matches = true
-		for item in SelSequence:
-			if (!Sequence.has(item)):
-				matches = false
-				break
-		
-		if (matches):
-			if (SelSequence.size() == Sequence.size()):
+	if (SelSequence.size() > 0):
+		if (hasOrder):
+			if SelSequence == Sequence:
 				print("Correct")
 				WinPopup.show()
+				
 			else:
-				print("Your Missing Some Answers")
+				print("Wrong")
+				Reset()
 				
 				attempts += 1
 				attempt.text = "Attempts: %d" % attempts
-			
+				
 				if attempts >= 3:
 					hint.show()
 		else:
-			print("Incorrect")
-			Reset()
+			var matches = true
+			for item in SelSequence:
+				if (!Sequence.has(item)):
+					matches = false
+					break
 			
-			attempts += 1
-			attempt.text = "Attempts: %d" % attempts
-			
-			if attempts >= 3:
-				hint.show()
-			
-			
-	
+			if (matches):
+				if (SelSequence.size() == Sequence.size()):
+					print("Correct")
+					WinPopup.show()
+				else:
+					print("Your Missing Some Answers")
+					
+					attempts += 1
+					attempt.text = "Attempts: %d" % attempts
+				
+					if attempts >= 3:
+						hint.show()
+			else:
+				print("Incorrect")
+				Reset()
+				
+				attempts += 1
+				attempt.text = "Attempts: %d" % attempts
+				
+				if attempts >= 3:
+					hint.show()
+
 func Reset():
 	SelSequence.clear()
 	label.text = "Selected: "
