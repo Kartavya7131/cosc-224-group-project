@@ -7,22 +7,19 @@ var page_text := [""]  # Initialize with an empty array to store page contents
 var page_count := 0
 
 # Initialize pages with content
-func init_page(attacker: bool, level_id: int, level_loader_ref):
-	var LevelLoader = level_loader_ref
-	var level_data = LevelLoader.GetLevelData(attacker, level_id)
-
+func init_page(title, desc, codexData):
 	page_text.clear()
 
 	# Page 0: Title
-	page_text.append("[b][center][color=white]\n\n%s[/color][/center][/b]" % level_data[0])
+	page_text.append("[b][center][color=white]\n\n%s[/color][/center][/b]" % title)
 
 	# Page 1: Description
-	page_text.append("[b]Description:[/b]\n" + level_data[1])
+	page_text.append("[b]Description:[/b]\n" + desc)
 	
 	# Page 2+: Codex Pages
-	if level_data[7].size() > 0:
-		for entry_index in level_data[7].size():
-			var codex_entry = level_data[7][entry_index]
+	if codexData.size() > 0:
+		for entry_index in codexData.size():
+			var codex_entry = codexData[entry_index]
 			page_text.append("[b]codex:[/b]\n%s" % [codex_entry])
 	else:
 		page_text.append("\n[b]Codex Entry:[/b]\n[i]No entry available for this level.[/i]")
@@ -31,8 +28,6 @@ func init_page(attacker: bool, level_id: int, level_loader_ref):
 
 	# Set page count and display
 	page_count = page_text.size() 
-	current_page = 0
-	update_page_text()
 
 func update_page_text():
 	if current_page >= 0 and current_page < page_text.size():
