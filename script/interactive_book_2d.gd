@@ -19,14 +19,13 @@ func init_page(attacker: bool, level_id: int, level_loader_ref):
 	# Page 1: Description
 	page_text.append("[b]Description:[/b]\n" + level_data[1])
 	
-	# Page 4: Codex Entry
-	# Page 4+: Codex Pages
+	# Page 2+: Codex Pages
 	if level_data[7].size() > 0:
 		for entry_index in level_data[7].size():
 			var codex_entry = level_data[7][entry_index]
-			page_text.append("\n%s" % [codex_entry])
+			page_text.append("[b]codex:[/b]\n%s" % [codex_entry])
 	else:
-		page_text.append("\n\n[b]Codex Entry:[/b]\n[i]No entry available for this level.[/i]")
+		page_text.append("\n[b]Codex Entry:[/b]\n[i]No entry available for this level.[/i]")
 
 	page_text.append("")
 
