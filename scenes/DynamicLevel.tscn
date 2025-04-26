@@ -196,16 +196,15 @@ scale = Vector2(0.758503, 0.759259)
 texture = ExtResource("9_miyxp")
 
 [node name="Clouds3" type="MarginContainer" parent="UI/Background"]
-visible = false
 layout_mode = 2
 
 [node name="Cloud8" type="Sprite2D" parent="UI/Background/Clouds3"]
-position = Vector2(405.75, 535.25)
+position = Vector2(405.75, 519.25)
 scale = Vector2(1.44937, 1.18293)
 texture = ExtResource("12_dd1u6")
 
 [node name="Cloud7" type="Sprite2D" parent="UI/Background/Clouds3"]
-position = Vector2(507, 551)
+position = Vector2(524, 513)
 texture = ExtResource("13_dd1u6")
 
 [node name="Cloud9" type="Sprite2D" parent="UI/Background/Clouds3"]
