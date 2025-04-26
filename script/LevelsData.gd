@@ -16,7 +16,7 @@ var DefenderLevels = {
 		"hasOrder": false
 		},
 	1: {
-		"desc": "Someone is trying to bypass the login page using an \"OR '1'='1'\" statement \n\nThe Query they are giving is:\nSELECT * FROM users WHERE username = 'name' OR '1'='1'-- AND password = 'pass'; \nRewrite the query to ensure that this attack is invalid!",
+		"desc": "Someone is trying to bypass the login page using an \"OR '1'='1'\" statement \n\nThe Query they are giving is:\nSELECT * FROM users WHERE username = 'name' OR '1'='1'-- AND password = 'pass'; \nHow can you modify the query construction to neutralize this risk?",
 		"hint": "QUOTE() function automatically avoids special characters like '.",
 		"seq": ["SELECT *", "FROM users", "WHERE", "Username =", "QUOTE('Input');"],
 		"dud": ["NULL", "PROCESS('Input');"],
@@ -44,31 +44,31 @@ var AttackerLevels = {
 	0: {
 		"desc": "You found a login form that checks for username and password\n The query used is:\n SELECT * FROM users WHERE username = 'INPUT' AND password = 'INPUT';\n You must log in without knowing the correct password! ",
 		"hint": "Try creating an SQL statment that will always equate to true",
-		"seq": ["OR 1=1;", "--"],
-		"dud": ["1=2", "DROP TABLE users", "UPDATE users SET"],
+		"seq": ["OR","'1'='1';", "--"],
+		"dud": ["'1'='2';", "DROP TABLE users", "UPDATE users SET"],
 		"windesc": "WITH A CORRECT INJECTION STATEMENT,\n YOU GAINED ACCESS TO THE ACCOUNT WITHOUT A PASSWORD.\n THE LOGIN QUERY RETURNED TRUE FOR ALL INPUTS.\nUSERNAME: Player 1\nPASSWORD: **** OR '1' = '1';",
 		"codexEntry": ["Think about how logical operators in SQL behave. If any part of a WHERE clause is true, the whole thing can pass. Can you craft a condition that always returns true, regardless of the input?"]
 		},
 	1: {
 		"desc": "You are trying to access a data base using this SQL statment\n SELECT id, username, password FROM users WHERE id = 'input'; \n How can you extract all user data? ",
 		"hint": "Try using UNION SELECT for retrieving multiple query results.",
-		"seq": ["UNION SELECT id,", "username,","password FROM users;"],
-		"dud": ["SELECT *", "WHERE TABLE = 'users';", "UPDATE users SET"],
+		"seq": ["UNION SELECT id,", "username,","password FROM users;--"],
+		"dud": ["SELECT *", "WHERE TABLE = 'users'--;", "UPDATE users SET"],
 		"windesc": "YOU INJECTED A UNION QUERY AND \nRETRIEVED ALL USER RECORDS FROM THE DATABASE.\nFULL CREDENTIAL LEAK ACHIEVED.",
 		"codexEntry": ["SQL can combine results from multiple queries using a special keyword. Explore whether your injection can extend the original result set with your own data — but make sure your columns align."]
 		},
 	2: {
-		"desc": "You have find a system updates user passwords with:\n UPDATE users SET password = 'input' WHERE username = 'input'; \n How can you change the admin's password to hacked?",
-		"hint": "Try using UNION SELECT for retrieving multiple query results.",
-		"seq": ["UPDATE users", "SET password = 'hacked'","WHERE username = 'admin';"],
-		"dud": ["SelectTable", "From TABLE = 'users';"],
-		"windesc": " YOU SUCCESSFULLY INJECTED\n AN UPDATE STATEMENT TO RESET THE ADMIN PASSWORD.\n THE DATABASE WAS MODIFIED.",
+		"desc": "You have discovered a vulnerable system that allows you to modify\n user data through input fields.\n How could you manipulate the system to reset the admin's password without authorization?",
+		"hint": "Consider how ending a query early could let you inject a new SQL command,\n Try injecting an UPDATE statement",
+		"seq": ["UPDATE users", "SET password = 'hacked'", "WHERE username = 'admin';--"],
+		"dud": ["SelectTable", "From TABLE = 'users';--"],
+		"windesc": "YOU SUCCESSFULLY INJECTED\nAN UPDATE STATEMENT TO RESET THE ADMIN PASSWORD.\nTHE DATABASE WAS MODIFIED.",
 		"codexEntry": ["Some systems don't stop you after one SQL statement. Try closing the current query cleanly and then think about how to introduce a second, malicious one."]
-		},
+},
 	3: {
 		"desc": "A system verifies user access using:\n SELECT * FROM users WHERE username = 'input'; \n  How can you check if the system is vulnerable without seeing output?",
 		"hint": "Use a timing-based attack to detect vulnerabilities.",
-		"seq": ["OR IF(", "1=1,","SLEEP(5),","0",");--"],
+		"seq": ["OR IF(", "'1'='1',","SLEEP(5),","'0'",");--"],
 		"dud": ["ELSE IF(", "Password=1","Sleep()"],
 		"windesc": "YOU DEPLOYED A TIME-BASED SQL INJECTION TO MEASURE RESPONSE DELAYS. \nA 5-SECOND DELAY CONFIRMS SQLI VULNERABILITY.\nPAYLOAD: ' OR IF(1=1, SLEEP(5), 0);",
 		"codexEntry": ["If you can't see data, can you still detect behavior? Look into ways SQL can delay responses — time itself can be used as a signal."]
