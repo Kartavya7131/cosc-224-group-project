@@ -52,7 +52,9 @@ func _on_codex_button_button_up() -> void:
 		for child in bookControl.get_children():
 			child.queue_free()
 	else:
-		bookControl.add_child(bookScene)
+		var newBookScene = preload("res://scenes/interactive_book_2d.tscn").instantiate()
+		newBookScene.init_page(data[0], data[1], data[7])
+		bookControl.add_child(newBookScene)
 	
 	BookShown = !BookShown
 	bookPopup.visible = BookShown
