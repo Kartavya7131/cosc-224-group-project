@@ -7,8 +7,8 @@ extends Node
 
 var DefenderLevels = {
 	0: {
-		"desc": "Someone is trying to bypass the login page using an \"OR '1'='1'\" \n statement what methodes can be used to prevent the SQL injection from happening?",
-		"hint": "Avoid relying on tricks like string concat or client-side checks.",
+		"desc": "Someone is trying to bypass the login page using an \"OR '1'='1'\" \n statement what methods can be used to prevent the SQL injection from happening?",
+		"hint": "Avoid relying on tricks like string concatination or client-side checks.",
 		"seq": ["Use Prepared Statement","Input Validation","ORM Framework", "Least Privilege"],
 		"dud": ["Use String Concatenation","Disable Errors", "Trust Admin Input", "Client-side Checks Only"],
 		"windesc": " SQL INJECTION BLOCKED USING DEFENSE-IN-DEPTH.\nINPUT WAS VALIDATED AND EXECUTED VIA SAFE DATABASE INTERFACES.\n'OR 1=1' HAD NO EFFECT ON THE QUERY EXECUTION.",
@@ -24,12 +24,12 @@ var DefenderLevels = {
 		"codexEntry": ["Special characters in strings can break query structure. Consider functions that neutralize input by wrapping or escaping it safely."]
 		},
 	2: {
-		"desc": "The following code segment is used to store a users comments and is vulnerable to SQL injection:\n\nINSERT INTO comments (text) VALUES ('\" + Hacking the database + \"');\nYour job is to fix the query to prevent malicious injection attacks.\n\n *note* : Define the method before defining variable(s)",
-		"hint": "Use  a methods that prevent raw input from being executed as code.",
+		"desc": "The following code segment is used to store a user's comments and is vulnerable to SQL injection:\n\nINSERT INTO comments (text) VALUES ('\" + Hacking the database + \"');\nYour job is to fix the query to prevent malicious injection attacks.\n\n *note* : Define the method before defining variable(s)",
+		"hint": "Use a method that prevents raw input from being executed as code.",
 		"seq": ["PREPARE stmt FROM", "\'INSERT INTO comments (text) VALUES (?)\';", "SET @input = [user_input];", "EXECUTE stmt", "USING @input;"],
 		"dud": ["INSERT 'user_input'", "STRING user_input", "SELECT ALL", "CONCAT(user_input)"],
 		"windesc": "YOU'VE SAFELY STORED USER COMMENTS USING PREPARED STATEMENTS. \nWELL DONE",
-		"codexEntry": ["When handling text input, think about whether the input is ever executed as code. Using the right database feature can force the system to treat it as plain data only."]
+		"codexEntry": ["When handling text input, think about whether the input would ever be executed as code. Using the right database feature can force the system to treat it as plain data only."]
 		},
 	3: {
 		"desc": "A system is using query to check a user's existence:\nSELECT * FROM users WHERE username = '\" + MyAccount + \"';\n\nAn attacker is using the statment:\n' OR IF(1=1, SLEEP(5), 0);--\n\n This statment causes a delay to check vulnerablility. \nYou must write a query to defend against this type of SQL injection attack.",
@@ -70,7 +70,7 @@ var AttackerLevels = {
 		"hint": "Use a timing-based attack to detect vulnerabilities.",
 		"seq": ["OR IF(", "'1'='1',","SLEEP(5),","'0'",");--"],
 		"dud": ["ELSE IF(", "Password=1","Sleep()"],
-		"windesc": "YOU DEPLOYED A TIME-BASED SQL INJECTION TO MEASURE RESPONSE DELAYS. \nA 5-SECOND DELAY CONFIRMS SQLI VULNERABILITY.\nPAYLOAD: ' OR IF(1=1, SLEEP(5), 0);",
+		"windesc": "YOU DEPLOYED A TIME-BASED SQL INJECTION TO MEASURE RESPONSE DELAYS. \nA 5-SECOND DELAY CONFIRMS SQL VULNERABILITY.\nPAYLOAD: ' OR IF(1=1, SLEEP(5), 0);",
 		"codexEntry": ["If you can't see data, can you still detect behavior? Look into ways SQL can delay responses — time itself can be used as a signal."]
 		}
 }
